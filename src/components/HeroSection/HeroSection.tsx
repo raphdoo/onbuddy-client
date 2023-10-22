@@ -5,7 +5,10 @@ import { heroSection } from '../../assets/Assets'
 
 const HeroSection: React.FC = () => {
   return (
-    <div className=" min-h-[80%]  relative md:mt-[6%] mt-[20%] flex items-center">
+    <div
+      className="min-h-[80%]  relative md:mt-[6%] mt-[20%] flex items-center"
+      id="home"
+    >
       <div className="container  mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between">
         <div className="  w-full  md:w-1/2 md:pr-8">
           <div className="md:text-6xl text-4xl font-extrabold text-gray-800 mb-4">

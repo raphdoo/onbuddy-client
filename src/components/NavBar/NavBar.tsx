@@ -5,7 +5,7 @@ import { logo } from '../../assets/Assets'
 const menuItems: { label: string; link: string }[] = [
   { label: 'Home', link: '#home' },
   { label: 'Features', link: '#feature' },
-  { label: 'About us', link: '#about' },
+  { label: 'About us', link: '#feature' },
   { label: 'Pricing', link: '#pricing' },
   { label: 'Contact us', link: '#contact' },
 ]
