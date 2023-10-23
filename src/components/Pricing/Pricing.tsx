@@ -3,13 +3,13 @@ import React from 'react'
 
 const PricingSection: React.FC = () => {
   return (
-    <section className=" py-16">
+    <section className="py-16" id="pricing">
       <div className="container mx-auto">
         <h2 className="text-4xl font-semibold font-sans   text-center mb-8">
           OUR PRICING <span className="text-[#309CFF]">PLAN</span>
         </h2>
         <div className="flex flex-col max-w-[40rem] mx-auto sm:flex-row justify-center">
-          <div className="bg-white shadow-md h-fit p-4 rounded-lg  flex-1 m-4">
+          <div className="bg-white shadow-xl h-fit p-4 rounded-lg  flex-1 m-4 ">
             <div className=" flex  items-start  flex-col mb-4">
               <span className="text-2xl font-semibold text-center ">
                 Basic Plan
@@ -30,13 +30,13 @@ const PricingSection: React.FC = () => {
                 <Checkbox className="rounded-sm text-black" checked /> Feature 1
               </li>
             </ul>
-            <div className="text-2xl text-center mt-4">N30,000/month</div>
-            <button className="bg-blue-500 text-white px-4 py-2  mt-4 rounded-lg hover:bg-blue-600 mx-auto flex">
+            <div className="text-2xl  mt-4">N30,000/month</div>
+            <button className="bg-blue-500 text-white px-4 py-2   mt-4 rounded-lg shadow-lg hover:bg-blue-600  flex">
               Get Started
             </button>
           </div>
 
-          <div className="bg-white shadow-md p-4 rounded-lg flex-1 m-4">
+          <div className="bg-white shadow-xl p-4 rounded-xl flex-1 m-4">
             <div className=" flex  items-start  flex-col mb-4">
               <span className="text-2xl font-semibold text-center ">
                 Basic Plan
@@ -70,8 +70,8 @@ const PricingSection: React.FC = () => {
                 <Checkbox className="rounded-sm text-black" checked /> Feature 1
               </li>
             </ul>
-            <div className="text-2xl text-center mt-4">N30,000/month</div>
-            <button className="bg-blue-500 text-white px-4 py-2  mt-4 rounded-lg hover:bg-blue-600 mx-auto flex">
+            <div className="text-2xl  mt-4">N30,000/month</div>
+            <button className="bg-blue-500 shadow-lg text-white px-4 py-2  mt-4 rounded-lg hover:bg-blue-600  flex">
               Get Started
             </button>
           </div>

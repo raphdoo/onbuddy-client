@@ -5,7 +5,7 @@ import { featureData } from '../../utils/data/features'
 
 const Features: React.FC = () => {
   return (
-    <section className="mt-28  ">
+    <section className="mt-28" id="feature">
       <div className="container mx-auto p-8 max-w-[70rem]  h-full ">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {/* First Subsection */}
