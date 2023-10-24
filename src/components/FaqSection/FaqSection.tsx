@@ -1,37 +1,37 @@
-import React, { useState } from 'react'
-import { FiChevronDown } from 'react-icons/fi'
+import React, { useState } from "react";
+import { FiChevronDown } from "react-icons/fi";
 
 const FaqSection: React.FC = () => {
-  const [openQuestion, setOpenQuestion] = useState<number | null>(null)
+  const [openQuestion, setOpenQuestion] = useState<number | null>(null);
 
   const questions = [
     {
-      question: 'What is Onbuddy?',
+      question: "What is Onbuddy?",
       answer:
-        'Onbuddy is a platform that helps you find answers to your questions.',
+        "Onbuddy is a platform that helps you find answers to your questions.",
     },
     {
-      question: 'How can I get started with Onbuddy?',
+      question: "How can I get started with Onbuddy?",
       answer:
-        'To get started with Onbuddy, simply sign up and create an account.',
+        "To get started with Onbuddy, simply sign up and create an account.",
     },
     {
-      question: 'Is Onbuddy free to use?',
-      answer: 'Yes, Onbuddy offers a free basic plan for users.',
+      question: "Is Onbuddy free to use?",
+      answer: "Yes, Onbuddy offers a free basic plan for users.",
     },
     {
-      question: 'Can I upgrade to a premium plan?',
-      answer: 'Yes, you can upgrade to a premium plan for additional features.',
+      question: "Can I upgrade to a premium plan?",
+      answer: "Yes, you can upgrade to a premium plan for additional features.",
     },
-  ]
+  ];
 
   const toggleQuestion = (index: number) => {
     if (openQuestion === index) {
-      setOpenQuestion(null)
+      setOpenQuestion(null);
     } else {
-      setOpenQuestion(index)
+      setOpenQuestion(index);
     }
-  }
+  };
 
   return (
     <div className="p-4 md:p-8 lg:p-12 bg-[#EBF4FE]" id="faq">
@@ -58,7 +58,7 @@ const FaqSection: React.FC = () => {
                 <span>{item.question}</span>
                 <FiChevronDown
                   className={`transition-transform transform ${
-                    openQuestion === index ? 'rotate-180' : 'rotate-0'
+                    openQuestion === index ? "rotate-180" : "rotate-0"
                   }`}
                 />
               </button>
@@ -74,7 +74,7 @@ const FaqSection: React.FC = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FaqSection
+export default FaqSection;

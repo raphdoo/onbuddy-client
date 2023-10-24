@@ -1,25 +1,25 @@
-import React, { useState } from 'react'
-import Image from 'components/common/Images/Image'
-import { logo } from '../../assets/Assets'
+import React, { useState } from "react";
+import Image from "components/common/Images/Image";
+import { logo } from "../../assets/Assets";
 
 const menuItems: { label: string; link: string }[] = [
-  { label: 'Home', link: '#home' },
-  { label: 'Features', link: '#feature' },
-  { label: 'About us', link: '#feature' },
-  { label: 'Pricing', link: '#pricing' },
-  { label: 'Contact us', link: '#contact' },
-]
+  { label: "Home", link: "#home" },
+  { label: "Features", link: "#feature" },
+  { label: "About us", link: "#feature" },
+  { label: "Pricing", link: "#pricing" },
+  { label: "Contact us", link: "#contact" },
+];
 
 const NavBar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   const closeMenu = () => {
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
 
   return (
     <nav className="bg-white p-4 fixed top-0 w-full z-50">
@@ -69,7 +69,7 @@ const NavBar: React.FC = () => {
         </div>
         <div
           className={`md:hidden fixed top-0 right-0 h-screen w-1/2 bg-gray-800 transition-transform transform ${
-            isOpen ? 'translate-x-0' : 'translate-x-full'
+            isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div className="flex flex-col items-start px-4 justify-start pt-[20%] h-full">
@@ -116,7 +116,7 @@ const NavBar: React.FC = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;
