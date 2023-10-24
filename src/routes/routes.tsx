@@ -6,11 +6,8 @@ function MainRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-
         <Route path="/about" element={<h1>About</h1>} />
-
         <Route path="/users" element={<h1>Users</h1>} />
-
         <Route path="/contact" element={<h1>Contact</h1>} />
         <Route
           path="*"
