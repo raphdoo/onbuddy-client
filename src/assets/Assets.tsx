@@ -4,5 +4,8 @@ import messagin from '../assets/images/messagin.png'
 import chat from '../assets/images/chat.png'
 import people from '../assets/images/people.png'
 import task from '../assets/images/task.png'
+import  profile  from '../assets/images/profile.png'
+import logow from '../assets/images/logow.png'
 
-export { logo, heroSection, messagin, chat, people, task }
+
+export { logo, heroSection, messagin, chat, people, task, profile, logow}

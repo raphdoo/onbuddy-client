@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import HomePage from '../pages/HomePage/Index'
+import AdminPage from '../pages/Admin/index'
 
 function MainRoutes() {
   return (
@@ -12,6 +13,8 @@ function MainRoutes() {
         <Route path="/users" element={<h1>Users</h1>} />
 
         <Route path="/contact" element={<h1>Contact</h1>} />
+
+        <Route path="/admin" element={<AdminPage />} />
         <Route
           path="*"
           element={
