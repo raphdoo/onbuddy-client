@@ -6,7 +6,7 @@ function EditProfile() {
   return (
     <section  className="h-full w-full text-white flex flex-col justify-center" style={{ background:"url('src/assets/images/img-bg.png')", backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundSize:"cover" }}>
 			<div className="sm:grid grid-cols-12 flex flex-col  gap-4 mt-20 pb-20 w-full">
-				<section className="col-span-3 sm:space-y-8 flex flex-col items-center ml-20">
+				<section className="col-span-3 sm:space-y-8 flex flex-col items-center sm:ml-20">
 					<h2 className="text-[#309CFF] text-[40px] font-[700px]">Edit Profile</h2>
 					<Image src={profil} alt="Logo Image" className="w-40 h-40 rounded-full md:w-auto" />
 				</section>
