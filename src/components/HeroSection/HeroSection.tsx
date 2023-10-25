@@ -3,6 +3,7 @@ import Image from 'components/common/Images/Image'
 import React from 'react'
 import { heroSection } from '../../assets/Assets'
 
+
 const HeroSection: React.FC = () => {
   return (
     <div
