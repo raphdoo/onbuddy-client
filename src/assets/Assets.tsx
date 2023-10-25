@@ -7,6 +7,7 @@ import task from '../assets/images/task.png'
 import logowhite from '../assets/images/logowhite.png'
 import user from '../assets/images/user.png'
 import AdminHero from '../assets/images/HomepageHero.png'
+import profil from '../assets/images/profil.png'
 
 export {
   logo,
@@ -18,4 +19,5 @@ export {
   logowhite,
   user,
   AdminHero,
+  profil,
 }

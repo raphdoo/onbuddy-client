@@ -6,6 +6,7 @@ const AdminHomePage: React.FC = () => {
   return (
     <React.Fragment>
       <AdminHeroImage />
+      <AdminHomePageLayout />
     </React.Fragment>
   )
 }
