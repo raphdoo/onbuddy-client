@@ -1,5 +1,5 @@
-import pic from "../assets/images/auth.png";
-import logo from "../assets/images/lgo.png";
+import pic from "../../assets/images/auth.png";
+import logo from "../../assets/images/lgo.png";
 export const ConfirmPassword = () => {
   return (
     <div className="text-black text-2xl grid md:grid-cols-2 items-center h-screen bg-background">

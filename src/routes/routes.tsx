@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HomePage from "../pages/HomePage/Index";
-import { Login } from "../pages/login";
-import { Register } from "../pages/register";
-import { ConfirmPassword } from "../pages/confirm-password";
-import { ForgotPassword } from "../pages/forgot";
+import { Login } from "../pages/Login";
+import { Register } from "../pages/Register";
+import { ConfirmPassword } from "../pages/Confirm-Password";
+import { ForgotPassword } from "../pages/Forgot-Password";
 function MainRoutes() {
   return (
     <BrowserRouter>
