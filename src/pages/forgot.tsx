@@ -15,7 +15,7 @@ export const ForgotPassword = () => {
         <div className="absolute inset-0 m-auto  w-full p-2 flex flex-col h-full items-center justify-center">
           <img src={logo} className="w-1/2" />
           <h1 className="font-bold uppercase text-center text-3xl text-white">
-            The ultimate <span className="text-primary">HR</span>
+            The ultimate <span className="text-blue-500">HR</span>
             <br /> solution
           </h1>
         </div>
@@ -23,7 +23,7 @@ export const ForgotPassword = () => {
       <form className="p-6 grid items-center w-full ">
         <h1 className="font-bold text-center text-4xl">Forgot Password</h1>
         <p className="text-center">
-          <a href="/login" className="text-primary font-semibold">
+          <a href="/login" className="text-blue-500 font-semibold">
             Go to Login
           </a>
         </p>
@@ -36,11 +36,11 @@ export const ForgotPassword = () => {
             <input
               type="email"
               id="email"
-              className="rounded-md border border-gray-300 block w-full p-2.5 pl-10 border-none"
+              className="rounded-md  border-gray-300 block w-full p-2.5 pl-10 border"
               placeholder="Enter email address"
               required
             />
-            <button className="text-sm h-full bg-primary text-white rounded-md ml-2 px-2 w-1/3 py-2">
+            <button className="text-sm h-full bg-blue-500 text-white rounded-md ml-2 px-2 w-1/3 py-2">
               Get code
             </button>
           </div>
@@ -56,12 +56,12 @@ export const ForgotPassword = () => {
               type="text"
               id="password"
               placeholder="Input Code"
-              className="rounded-md border border-gray-300 block w-full p-2.5 pl-10 border-none"
+              className="rounded-md  border-gray-300 block w-full p-2.5 pl-10 border"
               required
             />
             <a
               href="/confirm-password"
-              className="text-center text-sm bg-primary text-white rounded-md ml-2 px-2 py-2 w-1/3 m-auto"
+              className="text-center text-sm bg-blue-500 text-white rounded-md ml-2 px-2 py-2 w-1/3 m-auto"
             >
               Verify
             </a>

@@ -25,7 +25,7 @@ export const Login = () => {
         <h1 className="font-bold text-center text-4xl">Welcome Back</h1>
         <p className="text-center">
           Don’t have an account ?{" "}
-          <a href="/register" className="text-primary font-semibold">
+          <a href="/register" className="text-blue-500 font-semibold">
             Register
           </a>
         </p>
@@ -38,7 +38,7 @@ export const Login = () => {
             <input
               type="email"
               id="email"
-              className="rounded-md border border-text block w-full p-2.5 pl-10 border-none"
+              className="rounded-md border-gray-500 border block w-full p-2.5 pl-10 "
               placeholder="Enter email address"
               required
             />
@@ -58,25 +58,25 @@ export const Login = () => {
               type="password"
               id="password"
               placeholder="******"
-              className="rounded-md border-2 border-gray-500 block w-full p-2.5 pl-10 border-none"
+              className="rounded-md border-gray-500 block w-full p-2.5 pl-10 border"
               required
             />
           </div>
         </div>
         <div className="flex justify-between w-3/4 m-auto py-4">
           <div className="flex items-center gap-2">
-            <input type="checkbox" className="rounded focus:outline-none" />
+            <input type="checkbox" className="rounded focus:outline-none " />
             <label className="text-sm">Remember me</label>
           </div>
           <a
             href="/forgot-password"
-            className="text-primary text-sm font-semibold"
+            className="text-blue-500 text-sm font-semibold"
           >
             Forgot Password
           </a>
         </div>
         <button
-          className={`delay-100 transition rounded-lg py-1 border text-white text-md bg-primary w-1/3 m-auto font-[0.9rem]`}
+          className={`delay-100 transition rounded-lg py-1 border text-white text-md bg-blue-500 w-1/3 m-auto font-[0.9rem]`}
         >
           Login
         </button>

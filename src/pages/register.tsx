@@ -25,7 +25,7 @@ export const Register = () => {
         <h1 className="font-bold text-center text-4xl">Hello</h1>
         <p className="text-center">
           Have an account ?{" "}
-          <a href="/login" className="text-primary font-semibold">
+          <a href="/login" className="text-blue-500 font-semibold">
             Login
           </a>
         </p>
@@ -38,7 +38,7 @@ export const Register = () => {
             <input
               type="text"
               id="company name"
-              className="rounded-md border border-gray-300 block w-full p-2.5 pl-10 border-none"
+              className="rounded-md border border-gray-300 block w-full p-2.5 pl-10 border"
               placeholder="Enter company name"
               required
             />
@@ -51,7 +51,7 @@ export const Register = () => {
             <input
               type="email"
               id="email"
-              className="rounded-md border border-gray-300 block w-full p-2.5 pl-10 border-none"
+              className="rounded-md  border-gray-300 block w-full p-2.5 pl-10 border"
               placeholder="Enter email address"
               required
             />
@@ -71,7 +71,7 @@ export const Register = () => {
               type="password"
               id="password"
               placeholder="******"
-              className="rounded-md border border-gray-300 block w-full p-2.5 pl-10 border-none"
+              className="rounded-md border-gray-300 block w-full p-2.5 pl-10 border"
               required
             />
           </div>
@@ -79,19 +79,19 @@ export const Register = () => {
             Pricing
           </label>
           <div className="relative flex items-center">
-            <select className="w-full border-none rounded-md">
+            <select className="w-full border rounded-md">
               <option></option>
             </select>
           </div>
         </div>
         <div className="flex justify-between w-3/4 m-auto py-4">
           <div className="flex items-center gap-2">
-            <input type="checkbox" className="rounded focus:outline-none" />
+            <input type="checkbox" className="rounded focus:outline" />
             <label className="text-sm">Remember me</label>
           </div>
         </div>
         <button
-          className={`delay-100 transition rounded-lg py-1 border text-white text-md bg-primary w-1/3 m-auto font-[0.9rem]`}
+          className={`delay-100 transition rounded-lg py-1 border text-white text-md bg-blue-500 w-1/3 m-auto font-[0.9rem]`}
         >
           Register
         </button>
