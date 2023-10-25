@@ -6,5 +6,16 @@ import people from '../assets/images/people.png'
 import task from '../assets/images/task.png'
 import logowhite from '../assets/images/logowhite.png'
 import user from '../assets/images/user.png'
+import AdminHero from '../assets/images/HomepageHero.png'
 
-export { logo, heroSection, messagin, chat, people, task, logowhite, user }
+export {
+  logo,
+  heroSection,
+  messagin,
+  chat,
+  people,
+  task,
+  logowhite,
+  user,
+  AdminHero,
+}

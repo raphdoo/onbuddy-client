@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import HomePage from '../pages/HomePage/Index'
-import AdminPage from '../pages/admin/Index'
 import AdminLayout from 'components/admin/HomePage/AdminLayout'
+import AdminHomePageLayout from '../components/admin/HomePageLayout/AdminHomePageLayout'
+import AdminWelcome from '../components/admin/HomePage/Purpose/AdminPurpose'
+import AdminPurpose from '../components/admin/HomePage/Purpose/AdminPurpose'
 
 function MainRoutes() {
   return (
@@ -12,8 +14,17 @@ function MainRoutes() {
         <Route path="/users" element={<h1>Users</h1>} />
         <Route path="/contact" element={<h1>Contact</h1>} />
         <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<h1>This is Homepage</h1>} />
-          <Route path="profile" element={<h1>This is profile</h1>} />
+          <Route index element={<AdminHomePageLayout />} />
+          <Route
+            path="profile"
+            element={<h1 className="mt-[50px]">This is Profile</h1>}
+          />
+          <Route path="home" element={<AdminHomePageLayout />}>
+            <Route index element={<h1>This is profile</h1>} />
+            <Route path="welcome" element={<h1>Welcome</h1>} />
+            <Route path="purpose" element={<AdminPurpose />} />
+            <Route path="contact" element={<h1>This is contact</h1>} />
+          </Route>
         </Route>
 
         <Route

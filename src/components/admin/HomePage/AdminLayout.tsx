@@ -10,10 +10,11 @@ interface LayoutProps {
 const AdminLayout: React.FC<LayoutProps> = ({ children }) => {
   const dispatch = useDispatch()
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-fit bg-gray-300">
       <AdminNavbar />
+
       <div
-        className="flex-1 p-6 mt-[50px]"
+        className="flex-1 p-6 px-12"
         onClick={() => dispatch(closeProfile(false))}
       >
         <Outlet />
