@@ -1,6 +1,6 @@
 import AdminFooter from "components/AdminFooter/AdminFooter"
 import AdminNavBar from "components/AdminNavbar/AdminNavbar"
-import HeroAdmin from "components/HeroAdmin/HeroAdmin"
+import AdminHeroSection from "components/AdminHeroSection/AdminHeroSection"
 
 
 
@@ -8,7 +8,7 @@ function AdminPage () {
   return (
     <div>
 			<AdminNavBar />
-			<HeroAdmin />
+			<AdminHeroSection />
 			<AdminFooter />
     </div>
   )
