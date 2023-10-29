@@ -22,7 +22,6 @@ const profileSlice = createSlice({
     },
     closeProfile(state) {
       state.isOpen = false
-      console.log(state.isOpen)
     },
   },
 })

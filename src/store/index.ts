@@ -5,3 +5,7 @@ export const store = configureStore({
     profileMenu: profileSlice,
   },
 })
+
+export type RootState = {
+  profileMenu: ReturnType<typeof profileSlice> 
+}
