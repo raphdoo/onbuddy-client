@@ -15,7 +15,7 @@ const AdminLayout: React.FC<LayoutProps> = () => {
 
       <div
         className="flex-1 p-6  md:px-12 px-2"
-        onClick={() => dispatch(closeProfile(false))}
+        onClick={() => dispatch(closeProfile())}
       >
         <Outlet />
       </div>

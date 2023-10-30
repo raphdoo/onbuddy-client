@@ -2,12 +2,9 @@ import {
   useSelector as useReduxSelector,
   useDispatch as useReduxDispatch,
 } from 'react-redux'
-import { RootState } from 'src/store'
+import { RootState } from '../store/index'
 
-export function useSelector(selector: {
-  (state: RootState): boolean
-  (state: unknown): unknown
-}) {
+export function useSelector(selector: (state: RootState) => any) {
   return useReduxSelector(selector)
 }
 

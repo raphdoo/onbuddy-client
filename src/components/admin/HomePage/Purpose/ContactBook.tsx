@@ -4,7 +4,10 @@ import React from 'react'
 const ContactBook: React.FC = () => {
   return (
     <div className="container mx-auto p-4">
-      <Collapsible title="Kelvin"></Collapsible>
+      <Collapsible title="Kelvin">
+        {' '}
+        <h1>Hey</h1>
+      </Collapsible>
     </div>
   )
 }

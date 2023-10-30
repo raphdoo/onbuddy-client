@@ -13,7 +13,6 @@ import {
 } from '../../../assets/Icons'
 import { useDispatch, useSelector } from '../../../hooks/hooks'
 import { toggleProfile } from '../../../store/slices/ModalSlice'
-import { RootState } from 'src/store'
 
 const menuItems = [
   {
@@ -46,7 +45,8 @@ const menuItems = [
 const AdminNavbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const dispatch = useDispatch()
-  const profile = useSelector((state: RootState) => state.profileMenu.isOpen)
+
+  const profile = useSelector((state) => state.profileMenu.isOpen)
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
