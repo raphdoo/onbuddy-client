@@ -5,7 +5,6 @@ import { logowhite, user } from '../../../assets/Assets'
 
 import {
   RiHome5Fill,
-  BiSolidMessageSquareDetail,
   IoCalendarNumber,
   PiChatCenteredTextFill,
   PiNotepadFill,
