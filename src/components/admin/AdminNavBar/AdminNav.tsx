@@ -45,7 +45,8 @@ const menuItems = [
 const AdminNavbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const dispatch = useDispatch()
-  const profile: boolean = useSelector((state) => state.profileMenu.isOpen)
+
+  const profile = useSelector((state) => state.profileMenu.isOpen)
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
