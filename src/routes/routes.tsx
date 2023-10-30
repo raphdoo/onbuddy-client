@@ -1,5 +1,11 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HomePage from "../pages/HomePage/Index";
+
+import { Login } from "../pages/login";
+import { Register } from "../pages/register";
+import { ConfirmPassword } from "../pages/confirm-password";
+import { ForgotPassword } from "../pages/forgot";
+
 import AdminLayout from "components/admin/HomePage/AdminLayout";
 import AdminHomePageLayout from "../components/admin/HomePageLayout/AdminHomePageLayout";
 import AdminProfile from "../pages/Profile/Index";
@@ -15,9 +21,9 @@ import { OnePageProfile } from "components/admin/HomePage/HomePages/OnePageProfi
 import { SocialPage } from "components/admin/HomePage/HomePages/Socials";
 import { ContactUsPage } from "components/admin/HomePage/HomePages/ContactUs";
 import { WelcomePage } from "components/admin/HomePage/HomePages/WelcomePage";
-import EventPage from "../pages/Event";
-import EventDetail from "components/Event/EventDetail";
 import Event from "components/Event";
+import EventDetail from "components/Event/EventDetail";
+import EventPage from "../pages/Event";
 
 function MainRoutes() {
   return (
@@ -26,6 +32,13 @@ function MainRoutes() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<h1>About</h1>} />
         <Route path="/users" element={<h1>Users</h1>} />
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        <Route path="/confirm-password" element={<ConfirmPassword />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+
         <Route path="/contact" element={<h1>Contact</h1>} />
         <Route path="/event" element={<EventPage />} />
         <Route path="/admin" element={<AdminLayout />}>
