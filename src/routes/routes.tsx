@@ -1,10 +1,5 @@
-
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import HomePage from '../pages/HomePage/Index'
-import { Login } from "../pages/Login";
-        import { Register } from "../pages/Register";
-import { ConfirmPassword } from "../pages/Confirm-Password";
-import { ForgotPassword } from "../pages/Forgot-Password";
 import AdminLayout from 'components/admin/HomePage/AdminLayout'
 import AdminHomePageLayout from '../components/admin/HomePageLayout/AdminHomePageLayout'
 import AdminProfile from '../pages/Profile/Index'
@@ -21,17 +16,12 @@ import { SocialPage } from 'components/admin/HomePage/HomePages/Socials'
 import { ContactUsPage } from 'components/admin/HomePage/HomePages/ContactUs'
 import { WelcomePage } from 'components/admin/HomePage/HomePages/WelcomePage'
 
-
 function MainRoutes() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<h1>About</h1>} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/confirm-password" element={<ConfirmPassword />} />
         <Route path="/users" element={<h1>Users</h1>} />
         <Route path="/contact" element={<h1>Contact</h1>} />
         <Route path="/admin" element={<AdminLayout />}>
@@ -59,13 +49,13 @@ function MainRoutes() {
           path="*"
           element={
             <div>
-              <h1>Page not Found 😢 </h1> <Link to={"/"}> Back to Home</Link>
+              <h1>Page not Found 😢 </h1> <Link to={'/'}> Back to Home</Link>
             </div>
           }
         />
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
-export default MainRoutes;
+export default MainRoutes

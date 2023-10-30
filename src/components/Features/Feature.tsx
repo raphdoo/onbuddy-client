@@ -1,7 +1,7 @@
-import Image from "../common/Images/Image";
-import React from "react";
+import Image from '../common/Images/Image'
+import React from 'react'
 
-import { featureData } from "../../utils/data/features";
+import { featureData } from '../../utils/data/features'
 
 const Features: React.FC = () => {
   return (
@@ -15,12 +15,12 @@ const Features: React.FC = () => {
               className="bg-blue-200 p-14 rounded-lg flex flex-col cursor-pointer lg:min-h-[70vh] min-h-[50vh] transition hover:bg-[#309CFF]"
             >
               <div className="flex-1">
-                {" "}
+                {' '}
                 <h2 className="text-2xl font-bold mb-4">{item.title}</h2>
                 <p className="text-gray-700">{item.description}</p>
               </div>
               <div className="flex-10 h-full flex mx-auto">
-                {" "}
+                {' '}
                 <Image
                   className="max-w-auto"
                   src={`${item.imageSrc}`}
@@ -32,7 +32,7 @@ const Features: React.FC = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Features;
+export default Features

@@ -1,7 +1,7 @@
-import Button from "components/common/Button/Button";
-import Image from "components/common/Images/Image";
-import React from "react";
-import { heroSection } from "../../assets/Assets";
+import Button from 'components/common/Button/Button'
+import Image from 'components/common/Images/Image'
+import React from 'react'
+import { heroSection } from '../../assets/Assets'
 
 
 const HeroSection: React.FC = () => {
@@ -36,7 +36,7 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HeroSection;
+export default HeroSection
