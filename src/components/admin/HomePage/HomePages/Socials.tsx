@@ -1,0 +1,20 @@
+import React from 'react'
+import ContentCard from '../ContentCard/ContentCard'
+import SocialWall from '../Purpose/SocialWall'
+
+export const SocialPage: React.FC = () => {
+  return (
+    <React.Fragment>
+      <ContentCard title="SOCIALS">
+        <p className="mb-3">
+          Here is a great place to connect with your colleagues. Its a great
+          place to share information about yourself, and to ask questions.
+        </p>
+        <p className="mb-3">We hope you find this section useful</p>
+        <div>
+          <SocialWall />
+        </div>
+      </ContentCard>
+    </React.Fragment>
+  )
+}
