@@ -1,5 +1,5 @@
-import React from "react";
-import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import React from 'react'
+import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
 
 const FooterSection: React.FC = () => {
   return (
@@ -39,7 +39,7 @@ const FooterSection: React.FC = () => {
         &copy; {new Date().getFullYear()} OnBuddy. All rights reserved.
       </p>
     </footer>
-  );
-};
+  )
+}
 
-export default FooterSection;
+export default FooterSection

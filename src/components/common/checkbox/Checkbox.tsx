@@ -1,6 +1,6 @@
-import React, { InputHTMLAttributes } from "react";
+import React, { InputHTMLAttributes } from 'react'
 
-type CheckboxProps = InputHTMLAttributes<HTMLInputElement>;
+type CheckboxProps = InputHTMLAttributes<HTMLInputElement>
 
 const Checkbox: React.FC<CheckboxProps> = (props) => {
   return (
@@ -12,7 +12,7 @@ const Checkbox: React.FC<CheckboxProps> = (props) => {
       />
       <span className="text-gray-700">{props.children}</span>
     </label>
-  );
-};
+  )
+}
 
-export default Checkbox;
+export default Checkbox

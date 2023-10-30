@@ -1,5 +1,5 @@
-import Checkbox from "components/common/checkbox/Checkbox";
-import React from "react";
+import Checkbox from 'components/common/checkbox/Checkbox'
+import React from 'react'
 
 const PricingSection: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const PricingSection: React.FC = () => {
             <div className=" flex  items-start  flex-col mb-4">
               <span className="text-2xl font-semibold text-center ">
                 Basic Plan
-              </span>{" "}
+              </span>{' '}
               <span className="text-xl font-semibold text-center">
                 N0/Month
               </span>
@@ -40,7 +40,7 @@ const PricingSection: React.FC = () => {
             <div className=" flex  items-start  flex-col mb-4">
               <span className="text-2xl font-semibold text-center ">
                 Basic Plan
-              </span>{" "}
+              </span>{' '}
               <span className="text-xl font-semibold text-center">
                 N20,000/Month
               </span>
@@ -78,7 +78,7 @@ const PricingSection: React.FC = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default PricingSection;
+export default PricingSection
