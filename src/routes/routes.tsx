@@ -15,7 +15,7 @@ import { OnePageProfile } from "components/admin/HomePage/HomePages/OnePageProfi
 import { SocialPage } from "components/admin/HomePage/HomePages/Socials";
 import { ContactUsPage } from "components/admin/HomePage/HomePages/ContactUs";
 import { WelcomePage } from "components/admin/HomePage/HomePages/WelcomePage";
-import EventPage from "src/pages/Event";
+import EventPage from "../pages/Event";
 import EventDetail from "components/Event/EventDetail";
 import Event from "components/Event";
 
