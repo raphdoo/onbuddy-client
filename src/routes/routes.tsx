@@ -15,6 +15,11 @@ import { OnePageProfile } from 'components/admin/HomePage/HomePages/OnePageProfi
 import { SocialPage } from 'components/admin/HomePage/HomePages/Socials'
 import { ContactUsPage } from 'components/admin/HomePage/HomePages/ContactUs'
 import { WelcomePage } from 'components/admin/HomePage/HomePages/WelcomePage'
+import ConfirmPassword from 'components/auth/confirm-password'
+// import { Register } from 'components/auth/register'
+import { Login } from 'components/auth/login'
+import { ForgotPassword } from 'components/auth/forgot'
+import { Signup } from 'components/auth/signup'
 
 function MainRoutes() {
   return (
@@ -24,6 +29,11 @@ function MainRoutes() {
         <Route path="/about" element={<h1>About</h1>} />
         <Route path="/users" element={<h1>Users</h1>} />
         <Route path="/contact" element={<h1>Contact</h1>} />
+        <Route path="/password" element={<ConfirmPassword />} />
+        {/* <Route path="/register" element={<Register />} /> */}
+        <Route path="/register" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/forgot" element={<ForgotPassword />} />
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminHomePageLayout />} />
           <Route path="profile" element={<AdminProfile />} />

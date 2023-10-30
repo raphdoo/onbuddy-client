@@ -40,13 +40,13 @@ const NavBar: React.FC = () => {
         </div>
         <div className="hidden md:flex items-center space-x-4">
           <a
-            href="#"
+            href="/login"
             className="text-black border-solid border-[1px] px-[2rem] py-[0.5rem] rounded-md hover:bg-gray-100"
           >
             Login
           </a>
           <a
-            href="#"
+            href="/register"
             className="bg-blue-500 border-solid border-[1px] px-[2rem] py-[0.5rem] rounded-md text-white hover:bg-blue-600 transition duration-300"
           >
             Register
