@@ -8,6 +8,12 @@ import logowhite from '../assets/images/logowhite.png'
 import user from '../assets/images/user.png'
 import AdminHero from '../assets/images/HomepageHero.png'
 import profil from '../assets/images/profil.png'
+import user1 from '../assets/images/user1.png'
+import vector from '../assets/images/Vector.png'
+import vectordot from '../assets/images/Vectordot.png'
+import useredit from '../assets/images/useredit.png'
+
+
 
 export {
   logo,
@@ -20,4 +26,9 @@ export {
   user,
   AdminHero,
   profil,
+  user1,
+  vector,
+  vectordot,
+  useredit,
+
 }

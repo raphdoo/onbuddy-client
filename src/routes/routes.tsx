@@ -6,6 +6,8 @@ import AdminWelcome from '../components/admin/HomePage/Purpose/AdminPurpose'
 import AdminPurpose from '../components/admin/HomePage/Purpose/AdminPurpose'
 import ProfilePage from '../pages/ProfilePage/index'
 import EditPage from '../pages/EditPage/index'
+import ChangePassword from '../pages/ChangePassword/index'
+import WorkDetails from '../pages/WorkDetails/index'
 
 
 
@@ -18,14 +20,25 @@ function MainRoutes() {
         <Route path="/users" element={<h1>Users</h1>} />
         <Route path="/contact" element={<h1>Contact</h1>} />
         <Route
+            path="profile"
+            element={<ProfilePage/>}
+        />
+        <Route
             path="edit"
             element={<EditPage/>}
           />
 
         <Route
-            path="profile"
-            element={<ProfilePage/>}
-        />
+            path="changepassword"
+            element={<ChangePassword/>}
+          />
+
+        <Route
+            path="WorkDetails"
+            element={<WorkDetails/>}
+          />
+
+        
         <Route path="/admin" element={<AdminLayout />}>
         
           <Route index element={<AdminHomePageLayout />} />

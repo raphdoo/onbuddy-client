@@ -1,17 +1,15 @@
 import AdminFooter from "components/admin/AdminFooter/AdminFooter"
 import AdminNavbar from "components/admin/AdminNavBar/AdminNav"
+import WorkDetails from "components/admin/WorkDetails/WorkDetails"
 
-import ProfilePage from "components/admin/ProfilePage/ProfilePage"
-
-
-function Profile() {
+function index() {
   return (
     <div>
       <AdminNavbar />
-      <ProfilePage />
+      <WorkDetails />
       <AdminFooter />
     </div>
   )
 }
 
-export default Profile
+export default index
