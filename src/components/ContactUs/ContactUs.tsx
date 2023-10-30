@@ -1,32 +1,32 @@
-import React, { useState } from 'react'
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa' // Import the icons you need
+import React, { useState } from "react";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"; // Import the icons you need
 
 const ContactUs: React.FC = () => {
   const [formValues, setFormValues] = useState({
-    fullName: '',
-    subject: '',
-    email: '',
-    message: '',
-  })
+    fullName: "",
+    subject: "",
+    email: "",
+    message: "",
+  });
 
   const handleInputChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = event.target
-    setFormValues({ ...formValues, [name]: value })
-  }
+    const { name, value } = event.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
 
   const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault()
+    event.preventDefault();
     // Add your form submission logic here
-    console.log('Form Submitted', formValues)
-  }
+    console.log("Form Submitted", formValues);
+  };
 
   return (
     <div className="p-4 md:p-8 lg:p-12" id="contact">
       <div className="bg-white p-6 rounded-lg shadow-lg ">
         <h2 className="md:text-5xl  text-2xl font-bold mb-8 flex mx-auto md:max-w-[60%] uppercase md:leading-[4rem] items-center  justify-center flex-wrap">
-          Have Any Question?{' '}
+          Have Any Question?{" "}
           <span className="text-[#309CFF]"> Contact Us Now</span>
         </h2>
         <p className=" mb-4 text-center w-full ">
@@ -96,7 +96,7 @@ const ContactUs: React.FC = () => {
               />
             </div>
             <div className="lg:w-1/2 lg:mb-4">
-              {' '}
+              {" "}
               <label htmlFor="email" className="block font-semibold">
                 Email
               </label>
@@ -134,7 +134,7 @@ const ContactUs: React.FC = () => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ContactUs
+export default ContactUs;
