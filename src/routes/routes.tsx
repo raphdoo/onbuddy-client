@@ -1,26 +1,28 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import HomePage from '../pages/HomePage/Index'
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import HomePage from "../pages/HomePage/Index";
 
-import { Login } from '../pages/login'
-import { Register } from '../pages/register'
-import { ConfirmPassword } from '../pages/confirm-password'
-import { ForgotPassword } from '../pages/forgot'
+import { Login } from "../pages/login";
+import { Register } from "../pages/register";
+import { ConfirmPassword } from "../pages/confirm-password";
+import { ForgotPassword } from "../pages/forgot";
 
-import AdminLayout from 'components/admin/HomePage/AdminLayout'
-import AdminHomePageLayout from '../components/admin/HomePageLayout/AdminHomePageLayout'
-import AdminProfile from '../pages/Profile/Index'
-import { OurPurpose } from 'components/admin/HomePage/HomePages'
-import { OurValues } from 'components/admin/HomePage/HomePages/OurValues'
-import { OurCulture } from 'components/admin/HomePage/HomePages/OurCulture'
-import { ContactBooks } from 'components/admin/HomePage/HomePages/ContactBooks'
-import { Diversity } from 'components/admin/HomePage/HomePages/Diversity'
-import { Health } from 'components/admin/HomePage/HomePages/Health'
-import { Learning } from 'components/admin/HomePage/HomePages/Learning'
-import { GettingReady } from 'components/admin/HomePage/HomePages/GettingReady'
-import { OnePageProfile } from 'components/admin/HomePage/HomePages/OnePageProfile'
-import { SocialPage } from 'components/admin/HomePage/HomePages/Socials'
-import { ContactUsPage } from 'components/admin/HomePage/HomePages/ContactUs'
-import { WelcomePage } from 'components/admin/HomePage/HomePages/WelcomePage'
+import AdminLayout from "components/admin/HomePage/AdminLayout";
+import AdminHomePageLayout from "../components/admin/HomePageLayout/AdminHomePageLayout";
+import AdminProfile from "../pages/Profile/Index";
+import { OurPurpose } from "components/admin/HomePage/HomePages";
+import { OurValues } from "components/admin/HomePage/HomePages/OurValues";
+import { OurCulture } from "components/admin/HomePage/HomePages/OurCulture";
+import { ContactBooks } from "components/admin/HomePage/HomePages/ContactBooks";
+import { Diversity } from "components/admin/HomePage/HomePages/Diversity";
+import { Health } from "components/admin/HomePage/HomePages/Health";
+import { Learning } from "components/admin/HomePage/HomePages/Learning";
+import { GettingReady } from "components/admin/HomePage/HomePages/GettingReady";
+import { OnePageProfile } from "components/admin/HomePage/HomePages/OnePageProfile";
+import { SocialPage } from "components/admin/HomePage/HomePages/Socials";
+import { ContactUsPage } from "components/admin/HomePage/HomePages/ContactUs";
+import { WelcomePage } from "components/admin/HomePage/HomePages/WelcomePage";
+import EventPage from "../pages/Event";
+import Event from "components/Event";
 
 function MainRoutes() {
   return (
@@ -39,6 +41,17 @@ function MainRoutes() {
         <Route path="/contact" element={<h1>Contact</h1>} />
 
         <Route path="/admin" element={<AdminLayout />}>
+          <Route path="event" element={<EventPage />}>
+            <Route index={true} element={<Event />} />
+            <Route
+              path=":eventId"
+              element={
+                <h1 className="mt-[50px] bg-red-500">
+                  This is the event detail
+                </h1>
+              }
+            />
+          </Route>
           <Route index element={<AdminHomePageLayout />} />
           <Route path="profile" element={<AdminProfile />} />
           <Route path="home" element={<AdminHomePageLayout />}>
@@ -62,13 +75,13 @@ function MainRoutes() {
           path="*"
           element={
             <div>
-              <h1>Page not Found 😢 </h1> <Link to={'/'}> Back to Home</Link>
+              <h1>Page not Found 😢 </h1> <Link to={"/"}> Back to Home</Link>
             </div>
           }
         />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default MainRoutes
+export default MainRoutes;
