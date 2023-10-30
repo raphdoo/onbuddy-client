@@ -55,15 +55,17 @@ const AdminNavbar: React.FC = () => {
   }
 
   return (
-    <nav className="bg-blue-500 md:px-8 sm:px-6  h-16 flex items-center justify-between fixed w-full ">
+    <nav className="bg-[#0F6FC8] md:px-8 sm:px-6  h-16 flex items-center justify-between fixed w-full ">
       <div className="ml-4 text-white text-xl font-bold">
-        <img src={logowhite} alt="logo image" />
+        <a href="/" className="">
+          <img src={logowhite} alt="logo image" />
+        </a>
       </div>
 
       <div className="flex items-center mr-4">
         {isMobileMenuOpen && (
           <div className="sm:hidden fixed top-0 right-0 h-screen w-3/4 bg-blue-500 text-white p-4 transform-gpu translate-x-0 transition-transform">
-            <div className="relative  flex  justify-end">
+            <div className="relative flex justify-end">
               <IoClose
                 onClick={toggleMobileMenu}
                 className="right-0 text-2xl "

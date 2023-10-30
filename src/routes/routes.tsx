@@ -1,11 +1,16 @@
+
+
+
+
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HomePage from "../pages/HomePage/Index";
-
-import { Login } from "../pages/login";
-import { Register } from "../pages/register";
-import { ConfirmPassword } from "../pages/confirm-password";
-import { ForgotPassword } from "../pages/forgot";
-
+import EditPage from '../pages/EditPage/index'
+import WorkDetails from '../pages/WorkDetails/index'
+import ChangePassword from '../pages/ChangePassword/index'
+import AdminPurpose from '../components/admin/HomePage/Purpose/AdminPurpose'
+import ConfirmPassword from "components/auth/confirm-password";
+import ProfilePage from '../pages/ProfilePage/index'
+import AdminWelcome from '../components/admin/HomePage/Purpose/AdminPurpose'
 import AdminLayout from "components/admin/HomePage/AdminLayout";
 import AdminHomePageLayout from "../components/admin/HomePageLayout/AdminHomePageLayout";
 import AdminProfile from "../pages/Profile/Index";
@@ -21,8 +26,13 @@ import { OnePageProfile } from "components/admin/HomePage/HomePages/OnePageProfi
 import { SocialPage } from "components/admin/HomePage/HomePages/Socials";
 import { ContactUsPage } from "components/admin/HomePage/HomePages/ContactUs";
 import { WelcomePage } from "components/admin/HomePage/HomePages/WelcomePage";
+import { ForgotPassword } from "components/auth/forgot";
+import { Login } from "components/auth/login";
+import { Register } from "components/auth/register";
 import EventPage from "../pages/Event";
 import Event from "components/Event";
+
+
 
 function MainRoutes() {
   return (
@@ -35,11 +45,29 @@ function MainRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        <Route path="/confirm-password" element={<ConfirmPassword />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/confirm" element={<ConfirmPassword />} />
+        <Route path="/forgot" element={<ForgotPassword />} />
 
         <Route path="/contact" element={<h1>Contact</h1>} />
 
+              <Route
+            path="edit"
+            element={<EditPage/>}
+          />
+
+        <Route
+            path="changepassword"
+            element={<ChangePassword/>}
+          />
+
+        <Route
+            path="WorkDetails"
+            element={<WorkDetails/>}
+          />
+             <Route
+            path="profile"
+            element={<ProfilePage/>}
+        />
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="event" element={<EventPage />}>
             <Route index={true} element={<Event />} />
@@ -54,6 +82,7 @@ function MainRoutes() {
           </Route>
           <Route index element={<AdminHomePageLayout />} />
           <Route path="profile" element={<AdminProfile />} />
+
           <Route path="home" element={<AdminHomePageLayout />}>
             <Route index element={<WelcomePage />} />
             <Route path="purpose" element={<OurPurpose />} />
@@ -68,6 +97,7 @@ function MainRoutes() {
             <Route path="socials" element={<SocialPage />} />
             <Route path="events" element={<h1>Events</h1>} />
             <Route path="contact" element={<ContactUsPage />} />
+
           </Route>
         </Route>
 
