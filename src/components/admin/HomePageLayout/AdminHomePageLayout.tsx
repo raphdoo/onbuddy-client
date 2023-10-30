@@ -1,4 +1,4 @@
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet, Link, NavLink } from 'react-router-dom'
 
 import Collapsible from '../../../components/common/CollapsMenu/Colllaps'
 import AdminHeroImage from '../HomePage/AdminHeroImage'
@@ -19,304 +19,127 @@ interface MenuItem {
 
 const links: MenuItem[] = [
   {
-    title: 'How to use our portal',
+    title: 'Home',
     link: [
       {
-        path: '/admin/home/welcome',
-        label: 'Company Welcome',
+        path: '/admin/home',
+        label: 'How to use the portal',
       },
+    ],
+  },
+  {
+    title: 'Our Business',
+    link: [
       {
         path: '/admin/home/purpose',
-        label: 'Purpose and Strategy',
+        label: 'Our Purpose',
+      },
+      {
+        path: '/admin/home/our-value',
+        label: 'Our Values',
+      },
+      {
+        path: '/admin/home/our-culture',
+        label: 'Our Culture',
       },
     ],
   },
   {
-    title: 'Company Welcome',
+    title: 'Your Program',
     link: [
       {
-        path: '/',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
+        path: '/admin/home/contact-books',
+        label: 'Contact Books',
       },
     ],
   },
   {
-    title: 'Purpose and strategy',
+    title: 'Our Commitments',
     link: [
       {
-        path: '',
-        label: 'Dashboard',
+        path: '/admin/home/diversity',
+        label: 'Diversity and Inclusion',
       },
       {
-        path: '',
-        label: 'Profile',
+        path: '/admin/home/health',
+        label: 'Health and Wellness',
+      },
+      {
+        path: '/admin/home/learning',
+        label: 'Learning and Development',
       },
     ],
   },
   {
-    title: 'How to use our portal',
+    title: 'Updates',
     link: [
       {
-        path: '',
-        label: 'Dashboard',
+        path: '/admin/home/getting-ready',
+        label: 'Getting ready for day one',
       },
       {
-        path: '',
-        label: 'Profile',
-      },
-    ],
-  },
-  {
-    title: 'How to use our portal',
-    link: [
-      {
-        path: '',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
-      },
-    ],
-  },
-  {
-    title: 'How to use our portal',
-    link: [
-      {
-        path: '',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
-      },
-    ],
-  },
-  {
-    title: 'How to use our portal',
-    link: [
-      {
-        path: '',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
-      },
-    ],
-  },
-  {
-    title: 'How to use our portal',
-    link: [
-      {
-        path: '',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
-      },
-    ],
-  },
-  {
-    title: 'How to use our portal',
-    link: [
-      {
-        path: '',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
-      },
-    ],
-  },
-  {
-    title: 'How to use our portal',
-    link: [
-      {
-        path: '',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
-      },
-    ],
-  },
-  {
-    title: 'How to use our portal',
-    link: [
-      {
-        path: '',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
-      },
-    ],
-  },
-  {
-    title: 'How to use our portal',
-    link: [
-      {
-        path: '',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
-      },
-    ],
-  },
-  {
-    title: 'How to use our portal',
-    link: [
-      {
-        path: '',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
-      },
-    ],
-  },
-  {
-    title: 'How to use our portal',
-    link: [
-      {
-        path: '',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
-      },
-    ],
-  },
-  {
-    title: 'How to use our portal',
-    link: [
-      {
-        path: '',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
-      },
-    ],
-  },
-  {
-    title: 'How to use our portal',
-    link: [
-      {
-        path: '',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
-      },
-    ],
-  },
-  {
-    title: 'How to use our portal',
-    link: [
-      {
-        path: '',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
-      },
-    ],
-  },
-  {
-    title: 'How to use our portal',
-    link: [
-      {
-        path: '',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
-      },
-    ],
-  },
-  {
-    title: 'How to use our portal',
-    link: [
-      {
-        path: '',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
-      },
-    ],
-  },
-  {
-    title: 'How to use our portal',
-    link: [
-      {
-        path: '',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
-      },
-    ],
-  },
-  {
-    title: 'How to use our portal',
-    link: [
-      {
-        path: '',
-        label: 'Dashboard',
-      },
-      {
-        path: '',
-        label: 'Profile',
+        path: '/admin/home/one-page',
+        label: 'One page profile',
       },
     ],
   },
 ]
 
-const AdminHomePageLayout: React.FC<LayoutProps> = ({ children }) => {
+const AdminHomePageLayout: React.FC<LayoutProps> = () => {
   return (
     <div>
       <AdminHeroImage />
-      <div className="flex h-fit bg-gray-300 ">
-        <div className=" w-60 px-4">
+      <div className="flex min-h-screen bg-gray-300 mt-10">
+        <div className=" md:flex flex-col hidden md:w-[25%] w-full md:px-4 ">
           <nav>
             {links.map((link) => (
-              <Collapsible key={link.title} title={link.title}>
-                {link.link.map((item) => (
-                  <Link
-                    to={`${item.path}`}
-                    key={item.label}
-                    className="block py-2 font-bold"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </Collapsible>
+              <div key={link.title}>
+                <Collapsible key={link.title} title={link.title}>
+                  {link.link.map((item) => (
+                    <Link
+                      to={`${item.path}`}
+                      key={item.label}
+                      className=" hover:text-[#309CFF] text-xl py-2 flex gap-2 font-normal   "
+                    >
+                      <span className="ml-5">-</span>{' '}
+                      <li className="list-none">{item.label}</li>
+                    </Link>
+                  ))}
+                </Collapsible>
+                <div className="h-px bg-black "></div>
+              </div>
             ))}
+
+            <div className="flex flex-col  gap-4 mt-8 mb-10">
+              <div className="cursor-pointer border-b  border-gray-300  flex justify-between items-center">
+                <NavLink
+                  to="/admin/home/socials"
+                  className="font-bold text-xl  text-gray-500 uppercase active:text-red-500"
+                >
+                  Socials
+                </NavLink>
+              </div>
+              <div className="cursor-pointer border-b  border-gray-300  flex justify-between items-center">
+                <Link
+                  to="/admin/home/events"
+                  className="font-bold text-xl text-gray-500 uppercase"
+                >
+                  Events
+                </Link>
+              </div>
+              <div className="cursor-pointer border-b  border-gray-300  flex justify-between items-center">
+                <Link
+                  to="/admin/home/contact"
+                  className="font-bold  text-xl text-gray-500  uppercase"
+                >
+                  Cotact Us
+                </Link>
+              </div>
+            </div>
           </nav>
         </div>
 
-        <div className="flex-1 p-6">
+        <div className="flex-1 md:p-6 p-2">
           <Outlet />
         </div>
       </div>

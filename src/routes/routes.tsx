@@ -2,9 +2,20 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HomePage from "../pages/HomePage/Index";
 import AdminLayout from "components/admin/HomePage/AdminLayout";
 import AdminHomePageLayout from "../components/admin/HomePageLayout/AdminHomePageLayout";
-import AdminWelcome from "../components/admin/HomePage/Purpose/AdminPurpose";
-import AdminPurpose from "../components/admin/HomePage/Purpose/AdminPurpose";
-import EventPage from "../pages/Event";
+import AdminProfile from "../pages/Profile/Index";
+import { OurPurpose } from "components/admin/HomePage/HomePages";
+import { OurValues } from "components/admin/HomePage/HomePages/OurValues";
+import { OurCulture } from "components/admin/HomePage/HomePages/OurCulture";
+import { ContactBooks } from "components/admin/HomePage/HomePages/ContactBooks";
+import { Diversity } from "components/admin/HomePage/HomePages/Diversity";
+import { Health } from "components/admin/HomePage/HomePages/Health";
+import { Learning } from "components/admin/HomePage/HomePages/Learning";
+import { GettingReady } from "components/admin/HomePage/HomePages/GettingReady";
+import { OnePageProfile } from "components/admin/HomePage/HomePages/OnePageProfile";
+import { SocialPage } from "components/admin/HomePage/HomePages/Socials";
+import { ContactUsPage } from "components/admin/HomePage/HomePages/ContactUs";
+import { WelcomePage } from "components/admin/HomePage/HomePages/WelcomePage";
+import EventPage from "src/pages/Event";
 import EventDetail from "components/Event/EventDetail";
 import Event from "components/Event";
 
@@ -31,11 +42,22 @@ function MainRoutes() {
               }
             />
           </Route>
+          <Route path="profile" element={<AdminProfile />} />
+
           <Route path="home" element={<AdminHomePageLayout />}>
-            <Route index element={<h1>This is profile</h1>} />
-            <Route path="welcome" element={<h1>Welcome</h1>} />
-            <Route path="purpose" element={<AdminPurpose />} />
-            <Route path="contact" element={<h1>This is contact</h1>} />
+            <Route index element={<WelcomePage />} />
+            <Route path="purpose" element={<OurPurpose />} />
+            <Route path="our-value" element={<OurValues />} />
+            <Route path="our-culture" element={<OurCulture />} />
+            <Route path="contact-books" element={<ContactBooks />} />
+            <Route path="diversity" element={<Diversity />} />
+            <Route path="health" element={<Health />} />
+            <Route path="learning" element={<Learning />} />
+            <Route path="getting-ready" element={<GettingReady />} />
+            <Route path="one-page" element={<OnePageProfile />} />
+            <Route path="socials" element={<SocialPage />} />
+            <Route path="events" element={<h1>Events</h1>} />
+            <Route path="contact" element={<ContactUsPage />} />
           </Route>
         </Route>
 
