@@ -1,4 +1,7 @@
 
+
+
+
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HomePage from "../pages/HomePage/Index";
 import EditPage from '../pages/EditPage/index'
@@ -26,6 +29,8 @@ import { WelcomePage } from "components/admin/HomePage/HomePages/WelcomePage";
 import { ForgotPassword } from "components/auth/forgot";
 import { Login } from "components/auth/login";
 import { Register } from "components/auth/register";
+import EventPage from "../pages/Event";
+import Event from "components/Event";
 
 
 
@@ -64,6 +69,17 @@ function MainRoutes() {
             element={<ProfilePage/>}
         />
         <Route path="/admin" element={<AdminLayout />}>
+          <Route path="event" element={<EventPage />}>
+            <Route index={true} element={<Event />} />
+            <Route
+              path=":eventId"
+              element={
+                <h1 className="mt-[50px] bg-red-500">
+                  This is the event detail
+                </h1>
+              }
+            />
+          </Route>
           <Route index element={<AdminHomePageLayout />} />
           <Route path="profile" element={<AdminProfile />} />
 
