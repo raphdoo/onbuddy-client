@@ -1,8 +1,13 @@
+
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HomePage from "../pages/HomePage/Index";
-
+import EditPage from '../pages/EditPage/index'
+import WorkDetails from '../pages/WorkDetails/index'
+import ChangePassword from '../pages/ChangePassword/index'
+import AdminPurpose from '../components/admin/HomePage/Purpose/AdminPurpose'
 import ConfirmPassword from "components/auth/confirm-password";
-
+import ProfilePage from '../pages/ProfilePage/index'
+import AdminWelcome from '../components/admin/HomePage/Purpose/AdminPurpose'
 import AdminLayout from "components/admin/HomePage/AdminLayout";
 import AdminHomePageLayout from "../components/admin/HomePageLayout/AdminHomePageLayout";
 import AdminProfile from "../pages/Profile/Index";
@@ -23,6 +28,7 @@ import { Login } from "components/auth/login";
 import { Register } from "components/auth/register";
 
 
+
 function MainRoutes() {
   return (
     <BrowserRouter>
@@ -38,6 +44,25 @@ function MainRoutes() {
         <Route path="/forgot" element={<ForgotPassword />} />
 
         <Route path="/contact" element={<h1>Contact</h1>} />
+
+              <Route
+            path="edit"
+            element={<EditPage/>}
+          />
+
+        <Route
+            path="changepassword"
+            element={<ChangePassword/>}
+          />
+
+        <Route
+            path="WorkDetails"
+            element={<WorkDetails/>}
+          />
+             <Route
+            path="profile"
+            element={<ProfilePage/>}
+        />
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminHomePageLayout />} />
           <Route path="profile" element={<AdminProfile />} />
@@ -56,6 +81,7 @@ function MainRoutes() {
             <Route path="socials" element={<SocialPage />} />
             <Route path="events" element={<h1>Events</h1>} />
             <Route path="contact" element={<ContactUsPage />} />
+
           </Route>
         </Route>
 
