@@ -14,7 +14,6 @@ const profileSlice = createSlice({
   reducers: {
     openProfile(state) {
       state.isOpen = true
-      console.log(state.isOpen)
     },
     toggleProfile(state) {
       state.isOpen = !state.isOpen
@@ -22,7 +21,6 @@ const profileSlice = createSlice({
     },
     closeProfile(state) {
       state.isOpen = false
-      console.log(state.isOpen)
     },
   },
 })

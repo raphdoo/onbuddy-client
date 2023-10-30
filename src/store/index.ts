@@ -5,3 +5,8 @@ export const store = configureStore({
     profileMenu: profileSlice,
   },
 })
+export type RootState = {
+  profileMenu: {
+    isOpen: boolean
+  }
+}

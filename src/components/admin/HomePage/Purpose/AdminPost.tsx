@@ -1,11 +1,9 @@
-// components/Post.tsx
 import React from 'react'
-import { FaHeart, FaComment } from 'react-icons/fa'
 import CommentSection from './CommentSection'
 
 interface PostProps {
   userName: string
-  userImage: string // Replace with the actual user image URL
+  userImage: string
   time: string
   postContent: string
   likes: number
@@ -17,7 +15,7 @@ const AdminPost: React.FC<PostProps> = ({
   userImage,
   time,
   postContent,
-  likes,
+
   comments,
 }) => {
   const handleAddComment = (comment: string) => {

@@ -1,9 +1,8 @@
-// components/Collapse.tsx
 import React, { useState } from 'react'
 import { FiPlus, FiMinus } from 'react-icons/fi'
 
 interface CollapseProps {
-  title: string
+  title?: string
   children: React.ReactNode
 }
 
@@ -15,19 +14,21 @@ const ContentCollapse: React.FC<CollapseProps> = ({ title, children }) => {
   }
 
   return (
-    <div className="p-2">
+    <div className="p-2 mb-4">
       <div
-        className="flex items-center cursor-pointer"
+        className="flex items-center gap-5 cursor-pointer"
         onClick={toggleCollapse}
       >
         {isOpen ? (
-          <FiMinus size={20} className="bg-black  rounded-full text-white" />
+          <FiMinus size={20} className="bg-black   rounded-full text-white" />
         ) : (
           <FiPlus size={20} className="bg-[#309CFF]  rounded-full text-white" />
         )}
-        <h2 className="ml-2 font-bold text-[#309CFF]">{title}</h2>
+        <h1 className="font-bold  items-center  flex text-xl text-[#309CFF] ">
+          {title}
+        </h1>
       </div>
-      {isOpen && <div className="mt-2">{children}</div>}
+      {isOpen && <div className="mt-2 text-xl text-justify ">{children}</div>}
     </div>
   )
 }

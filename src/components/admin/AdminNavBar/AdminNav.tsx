@@ -5,7 +5,6 @@ import { logowhite, user } from '../../../assets/Assets'
 
 import {
   RiHome5Fill,
-  BiSolidMessageSquareDetail,
   IoCalendarNumber,
   PiChatCenteredTextFill,
   PiNotepadFill,
@@ -20,11 +19,7 @@ const menuItems = [
     icon: <RiHome5Fill className="fill-white text-3xl" />,
     link: '/',
   },
-  {
-    label: 'Chat',
-    icon: <BiSolidMessageSquareDetail className="fill-white text-3xl" />,
-    link: '/chat',
-  },
+
   {
     label: 'Calendar',
     icon: <IoCalendarNumber className="fill-white text-3xl" />,
@@ -45,7 +40,8 @@ const menuItems = [
 const AdminNavbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const dispatch = useDispatch()
-  const profile: boolean = useSelector((state) => state.profileMenu.isOpen)
+
+  const profile = useSelector((state) => state.profileMenu.isOpen)
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -67,10 +63,6 @@ const AdminNavbar: React.FC = () => {
       </div>
 
       <div className="flex items-center mr-4">
-        <div className="sm:hidden cursor-pointer" onClick={toggleMobileMenu}>
-          <FiMenu className="text-white text-2xl" />
-        </div>
-
         {isMobileMenuOpen && (
           <div className="sm:hidden fixed top-0 right-0 h-screen w-3/4 bg-blue-500 text-white p-4 transform-gpu translate-x-0 transition-transform">
             <div className="relative flex justify-end">
@@ -79,7 +71,6 @@ const AdminNavbar: React.FC = () => {
                 className="right-0 text-2xl "
               />
             </div>
-
             <ul className="flex flex-col space-y-4">
               {menuItems.map((item, index) => (
                 <li key={index}>
@@ -93,7 +84,7 @@ const AdminNavbar: React.FC = () => {
         )}
 
         {/* Desktop Menu */}
-        <ul className="hidden sm:flex space-x-6 items-center">
+        <ul className="flex space-x-6 items-center">
           {menuItems.map((item, index) => (
             <li key={index}>
               <Link to={item.link} className="text-white text-xl">
@@ -126,6 +117,12 @@ const AdminNavbar: React.FC = () => {
               </ul>
             </div>
           )}
+        </div>
+        <div
+          className="ml-2 sm:hidden cursor-pointer"
+          onClick={toggleMobileMenu}
+        >
+          <FiMenu className="text-white text-2xl" />
         </div>
       </div>
     </nav>
