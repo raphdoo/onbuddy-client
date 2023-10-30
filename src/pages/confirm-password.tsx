@@ -1,9 +1,6 @@
-import pic from "../assets/images/auth.png";
-import logo from "../assets/images/lgo.png";
-import { MdEmail } from "react-icons/md";
-import { RiLockPasswordFill } from "react-icons/ri";
-import { AiFillEye } from "react-icons/ai";
-import { FcGoogle } from "react-icons/fc";
+import pic from '../assets/images/auth.png'
+import logo from '../assets/images/lgo.png'
+
 export const ConfirmPassword = () => {
   return (
     <div className="text-black text-2xl grid md:grid-cols-2 items-center h-screen bg-background">
@@ -58,5 +55,5 @@ export const ConfirmPassword = () => {
         </div>
       </form>
     </div>
-  );
-};
+  )
+}
