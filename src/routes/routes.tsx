@@ -31,7 +31,7 @@ import { Login } from "components/auth/login";
 import { Register } from "components/auth/register";
 import EventPage from "../pages/Event";
 import Event from "components/Event";
-
+import LandingPage from "../pages/LandingPage";
 
 
 function MainRoutes() {
@@ -102,6 +102,11 @@ function MainRoutes() {
         </Route>
 
         <Route
+         path="/landing-page"
+         element={<LandingPage />}
+        />
+
+        <Route
           path="*"
           element={
             <div>
@@ -109,7 +114,9 @@ function MainRoutes() {
             </div>
           }
         />
+
       </Routes>
+
     </BrowserRouter>
   );
 }
