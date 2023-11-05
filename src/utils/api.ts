@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { getStoredAuthToken, removeStoredAuthToken } from "./authToken";
 import { objectToQueryString } from "./url";
+import.meta.env;
 
 type ErrorData = {
   code: string;
@@ -9,8 +10,10 @@ type ErrorData = {
   data: Record<string, unknown> | null;
 };
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const defaults = {
-  baseURL: "http://localhost:8000",
+  baseURL: API_URL,
   headers: () => ({
     "Content-Type": "application/json",
     Authorization: getStoredAuthToken()
@@ -43,7 +46,8 @@ const api = <T>(method: ApiMethod, url: string, variables?: any) => {
       })
       .catch((error) => {
         if (error.response) {
-          if (error.response.data.error.code === "INVALID_TOKEN") {
+          if (error.response.status === 401) {
+            reject(error.response);
             removeStoredAuthToken();
           } else {
             reject(error.response.data.error);
