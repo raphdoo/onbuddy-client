@@ -1,4 +1,4 @@
-import pic from "../../assets/images/authPic.png"
+import pic from "../../assets/images/auth.png"
 // import {MdEmail} from "react-icons/md";
 // import {RiLockPasswordFill} from "react-icons/ri";
 import logo from '../../assets/images/logo.png'

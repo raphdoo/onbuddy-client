@@ -1,14 +1,13 @@
 import AdminFooter from "components/admin/AdminFooter/AdminFooter"
 import AdminNavbar from "components/admin/AdminNavBar/AdminNav"
+import Edit from "components/admin/AdminEdit/AdminEdit"
 
-import ProfilePage from "components/admin/ProfilePage/ProfilePage"
 
-
-function Profile() {
+function AdminEdit() {
   return (
     <div>
-      <AdminNavbar />
-      <ProfilePage />
+    	<AdminNavbar />
+      <Edit />
       <div className="hidden sm:block">
         <AdminFooter />
       </div>
@@ -16,4 +15,4 @@ function Profile() {
   )
 }
 
-export default Profile
+export default AdminEdit

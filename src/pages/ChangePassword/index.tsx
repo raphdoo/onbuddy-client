@@ -7,7 +7,9 @@ function index() {
     <div>
       <AdminNavbar />
       <ChangePassword />
-      <AdminFooter />
+      <div className="hidden sm:block">
+        <AdminFooter />
+      </div>
     </div>
   )
 }

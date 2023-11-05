@@ -25,10 +25,14 @@ import { WelcomePage } from "components/admin/HomePage/HomePages/WelcomePage";
 import { ForgotPassword } from "components/auth/forgot";
 import { Login } from "components/auth/login";
 import { Register } from "components/auth/register";
+
+import AdminEdit from "../pages/AdminEdit/index";
+
 import EventPage from "../pages/Event";
 import Event from "components/Event";
 import LandingPage from "../pages/LandingPage";
 import EventDetail from "components/Event/EventDetail";
+
 
 
 function MainRoutes() {
@@ -51,8 +55,21 @@ function MainRoutes() {
 
         <Route path="changepassword" element={<ChangePassword />} />
 
-        <Route path="WorkDetails" element={<WorkDetails />} />
-        <Route path="profile" element={<ProfilePage />} />
+
+        <Route
+            path="WorkDetails"
+            element={<WorkDetails/>}
+          />
+             <Route
+            path="profile"
+            element={<ProfilePage/>}
+        />
+
+            <Route
+            path="adminedit"
+            element={<AdminEdit />}
+        />
+
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="event" element={<EventPage />}>
             <Route index={true} element={<Event />} />
