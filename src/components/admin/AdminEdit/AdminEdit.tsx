@@ -8,7 +8,7 @@ import { vectordot } from '../../../assets/Assets'
 
 function AdminEdit() {
   return (
-    <div className="h-screen bg-gray-200 sm:Relative">	
+    <div className="h-screen bg-gray-200">	
 			<section className="">
 				<div className="bg-[#0F6FC8] p-20 sm:p-32 w-full">
 					<div className="text-white flex justify-start items-center text-center sm:gap-2 font-bold px-5">
@@ -16,7 +16,7 @@ function AdminEdit() {
 						<h2 className="">Admin Edit</h2>
 					</div>
 				</div>
-				<div className="sm:absolute top-56 sm:max-w-7xl mx-auto  bg-white rounded-2xl w-full sm:ml-36 sm:py-10">
+				<div className="sm:absolute top-[25%] sm:max-w-7xl mx-auto  bg-white rounded-2xl w-full sm:ml-36 sm:py-10">
 					<section className="sm:flex justify-between px-20 border-b-2 border-b-gray-400 py-3">
 						<a href="/profile" className="">
 							<div className="">
@@ -75,24 +75,26 @@ function AdminEdit() {
 								<h2 className="">Lagos, Nigeria</h2>
 							</div>
 						</div>
-						<div className="col-span-8 bg-white shadow-xl rounded-sm space-y-10">
-							<div className="flex justify-start gap-6 px-4 py-3">
+						<div className="col-span-8 bg-white shadow-xl rounded-sm space-y-5">
+							<div className="flex-col gap-6 px-4 py-3">
 								<h2 className="">Manager</h2>
-								<input type="text" className="" />
+								<input type="text" className="w-full rounded-md" />
 							</div>
 
-							<div className="flex justify-start gap-6 px-4 py-3">
+							<div className="flex-col gap-6 px-4 py-3">
 								<h2 className="">Program track</h2>
-								<select name="Program track" id="" className="">
+								<select name="Program track" id="" className="w-full rounded-md">
+								<option value="" className="">Select....</option>
 									<option value="" className="">Technology</option>
 									<option value="" className="">Sales</option>
 									<option value="" className="">Operations</option>
 								</select>
 							</div>
 
-							<div className="flex justify-start gap-6 px-4 py-3">
+							<div className="flex-col gap-6 px-4 py-3">
 							<h2 className="">Candidate type</h2>
-								<select name="Program track" id="" className="">
+								<select name="Program track" id="" className="w-full rounded-md">
+								<option value="" className="">Select....</option>
 									<option value="" className="">Intern</option>
 									<option value="" className="">Graduate</option>
 									<option value="" className="">Experienced</option>

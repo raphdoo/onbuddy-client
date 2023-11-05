@@ -9,7 +9,7 @@ import { vectordot } from '../../../assets/Assets'
 
 function ProfilePage() {
   return (
-    <div className="h-screen bg-gray-200 sm:Relative">	
+    <div className="h-screen bg-gray-200">	
 			<section className="">
 				<div className="bg-[#0F6FC8] p-20 sm:p-32 w-full">
 					<div className="text-white flex justify-start items-center text-center sm:gap-2 font-bold px-5">
@@ -17,7 +17,7 @@ function ProfilePage() {
 						<h2 className="">My Profile</h2>
 					</div>
 				</div>
-				<div className="sm:absolute top-56 sm:max-w-7xl sm:mx-auto  bg-white rounded-2xl sm:w-full sm:ml-36 sm:py-10">
+				<div className="sm:absolute top-[30%] sm:max-w-7xl sm:mx-auto  bg-white rounded-2xl sm:w-full sm:ml-36 sm:py-10">
 					<section className="sm:flex justify-between px-20 border-b-2 border-b-gray-400 py-3">
 						<a href="/profile" className="border-b-2 border-blue-500 active">
 							<div className="">

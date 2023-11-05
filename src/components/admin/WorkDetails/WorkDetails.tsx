@@ -5,15 +5,15 @@ import { vectordot } from '../../../assets/Assets'
 
 function WorkDetails() {
   return (
-    <div className="h-screen bg-gray-200 sm:Relative">	
+    <div className="h-screen bg-gray-200">	
 			<section className="">
-				<div className="bg-[#0F6FC8] p-32  w-full">
-					<div className="text-white flex justify-start items-center gap-2 font-bold px-5">
+			<div className="bg-[#0F6FC8] p-20 sm:p-32 w-full">
+					<div className="text-white flex justify-start items-center text-center sm:gap-2 font-bold px-5">
 						<Image src={user1} alt="User profile" className="h-5 w-5" />
 						<h2 className="">Work Details</h2>
 					</div>
 				</div>
-				<div className="sm:absolute top-56 sm:max-w-7xl mx-auto  bg-white rounded-2xl w-full sm:ml-36 sm:py-10">
+				<div className="sm:absolute top-[30%] sm:max-w-7xl mx-auto  bg-white rounded-2xl w-full sm:ml-36 sm:py-10">
 					<section className="sm:flex justify-between px-20 border-b-2 border-b-gray-400 py-3">
 						<div className="">
 							<a href="/profile" className="">
@@ -46,10 +46,19 @@ function WorkDetails() {
 								<h2 className="">Change password</h2>
 							</div>
 						</a>
+
+						<a href="/adminedit" className="">
+							<div className="">
+								<div className="flex justify-start items-center gap-2">
+									<Image src={vectordot} alt="User profile" className="h-5 w-5" />
+									<h2 className="">Admin</h2>
+								</div>
+							</div>
+						</a>
 					</section>
 
 					<section className="sm:grid grid-cols-12 mt-4 px-5 gap-10">
-						<div className="col-span-4 mt-5 bg-white shadow-xl sm:flex flex-col items-center rounded-2xl p-6">
+						<div className="col-span-4 mt-5 bg-white shadow-xl flex flex-col items-center rounded-2xl p-6">
 							<div className="">
 								<Image src={vector} alt="Logo Image" className="w-40 h-40  md:w-auto" />
 							</div>
