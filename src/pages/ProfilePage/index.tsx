@@ -9,7 +9,9 @@ function Profile() {
     <div>
       <AdminNavbar />
       <ProfilePage />
-      <AdminFooter />
+      <div className="hidden sm:block">
+        <AdminFooter />
+      </div>
     </div>
   )
 }

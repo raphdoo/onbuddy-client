@@ -26,6 +26,8 @@ import { WelcomePage } from "components/admin/HomePage/HomePages/WelcomePage";
 import { ForgotPassword } from "components/auth/forgot";
 import { Login } from "components/auth/login";
 import { Register } from "components/auth/register";
+import AdminEdit from "../pages/AdminEdit/index";
+
 
 
 
@@ -62,6 +64,11 @@ function MainRoutes() {
              <Route
             path="profile"
             element={<ProfilePage/>}
+        />
+
+            <Route
+            path="adminedit"
+            element={<AdminEdit />}
         />
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminHomePageLayout />} />
