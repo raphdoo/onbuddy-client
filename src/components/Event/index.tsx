@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const events = [
+export const events = [
   {
     id: "1234",
     title: "HipHop Tuesday",

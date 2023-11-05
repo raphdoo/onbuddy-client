@@ -1,6 +1,6 @@
 import React from "react";
 import eventFrame from "../../../assets/images/event-frame.png";
-import { events } from "..";
+import { events } from "../index";
 import { useParams } from "react-router-dom";
 
 const EventDetail: React.FC = () => {
