@@ -5,17 +5,33 @@ import api from "../../utils/api";
 
 export type Methodtype = "post" | "patch" | "put" | "delete";
 
-const useMutation = (method: Methodtype, url: string) => {
+const useMutation = (
+  method: Methodtype,
+  url: string
+): [
+  {
+    data: Record<string, string> | null;
+    error: any | null;
+    isLoading: boolean;
+    variables?: Record<string, any>;
+  },
+  (newVariables?: Record<string, any>) => void
+] => {
   const [state, mergeState] = useMergeState({
     data: null,
     error: null,
     isLoading: false,
+    variables: {},
   });
 
   const makeRequest = useCallback(
     (variables = {}) =>
       new Promise((resolve, reject) => {
-        mergeState((currentState) => ({ ...currentState, isLoading: true }));
+        mergeState((currentState) => ({
+          ...currentState,
+          isLoading: true,
+          variables,
+        }));
 
         api[method](url, variables).then(
           (data: any) => {
@@ -28,23 +44,15 @@ const useMutation = (method: Methodtype, url: string) => {
           }
         );
       }),
-    [method, url, mergeState]
+    []
   );
 
   return [
     {
       ...state,
-      [isWorkingAlias[method]]: state.isLoading,
     },
     makeRequest,
   ];
-};
-
-const isWorkingAlias = {
-  post: "isCreating",
-  put: "isUpdating",
-  patch: "isUpdating",
-  delete: "isDeleting",
 };
 
 export default useMutation;
