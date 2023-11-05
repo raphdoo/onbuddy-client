@@ -3,3 +3,4 @@ node_modules
 dist
 .eslintcache
 .my-vital-app
+.env
