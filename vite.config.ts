@@ -29,5 +29,6 @@ export default defineConfig((configEnv) => {
           : "[hash:base64:5]",
       },
     },
+    envPrefix: "VITE_",
   };
 });
