@@ -4,19 +4,19 @@ import { profil } from '../../../assets/Assets'
 import { user1 } from '../../../assets/Assets'
 import { vector } from '../../../assets/Assets'
 import { vectordot } from '../../../assets/Assets'
-import { useredit } from '../../../assets/Assets'
 
-function EditProfile() {
+
+function AdminEdit() {
   return (
     <div className="h-screen bg-gray-200">	
 			<section className="">
-			<div className="bg-[#0F6FC8] p-20 sm:p-32 w-full">
+				<div className="bg-[#0F6FC8] p-20 sm:p-32 w-full">
 					<div className="text-white flex justify-start items-center text-center sm:gap-2 font-bold px-5">
-						<Image src={useredit} alt="User profile" className="h-5 w-5" />
-						<h2 className="">Edit Profile</h2>
+						<Image src={vectordot} alt="edit" className="h-5 w-5" />
+						<h2 className="">Admin Edit</h2>
 					</div>
 				</div>
-				<div className="sm:absolute top-[30%] sm:max-w-7xl mx-auto  bg-white rounded-2xl w-full sm:ml-36 sm:py-10">
+				<div className="sm:absolute top-[25%] sm:max-w-7xl mx-auto  bg-white rounded-2xl w-full sm:ml-36 sm:py-10">
 					<section className="sm:flex justify-between px-20 border-b-2 border-b-gray-400 py-3">
 						<a href="/profile" className="">
 							<div className="">
@@ -27,7 +27,7 @@ function EditProfile() {
 							</div>
 						</a>
 
-						<a href="/edit" className="border-b-2 border-blue-500 active">
+						<a href="/edit" className="">
 							<div className="">
 								<div className="flex justify-start items-center gap-2">
 									<Image src={user1} alt="User profile" className="h-5 w-5 text-blue-500" />
@@ -54,7 +54,7 @@ function EditProfile() {
 							</div>
 						</a>
 
-						<a href="/adminedit" className="">
+						<a href="/adminedit" className="border-b-2 border-blue-500 active">
 							<div className="">
 								<div className="flex justify-start items-center gap-2">
 									<Image src={vectordot} alt="User profile" className="h-5 w-5" />
@@ -70,22 +70,45 @@ function EditProfile() {
 								<Image src={profil} alt="Logo Image" className="w-40 h-40 rounded-full md:w-auto" />
 							</div>
 							<div className="flex flex-col items-center">
-								<h2 className="">ON BUDDY</h2>
+								<h2 className="">ONBUDDY ADMIN</h2>
 								<h2 className="">onbuddy@gmail.com</h2>
 								<h2 className="">Lagos, Nigeria</h2>
 							</div>
 						</div>
-						<div className="col-span-8 bg-white shadow-xl rounded-sm">
-							<label className="block mb-2 text-sm font-medium text-gray-900">Your Bio</label>
-							<textarea id="message" rows={10} className="block p-2.5 w-full text-sm dark:placeholder-gray-40" placeholder="Write your bio here......"></textarea>
-							<div className="flex justify-start space-x-4 py-2 px-3">
+						<div className="col-span-8 bg-white shadow-xl rounded-sm space-y-5">
+							<div className="flex-col gap-6 px-4 py-3">
+								<h2 className="">Manager</h2>
+								<input type="text" className="w-full rounded-md" />
+							</div>
+
+							<div className="flex-col gap-6 px-4 py-3">
+								<h2 className="">Program track</h2>
+								<select name="Program track" id="" className="w-full rounded-md">
+								<option value="" className="">Select....</option>
+									<option value="" className="">Technology</option>
+									<option value="" className="">Sales</option>
+									<option value="" className="">Operations</option>
+								</select>
+							</div>
+
+							<div className="flex-col gap-6 px-4 py-3">
+							<h2 className="">Candidate type</h2>
+								<select name="Program track" id="" className="w-full rounded-md">
+								<option value="" className="">Select....</option>
+									<option value="" className="">Intern</option>
+									<option value="" className="">Graduate</option>
+									<option value="" className="">Experienced</option>
+								</select>
+							</div>
+
+							<div className="flex sm:justify-start justify-between space-x-4 py-2 px-3">
             		<Button
-            			className="bg-blue-500 hover:bg-blue-600 text-white px-11 py-3 rounded-lg"
+            			className="bg-blue-500 hover:bg-blue-600 text-white px-6 sm:px-11 py-3 rounded-lg"
             			label="Save"
           			/>
 						
             		<Button
-            			className="hover:bg-blue-600 focus:ring-gray-300 border-2 focus:outline-none focus:ring-2 bg-white px-8 sm:px-11 py-3 rounded-lg"
+            			className="hover:bg-blue-600 focus:ring-gray-300 px-6 border-2 focus:outline-none focus:ring-2 bg-white sm:px-11 py-3 rounded-lg"
             			label="Cancel"
           			/>
 							</div>
@@ -97,4 +120,4 @@ function EditProfile() {
   )
 }
 
-export default EditProfile
+export default AdminEdit

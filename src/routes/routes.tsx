@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import HomePage from '../pages/HomePage/Index'
 import EditPage from '../pages/EditPage/index'
@@ -26,6 +27,44 @@ import { Register } from 'components/auth/register'
 import EventPage from '../pages/Event'
 import Event from 'components/Event'
 import CheckListPage from '../pages/CheckList'
+=======
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import HomePage from "../pages/HomePage/Index";
+import EditPage from "../pages/EditPage/index";
+import WorkDetails from "../pages/WorkDetails/index";
+import ChangePassword from "../pages/ChangePassword/index";
+import AdminPurpose from "../components/admin/HomePage/Purpose/AdminPurpose";
+import ConfirmPassword from "components/auth/confirm-password";
+import ProfilePage from "../pages/ProfilePage/index";
+import AdminWelcome from "../components/admin/HomePage/Purpose/AdminPurpose";
+import AdminLayout from "components/admin/HomePage/AdminLayout";
+import AdminHomePageLayout from "../components/admin/HomePageLayout/AdminHomePageLayout";
+import AdminProfile from "../pages/Profile/Index";
+import { OurPurpose } from "components/admin/HomePage/HomePages";
+import { OurValues } from "components/admin/HomePage/HomePages/OurValues";
+import { OurCulture } from "components/admin/HomePage/HomePages/OurCulture";
+import { ContactBooks } from "components/admin/HomePage/HomePages/ContactBooks";
+import { Diversity } from "components/admin/HomePage/HomePages/Diversity";
+import { Health } from "components/admin/HomePage/HomePages/Health";
+import { Learning } from "components/admin/HomePage/HomePages/Learning";
+import { GettingReady } from "components/admin/HomePage/HomePages/GettingReady";
+import { OnePageProfile } from "components/admin/HomePage/HomePages/OnePageProfile";
+import { SocialPage } from "components/admin/HomePage/HomePages/Socials";
+import { ContactUsPage } from "components/admin/HomePage/HomePages/ContactUs";
+import { WelcomePage } from "components/admin/HomePage/HomePages/WelcomePage";
+import { ForgotPassword } from "components/auth/forgot";
+import { Login } from "components/auth/login";
+import { Register } from "components/auth/register";
+
+import AdminEdit from "../pages/AdminEdit/index";
+
+import EventPage from "../pages/Event";
+import Event from "components/Event";
+import LandingPage from "../pages/LandingPage";
+import EventDetail from "components/Event/EventDetail";
+
+
+
 
 function MainRoutes() {
   return (
@@ -45,21 +84,34 @@ function MainRoutes() {
 
         <Route path="edit" element={<EditPage />} />
 
+
         <Route path="changepassword" element={<ChangePassword />} />
 
         <Route path="WorkDetails" element={<WorkDetails />} />
         <Route path="profile" element={<ProfilePage />} />
+
+
+        <Route path="changepassword" element={<ChangePassword />} />
+
+
+        <Route
+            path="WorkDetails"
+            element={<WorkDetails/>}
+          />
+             <Route
+            path="profile"
+            element={<ProfilePage/>}
+        />
+
+            <Route
+            path="adminedit"
+            element={<AdminEdit />}
+        />
+
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="event" element={<EventPage />}>
             <Route index={true} element={<Event />} />
-            <Route
-              path=":eventId"
-              element={
-                <h1 className="mt-[50px] bg-red-500">
-                  This is the event detail
-                </h1>
-              }
-            />
+            <Route path=":eventId" element={<EventDetail />} />
           </Route>
           <Route path="checklist" element={<CheckListPage />} />
 
@@ -84,6 +136,11 @@ function MainRoutes() {
         </Route>
 
         <Route
+         path="/landing-page"
+         element={<LandingPage />}
+        />
+
+        <Route
           path="*"
           element={
             <div>
@@ -91,7 +148,9 @@ function MainRoutes() {
             </div>
           }
         />
+
       </Routes>
+
     </BrowserRouter>
   )
 }

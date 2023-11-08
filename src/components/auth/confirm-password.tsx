@@ -1,4 +1,4 @@
-import pic from "../../assets/images/authPic.png"
+import pic from "../../assets/images/auth.png"
 import logo from '../../assets/images/logo.png'
 
 
