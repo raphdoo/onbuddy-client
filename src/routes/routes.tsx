@@ -1,38 +1,31 @@
-
-
-
-
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import HomePage from "../pages/HomePage/Index";
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import HomePage from '../pages/HomePage/Index'
 import EditPage from '../pages/EditPage/index'
 import WorkDetails from '../pages/WorkDetails/index'
 import ChangePassword from '../pages/ChangePassword/index'
-import AdminPurpose from '../components/admin/HomePage/Purpose/AdminPurpose'
-import ConfirmPassword from "components/auth/confirm-password";
+import ConfirmPassword from 'components/auth/confirm-password'
 import ProfilePage from '../pages/ProfilePage/index'
-import AdminWelcome from '../components/admin/HomePage/Purpose/AdminPurpose'
-import AdminLayout from "components/admin/HomePage/AdminLayout";
-import AdminHomePageLayout from "../components/admin/HomePageLayout/AdminHomePageLayout";
-import AdminProfile from "../pages/Profile/Index";
-import { OurPurpose } from "components/admin/HomePage/HomePages";
-import { OurValues } from "components/admin/HomePage/HomePages/OurValues";
-import { OurCulture } from "components/admin/HomePage/HomePages/OurCulture";
-import { ContactBooks } from "components/admin/HomePage/HomePages/ContactBooks";
-import { Diversity } from "components/admin/HomePage/HomePages/Diversity";
-import { Health } from "components/admin/HomePage/HomePages/Health";
-import { Learning } from "components/admin/HomePage/HomePages/Learning";
-import { GettingReady } from "components/admin/HomePage/HomePages/GettingReady";
-import { OnePageProfile } from "components/admin/HomePage/HomePages/OnePageProfile";
-import { SocialPage } from "components/admin/HomePage/HomePages/Socials";
-import { ContactUsPage } from "components/admin/HomePage/HomePages/ContactUs";
-import { WelcomePage } from "components/admin/HomePage/HomePages/WelcomePage";
-import { ForgotPassword } from "components/auth/forgot";
-import { Login } from "components/auth/login";
-import { Register } from "components/auth/register";
-import EventPage from "../pages/Event";
-import Event from "components/Event";
-
-
+import AdminLayout from 'components/admin/HomePage/AdminLayout'
+import AdminHomePageLayout from '../components/admin/HomePageLayout/AdminHomePageLayout'
+import AdminProfile from '../pages/Profile/Index'
+import { OurPurpose } from 'components/admin/HomePage/HomePages'
+import { OurValues } from 'components/admin/HomePage/HomePages/OurValues'
+import { OurCulture } from 'components/admin/HomePage/HomePages/OurCulture'
+import { ContactBooks } from 'components/admin/HomePage/HomePages/ContactBooks'
+import { Diversity } from 'components/admin/HomePage/HomePages/Diversity'
+import { Health } from 'components/admin/HomePage/HomePages/Health'
+import { Learning } from 'components/admin/HomePage/HomePages/Learning'
+import { GettingReady } from 'components/admin/HomePage/HomePages/GettingReady'
+import { OnePageProfile } from 'components/admin/HomePage/HomePages/OnePageProfile'
+import { SocialPage } from 'components/admin/HomePage/HomePages/Socials'
+import { ContactUsPage } from 'components/admin/HomePage/HomePages/ContactUs'
+import { WelcomePage } from 'components/admin/HomePage/HomePages/WelcomePage'
+import { ForgotPassword } from 'components/auth/forgot'
+import { Login } from 'components/auth/login'
+import { Register } from 'components/auth/register'
+import EventPage from '../pages/Event'
+import Event from 'components/Event'
+import CheckListPage from '../pages/CheckList'
 
 function MainRoutes() {
   return (
@@ -50,24 +43,12 @@ function MainRoutes() {
 
         <Route path="/contact" element={<h1>Contact</h1>} />
 
-              <Route
-            path="edit"
-            element={<EditPage/>}
-          />
+        <Route path="edit" element={<EditPage />} />
 
-        <Route
-            path="changepassword"
-            element={<ChangePassword/>}
-          />
+        <Route path="changepassword" element={<ChangePassword />} />
 
-        <Route
-            path="WorkDetails"
-            element={<WorkDetails/>}
-          />
-             <Route
-            path="profile"
-            element={<ProfilePage/>}
-        />
+        <Route path="WorkDetails" element={<WorkDetails />} />
+        <Route path="profile" element={<ProfilePage />} />
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="event" element={<EventPage />}>
             <Route index={true} element={<Event />} />
@@ -80,6 +61,8 @@ function MainRoutes() {
               }
             />
           </Route>
+          <Route path="checklist" element={<CheckListPage />} />
+
           <Route index element={<AdminHomePageLayout />} />
           <Route path="profile" element={<AdminProfile />} />
 
@@ -97,7 +80,6 @@ function MainRoutes() {
             <Route path="socials" element={<SocialPage />} />
             <Route path="events" element={<h1>Events</h1>} />
             <Route path="contact" element={<ContactUsPage />} />
-
           </Route>
         </Route>
 
@@ -105,13 +87,13 @@ function MainRoutes() {
           path="*"
           element={
             <div>
-              <h1>Page not Found 😢 </h1> <Link to={"/"}> Back to Home</Link>
+              <h1>Page not Found 😢 </h1> <Link to={'/'}> Back to Home</Link>
             </div>
           }
         />
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
-export default MainRoutes;
+export default MainRoutes

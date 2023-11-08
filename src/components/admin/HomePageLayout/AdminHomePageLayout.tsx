@@ -121,10 +121,10 @@ const AdminHomePageLayout: React.FC<LayoutProps> = () => {
               </div>
               <div className="cursor-pointer border-b  border-gray-300  flex justify-between items-center">
                 <Link
-                  to="/admin/home/events"
+                  to="/admin/checklist"
                   className="font-bold text-xl text-gray-500 uppercase"
                 >
-                  Events
+                  Checklist
                 </Link>
               </div>
               <div className="cursor-pointer border-b  border-gray-300  flex justify-between items-center">
