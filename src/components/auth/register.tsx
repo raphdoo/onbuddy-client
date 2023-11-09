@@ -1,10 +1,12 @@
 
+import { useApi } from 'hooks/api';
 import pic from '../../assets/images/authPic.png';
 import logo from '../../assets/images/logo.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AiOutlineCaretDown, AiOutlineCaretUp } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
+import Error from 'components/common/Errors';
 
 const list: { pricing: string }[] = [
   {
@@ -17,13 +19,32 @@ const list: { pricing: string }[] = [
 
 export const Register = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const[firstname, setFirstName] = useState('')
+  const[lastname, setLastName] = useState('')
+  const[companyName, setCompanyName] = useState('')
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [pricing, setPricing] = useState("Standard")
 
   const setToggle = () => {
     setIsOpen((prev) => !prev);
+    setPricing(pricing)
   };
 
-  const SubmitThis = () => {};
+  const [{ data, error }, makerequest] = useApi.post(`/auth/signup`);
+
+  useEffect(() => {
+    if (data) {
+      window.location.href = '/admin/home'
+    }
+  }, [data]);
+
+  const onSubmit = (event: any) => {
+    event.preventDefault();
+
+    makerequest({firstname, lastname, email, password, companyName, pricing});
+  }
 
   return (
     <div className="2xl:container h-screen m-auto select-none">
@@ -62,7 +83,7 @@ export const Register = () => {
             </span>
           </div>
 
-          <form action="" onSubmit={SubmitThis} className="space-y-6 py-6 mt-5">
+          <form action="" onSubmit={(e) => onSubmit(e)} className="space-y-6 py-6 mt-5">
             <div>
               <label htmlFor="firstname" className="text-sm font-semibold">
                 Firstname
@@ -70,6 +91,8 @@ export const Register = () => {
               <input
                 type="text"
                 placeholder="Enter first name"
+                value={firstname}
+                onChange={(event) => setFirstName(event.target.value)}
                 className="w-full py-3 px-6 mt-2 ring-1 ring-gray-300 rounded-xl placeholder-gray-400 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               />
             </div>
@@ -81,6 +104,8 @@ export const Register = () => {
               <input
                 type="text"
                 placeholder="Enter last name"
+                value={lastname}
+                onChange={(event) => setLastName(event.target.value)}
                 className="w-full py-3 px-6 mt-2 ring-1 ring-gray-300 rounded-xl placeholder-gray-400 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               />
             </div>
@@ -92,6 +117,8 @@ export const Register = () => {
               <input
                 type="text"
                 placeholder="Enter Company name"
+                value={companyName}
+                onChange={(event) => setCompanyName(event.target.value)}
                 className="w-full py-3 px-6 mt-2 ring-1 ring-gray-300 rounded-xl placeholder-gray-400 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               />
             </div>
@@ -103,6 +130,8 @@ export const Register = () => {
               <input
                 type="email"
                 placeholder="Enter Email address"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
                 className="w-full py-3 px-6 mt-2 ring-1 ring-gray-300 rounded-xl placeholder-gray-400 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               />
             </div>
@@ -114,6 +143,8 @@ export const Register = () => {
               <input
                 type="password"
                 placeholder="*******"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
                 className="w-full p-4 px-6 mt-2 ring-1 ring-gray-300 rounded-xl placeholder-gray-400 bg-transparent transition disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400 invalid:ring-red-400 focus:invalid:outline-none"
               />
             </div>
@@ -175,7 +206,11 @@ export const Register = () => {
                 Home
               </Link>
             </div>
+
+
           </form>
+
+          < Error errors={error}/>
         </div>
       </div>
     </div>

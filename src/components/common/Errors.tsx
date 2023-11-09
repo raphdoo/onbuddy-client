@@ -15,7 +15,7 @@ const Error: React.FC<ErrorProps> = ({errors}) => {
     if(errors) {
       const timeout = setTimeout(() => {
         setVisible(false)
-      }, 5000)
+      }, 8000)
 
       return () => clearTimeout(timeout);
     }
