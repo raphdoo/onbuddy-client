@@ -1,33 +1,5 @@
 
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import HomePage from '../pages/HomePage/Index'
-import EditPage from '../pages/EditPage/index'
-import WorkDetails from '../pages/WorkDetails/index'
-import ChangePassword from '../pages/ChangePassword/index'
-import ConfirmPassword from 'components/auth/confirm-password'
-import ProfilePage from '../pages/ProfilePage/index'
-import AdminLayout from 'components/admin/HomePage/AdminLayout'
-import AdminHomePageLayout from '../components/admin/HomePageLayout/AdminHomePageLayout'
-import AdminProfile from '../pages/Profile/Index'
-import { OurPurpose } from 'components/admin/HomePage/HomePages'
-import { OurValues } from 'components/admin/HomePage/HomePages/OurValues'
-import { OurCulture } from 'components/admin/HomePage/HomePages/OurCulture'
-import { ContactBooks } from 'components/admin/HomePage/HomePages/ContactBooks'
-import { Diversity } from 'components/admin/HomePage/HomePages/Diversity'
-import { Health } from 'components/admin/HomePage/HomePages/Health'
-import { Learning } from 'components/admin/HomePage/HomePages/Learning'
-import { GettingReady } from 'components/admin/HomePage/HomePages/GettingReady'
-import { OnePageProfile } from 'components/admin/HomePage/HomePages/OnePageProfile'
-import { SocialPage } from 'components/admin/HomePage/HomePages/Socials'
-import { ContactUsPage } from 'components/admin/HomePage/HomePages/ContactUs'
-import { WelcomePage } from 'components/admin/HomePage/HomePages/WelcomePage'
-import { ForgotPassword } from 'components/auth/forgot'
-import { Login } from 'components/auth/login'
-import { Register } from 'components/auth/register'
-import EventPage from '../pages/Event'
-import Event from 'components/Event'
 import CheckListPage from '../pages/CheckList'
-=======
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HomePage from "../pages/HomePage/Index";
 import EditPage from "../pages/EditPage/index";
