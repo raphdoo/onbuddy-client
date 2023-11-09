@@ -33,10 +33,10 @@ import HomePage from "../pages/HomePage/Index";
 import EditPage from "../pages/EditPage/index";
 import WorkDetails from "../pages/WorkDetails/index";
 import ChangePassword from "../pages/ChangePassword/index";
-import AdminPurpose from "../components/admin/HomePage/Purpose/AdminPurpose";
+// import AdminPurpose from "../components/admin/HomePage/Purpose/AdminPurpose";
 import ConfirmPassword from "components/auth/confirm-password";
 import ProfilePage from "../pages/ProfilePage/index";
-import AdminWelcome from "../components/admin/HomePage/Purpose/AdminPurpose";
+// import AdminWelcome from "../components/admin/HomePage/Purpose/AdminPurpose";
 import AdminLayout from "components/admin/HomePage/AdminLayout";
 import AdminHomePageLayout from "../components/admin/HomePageLayout/AdminHomePageLayout";
 import AdminProfile from "../pages/Profile/Index";
@@ -53,7 +53,7 @@ import { SocialPage } from "components/admin/HomePage/HomePages/Socials";
 import { ContactUsPage } from "components/admin/HomePage/HomePages/ContactUs";
 import { WelcomePage } from "components/admin/HomePage/HomePages/WelcomePage";
 import { ForgotPassword } from "components/auth/forgot";
-import { Login } from "components/auth/login";
+import { AdminLogin } from "components/auth/admin-login";
 import { Register } from "components/auth/register";
 
 import AdminEdit from "../pages/AdminEdit/index";
@@ -62,6 +62,7 @@ import EventPage from "../pages/Event";
 import Event from "components/Event";
 import LandingPage from "../pages/LandingPage";
 import EventDetail from "components/Event/EventDetail";
+import { EmployeeLogin } from "components/auth/employee-login";
 
 
 
@@ -74,7 +75,8 @@ function MainRoutes() {
         <Route path="/about" element={<h1>About</h1>} />
         <Route path="/users" element={<h1>Users</h1>} />
 
-        <Route path="/login" element={<Login />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/login" element={<EmployeeLogin />} />
         <Route path="/register" element={<Register />} />
 
         <Route path="/confirm" element={<ConfirmPassword />} />
