@@ -17,7 +17,7 @@ const menuItems = [
   {
     label: 'Home',
     icon: <RiHome5Fill className="fill-white text-3xl" />,
-    link: '/',
+    link: '/home',
   },
 
   {
@@ -28,7 +28,7 @@ const menuItems = [
   {
     label: 'Chat',
     icon: <PiChatCenteredTextFill className="fill-white text-3xl" />,
-    link: '/chat',
+    link: '/admin/home/socials',
   },
   {
     label: 'Tasks',
@@ -58,7 +58,7 @@ const AdminNavbar: React.FC = () => {
   return (
     <nav className="bg-[#0F6FC8] md:px-8 sm:px-6  h-16 flex items-center justify-between fixed w-full ">
       <div className="ml-4 text-white text-xl font-bold">
-        <a href="/" className="">
+        <a href="/home" className="">
           <img src={logowhite} alt="logo image" />
         </a>
       </div>

@@ -7,7 +7,7 @@ type ErrorData = {
   code: string;
   message: string;
   status: number;
-  data: Record<string, unknown> | null;
+  data: any | null;
 };
 
 const API_URL = import.meta.env.VITE_API_URL;

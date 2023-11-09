@@ -10,7 +10,7 @@ const useMutation = (
   url: string
 ): [
   {
-    data: Record<string, string> | null;
+    data: any | null;
     error: any | null;
     isLoading: boolean;
     variables?: Record<string, any>;
