@@ -1,19 +1,19 @@
-import { useCallback, useEffect } from "react";
-import { isEqual } from "lodash";
+import { useCallback, useEffect } from 'react';
+import { isEqual } from 'lodash';
 
-import api from "../../utils/api";
-import useMergeState from "hooks/mergeState";
-import useDeepCompareMemoize from "hooks/deepCompareMemoize";
+import api from '../../utils/api';
+import useMergeState from 'hooks/mergeState';
+import useDeepCompareMemoize from 'hooks/deepCompareMemoize';
 
 type Cache = {
   [key: string]: {
-    data: Record<string, string> | null;
+    data: any | null;
     apiVariables: any;
   };
 };
 
 type Options = {
-  cachePolicy?: "cache" | "no-cache";
+  cachePolicy?: 'cache' | 'no-cache';
 };
 
 const cache: Cache = {};
@@ -24,14 +24,14 @@ const useQuery = (
   options: Options = {}
 ): [
   {
-    data: Record<string, string> | null;
+    data: any | null;
     error: any | null;
     isLoading: boolean;
     variables: Record<string, any>;
   },
   (newVariables?: Record<string, any>) => void
 ] => {
-  const { cachePolicy = "cache" } = options;
+  const { cachePolicy = 'cache' } = options;
 
   const getCache = (url: string) => {
     if (cache[url] === undefined) return null;
@@ -43,7 +43,7 @@ const useQuery = (
   const isCacheAvailable =
     getCache(url) !== null &&
     isEqual(getCache(url)?.apiVariables, propsVariables);
-  const canUseCache = isCacheAvailable && cachePolicy === "cache";
+  const canUseCache = isCacheAvailable && cachePolicy === 'cache';
   const [state, mergeState] = useMergeState({
     data: canUseCache ? cache[url].data : null,
     error: null,

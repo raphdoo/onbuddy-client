@@ -1,8 +1,8 @@
-import { useState, useCallback, Dispatch } from "react";
-import { isFunction } from "lodash";
+import { useState, useCallback, Dispatch } from 'react';
+import { isFunction } from 'lodash';
 
 export type State = {
-  data: Record<string, string> | null;
+  data: any | null;
   error: string | null;
   isLoading: boolean;
   variables?: Record<string, string>;

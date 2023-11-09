@@ -1,16 +1,11 @@
 import React, { useEffect } from 'react';
-import logo from '../../assets/images/lgo.png';
 import pana from '../../assets/images/pana.png';
 import amico from '../../assets/images/amico.png';
 import amico2 from '../../assets/images/amico2.png';
-import { BsHousesFill } from 'react-icons/bs';
-import { BsFillCalendarDateFill } from 'react-icons/bs';
-import { BiSolidMessageSquareDetail } from 'react-icons/bi';
-import { BsFillCalendarEventFill } from 'react-icons/bs';
-import ppic from '../../assets/images/ppic.png';
 import { BsFillArrowRightSquareFill } from 'react-icons/bs';
 import { useApi } from 'hooks/api';
 import Loader from 'components/common/loader/loader';
+import AdminNavbar from 'components/admin/AdminNavBar/AdminNav';
 
 interface CurrentUser {
   currentUser: any;
@@ -21,29 +16,14 @@ const LandingPage: React.FC<CurrentUser> = ({ currentUser }) => {
     `/users/${currentUser.currentUser.id}`
   );
 
-  useEffect(() => {
-    if (response) {
-      console.log(response);
-    }
-  }, [response]);
-
   return (
     <div>
       {response && response.isLoading ? (
         <Loader />
       ) : (
         <div className="flex flex-col bg-blue-100">
-          <div className="bg-blue-500 py-6 px-8 h-10 flex items-center justify-between">
-            <img src={logo} alt="logo" className="h-10 w-10" />
-            <div className="flex gap-4 text-white h-full items-center">
-              <BsHousesFill className="text-2xl" />
-              <BsFillCalendarDateFill className="text-2xl" />
-              <BiSolidMessageSquareDetail className="text-2xl" />
-              <BsFillCalendarEventFill className="text-2xl" />
-              <img src={ppic} alt="" className="rounded-full" />
-            </div>
-          </div>
-          <div className="flex-1 px-10 py-6 flex flex-col gap-8">
+          <AdminNavbar/>
+          <div className="flex-1 px-10 py-6 flex flex-col gap-8 mt-20">
             <p className="font-bold text-xl">Hi, {response && response.data!.firstname}</p>
             <p>
               Congratulations on securing a place on our internship! Welcome to
@@ -63,24 +43,24 @@ const LandingPage: React.FC<CurrentUser> = ({ currentUser }) => {
                 We’re really looking forward to you joining us in onbuddy
                 company!
               </p>
-              <div className="w-full grid grid-cols-3 p-4 items-center">
-                <div className="flex flex-col items-center gap-4">
+              <div className="w-full p-4 flex flex-col md:flex-row justify-around">
+                <div className="flex flex-col items-end justify-between gap-4 mt-8 ">
                   <img src={pana} alt="" />
-                  <button className="w-fulll bg-blue-500 px-2 py-3 text-white font-semibold m-auto flex items-center gap-4 rounded-xl">
+                  <button className="w-full bg-blue-500 px-2 py-3 text-white font-semibold m-auto flex items-center gap-4 rounded-xl" onClick={()=> window.location.href = '/admin/home'}>
                     How to use our portal{' '}
                     <BsFillArrowRightSquareFill className="text-xl" />
                   </button>
                 </div>
-                <div className="flex flex-col items-center gap-4">
-                  <img src={amico} alt="" />
-                  <button className="w-fulll bg-blue-500 px-2 py-3 text-white font-semibold m-auto flex items-center gap-4 rounded-xl">
-                    Welcome to our family{' '}
+                <div className="flex flex-col items-end justify-between gap-4 mt-8 ">
+                  <img src={amico} alt=""  />
+                  <button className="w-full bg-blue-500 px-2 py-3 text-white font-semibold m-auto flex items-center gap-4 rounded-xl">
+                    Socials{' '}
                     <BsFillArrowRightSquareFill className="text-xl" />
                   </button>
                 </div>
-                <div className="flex flex-col items-center gap-4">
+                <div className="flex flex-col items-center gap-4 mt-8 ">
                   <img src={amico2} alt="" />
-                  <button className="w-full bg-blue-500 px-2 py-3 text-white font-semibold m-auto flex items-center gap-4 rounded-xl">
+                  <button className="w-full bg-blue-500 px-2 py-3 text-white font-semibold m-auto flex items-center gap-4 rounded-xl" onClick={()=> window.location.href = '/admin/home/purpose'}>
                     Our business{' '}
                     <BsFillArrowRightSquareFill className="text-xl" />
                   </button>
