@@ -1,5 +1,3 @@
-
-import CheckListPage from '../pages/CheckList'
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HomePage from "../pages/HomePage/Index";
 import EditPage from "../pages/EditPage/index";
@@ -27,6 +25,7 @@ import { WelcomePage } from "components/admin/HomePage/HomePages/WelcomePage";
 import { ForgotPassword } from "components/auth/forgot";
 import { AdminLogin } from "components/auth/admin-login";
 import { Register } from "components/auth/register";
+import CheckListPage from "../pages/CheckList";
 
 import AdminEdit from "../pages/AdminEdit/index";
 
@@ -35,16 +34,13 @@ import Event from "components/Event";
 import LandingPage from "../pages/LandingPage";
 import EventDetail from "components/Event/EventDetail";
 import { EmployeeLogin } from "components/auth/employee-login";
-import Signout from 'components/auth/signout';
-
+import Signout from "components/auth/signout";
 
 interface CurrentUser {
-  currentUser: any
+  currentUser: any;
 }
 
-const MainRoutes:React.FC<CurrentUser> = ({currentUser}) => {
-
-  
+const MainRoutes: React.FC<CurrentUser> = ({ currentUser }) => {
   return (
     <BrowserRouter>
       <Routes>
@@ -64,29 +60,17 @@ const MainRoutes:React.FC<CurrentUser> = ({currentUser}) => {
 
         <Route path="edit" element={<EditPage />} />
 
+        <Route path="changepassword" element={<ChangePassword />} />
+
+        <Route path="WorkDetails" element={<WorkDetails />} />
+        <Route path="profile" element={<ProfilePage />} />
 
         <Route path="changepassword" element={<ChangePassword />} />
 
         <Route path="WorkDetails" element={<WorkDetails />} />
         <Route path="profile" element={<ProfilePage />} />
 
-
-        <Route path="changepassword" element={<ChangePassword />} />
-
-
-        <Route
-            path="WorkDetails"
-            element={<WorkDetails/>}
-          />
-             <Route
-            path="profile"
-            element={<ProfilePage/>}
-        />
-
-            <Route
-            path="adminedit"
-            element={<AdminEdit />}
-        />
+        <Route path="adminedit" element={<AdminEdit />} />
 
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="event" element={<EventPage />}>
@@ -115,24 +99,24 @@ const MainRoutes:React.FC<CurrentUser> = ({currentUser}) => {
           </Route>
         </Route>
 
-        {currentUser && <Route
-         path="/home"
-         element={<LandingPage currentUser={currentUser}/>}
-        />}
+        {currentUser && (
+          <Route
+            path="/home"
+            element={<LandingPage currentUser={currentUser} />}
+          />
+        )}
 
         <Route
           path="*"
           element={
             <div>
-              <h1>Page not Found 😢 </h1> <Link to={'/'}> Back to Home</Link>
+              <h1>Page not Found 😢 </h1> <Link to={"/"}> Back to Home</Link>
             </div>
           }
         />
-
       </Routes>
-
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default MainRoutes
+export default MainRoutes;
