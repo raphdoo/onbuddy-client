@@ -1,11 +1,11 @@
-import react, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import pic from '../../assets/images/auth.png';
 // import {MdEmail} from "react-icons/md";
 // import {RiLockPasswordFill} from "react-icons/ri";
 // import {AiFillEye} from "react-icons/ai";
 import { FcGoogle } from 'react-icons/fc';
 import logo from '../../assets/images/logo.png';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useApi } from 'hooks/api';
 import Error from 'components/common/Errors';
 
@@ -13,16 +13,13 @@ export const AdminLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const Navigate = useNavigate();
-
-
   const [{ data, error }, makerequest] = useApi.post(`/auth/admin/signin`);
 
   useEffect(() => {
     if (data) {
-      Navigate('/admin/home');
+      window.location.href = '/admin/home'
     }
-  }, [data, Navigate]);
+  }, [data]);
 
   const onSubmit = (event: any) => {
     event.preventDefault();

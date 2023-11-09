@@ -35,11 +35,16 @@ import Event from "components/Event";
 import LandingPage from "../pages/LandingPage";
 import EventDetail from "components/Event/EventDetail";
 import { EmployeeLogin } from "components/auth/employee-login";
+import Signout from 'components/auth/signout';
 
 
+interface CurrentUser {
+  currentUser: any
+}
 
+const MainRoutes:React.FC<CurrentUser> = ({currentUser}) => {
 
-function MainRoutes() {
+  
   return (
     <BrowserRouter>
       <Routes>
@@ -53,6 +58,7 @@ function MainRoutes() {
 
         <Route path="/confirm" element={<ConfirmPassword />} />
         <Route path="/forgot" element={<ForgotPassword />} />
+        <Route path="/signout" element={<Signout />} />
 
         <Route path="/contact" element={<h1>Contact</h1>} />
 
@@ -109,10 +115,10 @@ function MainRoutes() {
           </Route>
         </Route>
 
-        <Route
-         path="/landing-page"
-         element={<LandingPage />}
-        />
+        {currentUser && <Route
+         path="/home"
+         element={<LandingPage currentUser={currentUser}/>}
+        />}
 
         <Route
           path="*"

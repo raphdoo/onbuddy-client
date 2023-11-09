@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FiMenu } from 'react-icons/fi'
 import { logowhite, user } from '../../../assets/Assets'
 
@@ -40,6 +40,7 @@ const menuItems = [
 const AdminNavbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const dispatch = useDispatch()
+  const Navigate = useNavigate()
 
   const profile = useSelector((state) => state.profileMenu.isOpen)
 
@@ -51,7 +52,7 @@ const AdminNavbar: React.FC = () => {
     dispatch(toggleProfile())
   }
   const logout = () => {
-    console.log('Logout clicked')
+    Navigate('/signout')
   }
 
   return (
@@ -107,9 +108,6 @@ const AdminNavbar: React.FC = () => {
               <ul className="space-y-2">
                 <li>
                   <Link to="/profile">Profile</Link>
-                </li>
-                <li>
-                  <Link to="/settings">Settings</Link>
                 </li>
                 <li>
                   <button onClick={logout}>Logout</button>
