@@ -5,7 +5,7 @@ type Options = {
   cachePolicy?: "cache" | "no-cache";
 };
 
-export default {
+export const useApi = {
   get: (
     url: string,
     propsVariables?: Record<string, string>,
