@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import pana from '../../assets/images/pana.png';
 import amico from '../../assets/images/amico.png';
 import amico2 from '../../assets/images/amico2.png';

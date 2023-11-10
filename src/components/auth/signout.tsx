@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 
 export default () => {
-  const [response, makerequest] = useApi.post(`/auth/signout`);
+  const [{data}, makerequest] = useApi.post(`/auth/signout`);
 
   useEffect(() => {
 
@@ -12,5 +12,5 @@ export default () => {
     window.location.href = '/login'
   }, []);
 
-  return <div>Signing out...</div>;
+  return <div>{data && data}</div>;
 };

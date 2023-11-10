@@ -31,7 +31,7 @@ const ContactSearch: React.FC = () => {
   //   // Add more contacts here
   // ];
 
-  const [{ data, error, isLoading }, currentUser] = useApi.get('/users/index');
+  const [{ data, isLoading }] = useApi.get('/users/index');
 
   useEffect(() => {
     if(data) {
