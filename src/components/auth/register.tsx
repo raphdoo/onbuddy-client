@@ -1,6 +1,6 @@
 
 import { useApi } from 'hooks/api';
-import pic from '../../assets/images/authPic.png';
+import pic from '../../assets/images/auth.png';
 import logo from '../../assets/images/logo.png';
 import { useState, useEffect } from 'react';
 import { AiOutlineCaretDown, AiOutlineCaretUp } from 'react-icons/ai';
