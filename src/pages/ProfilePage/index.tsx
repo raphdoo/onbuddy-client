@@ -3,12 +3,15 @@ import AdminNavbar from "components/admin/AdminNavBar/AdminNav"
 
 import ProfilePage from "components/admin/ProfilePage/ProfilePage"
 
+interface CurrentUser {
+  currentUser: any
+}
 
-function Profile() {
+const Profile: React.FC<CurrentUser> = ({currentUser}) => {
   return (
     <div>
       <AdminNavbar />
-      <ProfilePage />
+      {currentUser && <ProfilePage currentUser={currentUser}/>}
       <div className="hidden sm:block">
         <AdminFooter />
       </div>
