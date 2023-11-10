@@ -46,7 +46,7 @@ const Event: React.FC = () => {
         </p>
       </div>
       {events.map((each) => {
-        const { id, title, date, venue, link, imageUrl } = each;
+        const { id, title, date, venue, imageUrl } = each;
         return (
           <div
             className="mt-5 border border-black border-dotted border-4 rounded-lg"

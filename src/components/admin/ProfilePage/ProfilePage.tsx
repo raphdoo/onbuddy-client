@@ -11,7 +11,7 @@ interface CurrentUser {
 }
 
 const ProfilePage: React.FC<CurrentUser> = ({ currentUser }) => {
-  const [{ data, error, isLoading }] = useApi.get(
+  const [{ data, isLoading }] = useApi.get(
     `/users/${currentUser.currentUser.id}`
   );
 

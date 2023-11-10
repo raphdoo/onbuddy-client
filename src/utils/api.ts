@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { getStoredAuthToken, removeStoredAuthToken } from './authToken';
 import { objectToQueryString } from './url';
-import.meta.env;
+// import.meta.env;
 
 type ErrorData = {
   code: string;
@@ -10,7 +10,8 @@ type ErrorData = {
   data: any | null;
 };
 
-const API_URL = import.meta.env.VITE_API_URL;
+// const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = 'http://localhost:8000';
 
 const defaults = {
   baseURL: API_URL,
