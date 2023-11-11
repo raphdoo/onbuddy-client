@@ -63,11 +63,6 @@ const MainRoutes: React.FC<CurrentUser> = ({ currentUser }) => {
         <Route path="changepassword" element={<ChangePassword />} />
 
         <Route path="WorkDetails" element={<WorkDetails />} />
-        <Route path="profile" element={<ProfilePage />} />
-
-        <Route path="changepassword" element={<ChangePassword />} />
-
-        <Route path="WorkDetails" element={<WorkDetails />} />
         {currentUser && (
           <Route
             path="profile"

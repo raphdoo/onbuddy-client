@@ -16,7 +16,7 @@ function ChangePassword() {
             <h2 className="">Change password</h2>
         	</div>
     		</div>
-    		<div className="sm:absolute top-[30%] sm:max-w-7xl mx-auto  bg-white rounded-2xl w-full sm:ml-36">
+    		<div className="sm:absolute top-[30%] left-[10%] mx-auto  bg-white rounded-2xl sm:w-[80%]  sm:py-10">
         	<section className="sm:flex justify-between px-20 border-b-2 border-b-gray-400 py-6">
 						<a href="/profile" className="">
             	<div className="">
