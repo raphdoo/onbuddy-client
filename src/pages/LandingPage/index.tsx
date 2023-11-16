@@ -3,7 +3,6 @@ import pana from '../../assets/images/pana.png';
 import amico from '../../assets/images/amico.png';
 import amico2 from '../../assets/images/amico2.png';
 import { BsFillArrowRightSquareFill } from 'react-icons/bs';
-import { useApi } from 'hooks/api';
 import Loader from 'components/common/loader/loader';
 import AdminNavbar from 'components/admin/AdminNavBar/AdminNav';
 
@@ -12,19 +11,16 @@ interface CurrentUser {
 }
 
 const LandingPage: React.FC<CurrentUser> = ({ currentUser }) => {
-  const [response] = useApi.get(
-    `/users/${currentUser.currentUser.id}`
-  );
 
   return (
     <div>
-      {response && response.isLoading ? (
+      {!currentUser ? (
         <Loader />
       ) : (
         <div className="flex flex-col bg-blue-100">
-          <AdminNavbar/>
+          <AdminNavbar />
           <div className="flex-1 px-10 py-6 flex flex-col gap-8 mt-20">
-            <p className="font-bold text-xl">Hi, {response && response.data!.firstname}</p>
+            <p className="font-bold text-xl">Hi, {currentUser.firstname}</p>
             <p>
               Congratulations on securing a place on our internship! Welcome to
               our team and our on boarding portal, full of important information

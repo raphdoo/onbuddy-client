@@ -1,56 +1,69 @@
-import React, { useState } from 'react'
-import { FaHeart, FaComment } from 'react-icons/fa'
+import { useApi } from 'hooks/api';
+import React, { useEffect, useState } from 'react';
 
 interface CommentSectionProps {
-  comments: number
-  onAddComment: (comment: string) => void
+  showComments?: Boolean;
+  id: string;
 }
 
 const CommentSection: React.FC<CommentSectionProps> = ({
-  comments,
-  onAddComment,
+  showComments,
+  id,
 }) => {
-  const [showComments, setShowComments] = useState(false)
-  const [newComment, setNewComment] = useState('')
-
-  const toggleComments = () => {
-    setShowComments(!showComments)
-  }
+  const [content, setContent] = useState('');
 
   const handleCommentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setNewComment(event.target.value)
-  }
+    setContent(event.target.value);
+  };
+
+  const [{ data: singlePost }] = useApi.get(`/post/${id}`);
+
+  const [{data}, makerequest] = useApi.post(`/post/${id}/comment/create`);
 
   const handleAddComment = () => {
-    if (newComment.trim() !== '') {
-      onAddComment(newComment)
-      setNewComment('')
+    makerequest({ content });
+  };
+
+  useEffect(() => {
+    if (singlePost) {
+      
     }
-  }
+    if(data) {
+
+    }
+
+  }, [singlePost, data]);
 
   return (
     <div>
-      <div
-        className="flex items-center justify-between cursor-pointer"
-        onClick={toggleComments}
-      >
-        <div className="flex items-center">
-          <FaHeart className="text-red-500 mr-2" />
-          <span>48 Likes</span>
-        </div>
-        <div className="flex items-center">
-          <FaComment className="text-blue-500 mr-2" />
-          <span>{comments} Comments</span>
-        </div>
-      </div>
-      {showComments && (
-        <div className="mt-4">sdsd{/* Render your comment items here */}</div>
-      )}
-      <div className="mt-4">
+      {(showComments &&
+        singlePost &&
+        singlePost.comments &&
+        singlePost.comments.length) ?
+        singlePost.comments.map((comment: any, index: number) => {
+          return (
+            <div className="mt-8 ml-5" key={index}>
+              <div className="flex items-center mb-2">
+                <img
+                  src={comment.userId.avatar.url}
+                  alt={comment.userId.firstname}
+                  className="w-10 h-10 rounded-full mr-4"
+                />
+                <div>
+                  <h2 className="text-lg font-semibold">{comment.userId.name}</h2>
+                </div>
+              </div>
+              <p>{comment.content}</p>
+            </div>
+          );
+        })
+      
+        : <p></p>}
+      <div className="mt-4 ml-3">
         <input
           type="text"
           placeholder="Write a comment..."
-          value={newComment}
+          value={content}
           onChange={handleCommentChange}
           className="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
         />
@@ -62,7 +75,7 @@ const CommentSection: React.FC<CommentSectionProps> = ({
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CommentSection
+export default CommentSection;

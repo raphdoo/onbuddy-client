@@ -1,12 +1,15 @@
 import Button from 'components/common/Button/Button'
 import Image from 'components/common/Images/Image'
-import { profil } from '../../../assets/Assets'
 import { user1 } from '../../../assets/Assets'
 import { vector } from '../../../assets/Assets'
 import { vectordot } from '../../../assets/Assets'
 
+interface CurrentUser {
+  currentUser: any;
+}
 
-function AdminEdit() {
+
+const AdminEdit: React.FC<CurrentUser> =({currentUser}) =>{
   return (
     <div className="h-screen bg-gray-200">	
 			<section className="">
@@ -67,12 +70,11 @@ function AdminEdit() {
 					<section className="sm:grid grid-cols-12 mt-4 px-5 gap-10">
 						<div className="col-span-4 mt-5 bg-white shadow-xl flex flex-col items-center rounded-2xl p-6">
 							<div className="">
-								<Image src={profil} alt="Logo Image" className="w-40 h-40 rounded-full md:w-auto" />
+								<Image src={currentUser.avatar.url} alt="Logo Image" className="w-40 h-40 rounded-full md:w-auto" />
 							</div>
 							<div className="flex flex-col items-center">
-								<h2 className="">ONBUDDY ADMIN</h2>
-								<h2 className="">onbuddy@gmail.com</h2>
-								<h2 className="">Lagos, Nigeria</h2>
+								<h2 className="">{currentUser.name}</h2>
+
 							</div>
 						</div>
 						<div className="col-span-8 bg-white shadow-xl rounded-sm space-y-5">

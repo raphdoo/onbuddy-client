@@ -2,7 +2,12 @@ import React from 'react'
 import ContentCard from '../ContentCard/ContentCard'
 import SocialWall from '../Purpose/SocialWall'
 
-export const SocialPage: React.FC = () => {
+interface CurrentUser {
+  currentUser: any;
+}
+
+
+export const SocialPage: React.FC<CurrentUser> = ({currentUser}) => {
   return (
     <React.Fragment>
       <ContentCard title="SOCIALS">
@@ -12,7 +17,7 @@ export const SocialPage: React.FC = () => {
         </p>
         <p className="mb-3">We hope you find this section useful</p>
         <div>
-          <SocialWall />
+          <SocialWall currentUser={currentUser} />
         </div>
       </ContentCard>
     </React.Fragment>

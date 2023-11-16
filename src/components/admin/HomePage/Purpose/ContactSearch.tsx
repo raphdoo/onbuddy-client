@@ -31,11 +31,11 @@ const ContactSearch: React.FC = () => {
   //   // Add more contacts here
   // ];
 
-  const [{ data, isLoading }] = useApi.get('/users/index');
+  const [{ data, isLoading }] = useApi.get('/users/index', {keyword});
 
   useEffect(() => {
     if(data) {
-      console.log(data)
+      
     }
   }, [data])
 

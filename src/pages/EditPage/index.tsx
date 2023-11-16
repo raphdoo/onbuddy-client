@@ -3,11 +3,15 @@ import AdminNavbar from "components/admin/AdminNavBar/AdminNav"
 import EditProfile from "components/admin/EditProfile/EditProfile"
 
 
-function EditPage() {
+interface CurrentUser {
+  currentUser: any;
+}
+
+const EditPage: React.FC<CurrentUser> = ({currentUser}) =>{
   return (
     <div>
       <AdminNavbar />
-      <EditProfile />
+      <EditProfile currentUser={currentUser} />
       <div className="hidden sm:block">
         <AdminFooter />
       </div>
