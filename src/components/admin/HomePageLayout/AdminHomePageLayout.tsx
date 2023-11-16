@@ -1,89 +1,89 @@
-import { Outlet, Link, NavLink } from 'react-router-dom'
+import { Outlet, Link, NavLink } from "react-router-dom";
 
-import Collapsible from '../../../components/common/CollapsMenu/Colllaps'
-import AdminHeroImage from '../HomePage/AdminHeroImage'
+import Collapsible from "../../../components/common/CollapsMenu/Colllaps";
+import AdminHeroImage from "../HomePage/AdminHeroImage";
 
 interface LayoutProps {
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }
 
 interface Link {
-  path: string
-  label: string
+  path: string;
+  label: string;
 }
 
 interface MenuItem {
-  title: string
-  link: Link[]
+  title: string;
+  link: Link[];
 }
 
-const links: MenuItem[] = [
+export const links: MenuItem[] = [
   {
-    title: 'Home',
+    title: "Home",
     link: [
       {
-        path: '/admin/home',
-        label: 'How to use the portal',
+        path: "/admin/home",
+        label: "How to use the portal",
       },
     ],
   },
   {
-    title: 'Our Business',
+    title: "Our Business",
     link: [
       {
-        path: '/admin/home/purpose',
-        label: 'Our Purpose',
+        path: "/admin/home/purpose",
+        label: "Our Purpose",
       },
       {
-        path: '/admin/home/our-value',
-        label: 'Our Values',
+        path: "/admin/home/our-value",
+        label: "Our Values",
       },
       {
-        path: '/admin/home/our-culture',
-        label: 'Our Culture',
+        path: "/admin/home/our-culture",
+        label: "Our Culture",
       },
     ],
   },
   {
-    title: 'Your Program',
+    title: "Your Program",
     link: [
       {
-        path: '/admin/home/contact-books',
-        label: 'Contact Books',
+        path: "/admin/home/contact-books",
+        label: "Contact Books",
       },
     ],
   },
   {
-    title: 'Our Commitments',
+    title: "Our Commitments",
     link: [
       {
-        path: '/admin/home/diversity',
-        label: 'Diversity and Inclusion',
+        path: "/admin/home/diversity",
+        label: "Diversity and Inclusion",
       },
       {
-        path: '/admin/home/health',
-        label: 'Health and Wellness',
+        path: "/admin/home/health",
+        label: "Health and Wellness",
       },
       {
-        path: '/admin/home/learning',
-        label: 'Learning and Development',
+        path: "/admin/home/learning",
+        label: "Learning and Development",
       },
     ],
   },
   {
-    title: 'Updates',
+    title: "Updates",
     link: [
       {
-        path: '/admin/home/getting-ready',
-        label: 'Getting ready for day one',
+        path: "/admin/home/getting-ready",
+        label: "Getting ready for day one",
       },
       {
-        path: '/admin/home/one-page',
-        label: 'One page profile',
+        path: "/admin/home/one-page",
+        label: "One page profile",
       },
     ],
   },
-]
+];
 
 const AdminHomePageLayout: React.FC<LayoutProps> = () => {
   return (
@@ -101,7 +101,7 @@ const AdminHomePageLayout: React.FC<LayoutProps> = () => {
                       key={item.label}
                       className=" hover:text-[#309CFF] text-xl py-2 flex gap-2 font-normal   "
                     >
-                      <span className="ml-5">-</span>{' '}
+                      <span className="ml-5">-</span>{" "}
                       <li className="list-none">{item.label}</li>
                     </Link>
                   ))}
@@ -144,7 +144,7 @@ const AdminHomePageLayout: React.FC<LayoutProps> = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AdminHomePageLayout
+export default AdminHomePageLayout;

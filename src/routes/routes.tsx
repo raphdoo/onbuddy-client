@@ -1,13 +1,17 @@
+
 import CheckListPage from '../pages/CheckList';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import HomePage from '../pages/HomePage/Index';
-import EditPage from '../pages/EditPage/index';
-import WorkDetails from '../pages/WorkDetails/index';
-import ChangePassword from '../pages/ChangePassword/index';
+
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import HomePage from "../pages/HomePage/Index";
+import EditPage from "../pages/EditPage/index";
+import WorkDetails from "../pages/WorkDetails/index";
+import ChangePassword from "../pages/ChangePassword/index";
+
 // import AdminPurpose from "../components/admin/HomePage/Purpose/AdminPurpose";
 import ConfirmPassword from 'components/auth/confirm-password';
 import ProfilePage from '../pages/ProfilePage/index';
 // import AdminWelcome from "../components/admin/HomePage/Purpose/AdminPurpose";
+
 import AdminLayout from 'components/admin/HomePage/AdminLayout';
 import AdminHomePageLayout from '../components/admin/HomePageLayout/AdminHomePageLayout';
 import AdminProfile from '../pages/Profile/Index';
@@ -62,12 +66,14 @@ const MainRoutes: React.FC<CurrentUser> = ({ currentUser }) => {
           <Route path="edit" element={<EditPage currentUser={currentUser} />} />
         )}
 
+
         {currentUser && (
           <Route
             path="changepassword"
             element={<ChangePassword currentUser={currentUser} />}
           />
         )}
+
 
         <Route path="WorkDetails" element={<WorkDetails />} />
         {currentUser && (
@@ -77,12 +83,14 @@ const MainRoutes: React.FC<CurrentUser> = ({ currentUser }) => {
           />
         )}
 
+
         {currentUser && (
           <Route
             path="adminedit"
             element={<AdminEdit currentUser={currentUser} />}
           />
         )}
+
 
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="event" element={<EventPage />}>
@@ -127,7 +135,7 @@ const MainRoutes: React.FC<CurrentUser> = ({ currentUser }) => {
           path="*"
           element={
             <div>
-              <h1>Page not Found 😢 </h1> <Link to={'/'}> Back to Home</Link>
+              <h1>Page not Found 😢 </h1> <Link to={"/"}> Back to Home</Link>
             </div>
           }
         />
