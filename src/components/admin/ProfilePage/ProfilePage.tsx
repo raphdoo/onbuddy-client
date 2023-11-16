@@ -11,13 +11,10 @@ interface CurrentUser {
 }
 
 const ProfilePage: React.FC<CurrentUser> = ({ currentUser }) => {
-  const [{ data, isLoading }] = useApi.get(
-    `/users/${currentUser.currentUser.id}`
-  );
 
   return (
     <div>
-      {isLoading ? (
+      {!currentUser ? (
         <Loader />
       ) : (
         <div className="h-screen bg-gray-200">
@@ -102,46 +99,46 @@ const ProfilePage: React.FC<CurrentUser> = ({ currentUser }) => {
                 <div className="col-span-4 mt-5 bg-white shadow-xl flex flex-col items-center rounded-2xl p-6">
                   <div className="">
                     <Image
-                      src={profil}
+                      src={currentUser.avatar.url}
                       alt="Logo Image"
                       className="w-40 h-40 rounded-full md:w-auto"
                     />
                   </div>
                   <div className="flex flex-col items-center">
-                    <h2 className="">{data.name}</h2>
-                    <h2 className="">{data.email}</h2>
+                    <h2 className="">{currentUser.name}</h2>
+                    <h2 className="">{currentUser.email}</h2>
                   </div>
                 </div>
                 <div className="col-span-8 bg-white shadow-xl rounded-sm">
                   <div className="flex justify-between py-4 px-4 bg-[#D6EBFF99]">
                     <h2 className="">First Name</h2>
-                    <h2 className="">{data.firstname}</h2>
+                    <h2 className="">{currentUser.firstname}</h2>
                   </div>
 
                   <div className="flex justify-between py-4 px-4">
                     <h2 className="">Last Name</h2>
-                    <h2 className="">{data.lastname}</h2>
+                    <h2 className="">{currentUser.lastname}</h2>
                   </div>
 
                   <div className="flex justify-between py-4 px-4 bg-[#D6EBFF99]">
                     <h2 className="">Email</h2>
-                    <h2 className="">{data.email}</h2>
+                    <h2 className="">{currentUser.email}</h2>
                   </div>
 
 									<div className="flex justify-between py-4 px-4 ">
                     <h2 className="">Program Track</h2>
-                    <h2 className="">{data.programTrack}</h2>
+                    <h2 className="">{currentUser.programTrack}</h2>
                   </div>
 
 									<div className="flex justify-between py-4 px-4 bg-[#D6EBFF99]">
                     <h2 className="">Company Id</h2>
-                    <h2 className="">{data.companyId}</h2>
+                    <h2 className="">{currentUser.companyId}</h2>
                   </div>
 
                   <a href="/edit" className="">
                     <div className="flex justify-between py-4 px-4 ">
                       <h2 className="">Bio</h2>
-                      <h2 className="">{data.bio}</h2>
+                      <h2 className="">{currentUser.bio}</h2>
                     </div>
                   </a>
                 </div>

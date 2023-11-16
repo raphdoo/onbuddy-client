@@ -36,7 +36,7 @@ export const Register = () => {
 
   useEffect(() => {
     if (data) {
-      window.location.href = '/admin/home'
+      
     }
   }, [data]);
 

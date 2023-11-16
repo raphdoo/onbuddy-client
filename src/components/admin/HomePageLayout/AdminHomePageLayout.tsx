@@ -132,7 +132,7 @@ const AdminHomePageLayout: React.FC<LayoutProps> = () => {
                   to="/admin/home/contact"
                   className="font-bold  text-xl text-gray-500  uppercase"
                 >
-                  Cotact Us
+                  Contact Us
                 </Link>
               </div>
             </div>

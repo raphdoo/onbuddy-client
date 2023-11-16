@@ -5,8 +5,14 @@ import { user1 } from '../../../assets/Assets'
 import { vector } from '../../../assets/Assets'
 import { vectordot } from '../../../assets/Assets'
 
+interface CurrentUser {
+  currentUser: any;
+}
 
-function ChangePassword() {
+
+const ChangePassword: React.FC<CurrentUser> =({currentUser}) => {
+
+
   return (
     <div className="h-screen bg-gray-200">	
     	<section className="">
@@ -67,26 +73,24 @@ function ChangePassword() {
         	<section className="sm:grid grid-cols-12 mt-4 px-5 gap-10">
             <div className="col-span-4 mt-5 bg-white shadow-xl flex flex-col items-center rounded-2xl p-6">
               <div className="">
-                <Image src={profil} alt="Logo Image" className="w-40 h-40 rounded-full md:w-auto" />
+                <Image src={currentUser.avatar.url} alt="Logo Image" className="w-40 h-40 rounded-full md:w-auto" />
               </div>
               <div className="flex flex-col items-center">
-                <h2 className="">ON BUDDY</h2>
-                <h2 className="">onbuddy@gmail.com</h2>
-                <h2 className="">Lagos, Nigeria</h2>
+                {/* <h2 className="">ON BUDDY</h2> */}
               </div>
             </div>
             <div className="col-span-8 bg-white shadow-xl rounded-sm">
               <div className="flex justify-between py-4 px-4 bg-[#D6EBFF99]">
                 <h2 className="">Current Password</h2>
-                <h2 className="">***********</h2>
+                <input className="" placeholder='***********'></input>
               </div>
-              <div className="flex justify-between py-4 px-4">
+              <div className="flex justify-between py-4 px-4 bg-[#D6EBFF99]">
                 <h2 className="">New Password</h2>
-                <h2 className="">***********</h2>
+                <input className="" placeholder='***********'></input>
               </div>
               <div className="flex justify-between py-4 px-4 bg-[#D6EBFF99]">
                 <h2 className="">Re-type Password</h2>
-                <h2 className="">***********</h2>
+                <input className="" placeholder='***********'></input>
               </div>
             </div>
 						<div className="py-3 sm:py-0">

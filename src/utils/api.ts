@@ -1,6 +1,8 @@
-import axios, { AxiosResponse } from "axios";
-import { getStoredAuthToken, removeStoredAuthToken } from "./authToken";
-import { objectToQueryString } from "./url";
+
+import axios, { AxiosResponse } from 'axios';
+import { getStoredAuthToken, removeStoredAuthToken } from './authToken';
+import { objectToQueryString } from './url';
+
 import.meta.env;
 
 type ErrorData = {
