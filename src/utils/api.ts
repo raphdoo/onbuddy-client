@@ -1,7 +1,6 @@
-
-import axios, { AxiosResponse } from 'axios';
-import { getStoredAuthToken, removeStoredAuthToken } from './authToken';
-import { objectToQueryString } from './url';
+import axios, { AxiosResponse } from "axios";
+import { getStoredAuthToken, removeStoredAuthToken } from "./authToken";
+import { objectToQueryString } from "./url";
 
 import.meta.env;
 
@@ -74,7 +73,7 @@ const optimisticUpdate = async <T>(
 ) => {
   try {
     options.setLocalData(options.updatedFields);
-    await api<T>("put", url, options.updatedFields);
+    await api<T>("patch", url, options.updatedFields);
   } catch (error) {
     options.setLocalData(options.currentFields);
   }

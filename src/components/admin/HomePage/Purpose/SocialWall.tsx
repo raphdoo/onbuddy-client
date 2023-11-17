@@ -1,36 +1,34 @@
 // components/SocialWall.tsx
-import React, { useEffect, useState } from 'react';
-import { user } from '../../../../assets/Assets';
-import AdminPost from './AdminPost';
-import { useApi } from 'hooks/api';
+import React, { useState } from "react";
+import { user } from "../../../../assets/Assets";
+import AdminPost from "./AdminPost";
+import { useApi } from "hooks/api";
 
 interface CurrentUser {
   currentUser: any;
 }
 
-const SocialWall: React.FC<CurrentUser> = () => {
-  const [content, setContent] = useState('');
+const SocialWall: React.FC<CurrentUser> = (currentUser) => {
+  const [content, setContent] = useState("");
 
-  // const [{data: user}] = useApi.get(
-  //   `/users/${currentUser.currentUser.id}`
-  // );
+  const [, makeRequest] = useApi.post("/post/create");
 
-  const [response, makerequest] = useApi.post('/post/create');
-
-  const [{ data }] = useApi.get('/post/index');
+  const [{ data, isLoading }, fetch] = useApi.get("/post/index");
 
   const sendPost = () => {
-    makerequest({ content });
+    try {
+      makeRequest({ content }).then(() => {
+        setContent("");
+        fetch();
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  useEffect(() => {
-    if (response) {
-      // console.log(response)
-    }
-    if (data) {
-      // console.log(data);
-    }
-  }, [response, data]);
+  const updateLikes = () => {
+    fetch();
+  };
 
   return (
     <div className="max-w-full flex flex-col gap-3 w-full mx-auto p-4">
@@ -43,6 +41,7 @@ const SocialWall: React.FC<CurrentUser> = () => {
             <img src={user} alt="User" className="w-8 h-8 rounded-full mr-2" />
             <textarea
               onChange={(e) => setContent(e.target.value)}
+              value={content}
               placeholder="Write your post..."
               className="flex-1 border min-h-[15rem] border-gray-300 p-2 rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />
@@ -57,19 +56,26 @@ const SocialWall: React.FC<CurrentUser> = () => {
           </div>
         </div>
       </div>
+      {isLoading && (
+        <div className="bg-white p-4 mb-4 border rounded-lg shadow-md">
+          posts are still loading... wait for it
+        </div>
+      )}
       {data &&
         data.length &&
         data.map((post: any, index: number) => {
           return (
             <div key={index}>
               <AdminPost
-              userName={post.userId.name}
-              userImage={post.userId.avatar.url}
-              time="2 hours ago"
-              postContent={post.content}
-              likes={post.likes ? post.likes.length : 0}
-              id={post.id}
-            />
+                updateStateLikes={updateLikes}
+                userName={post.userId.name}
+                userImage={post.userId.avatar.url}
+                time="2 hours ago"
+                postContent={post.content}
+                likes={post.likes}
+                currentUserId={currentUser.currentUser.id}
+                id={post.id}
+              />
             </div>
           );
         })}
