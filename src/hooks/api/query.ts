@@ -1,9 +1,9 @@
-import { useCallback, useEffect } from 'react';
-import { isEqual } from 'lodash';
+import { useCallback, useEffect } from "react";
+import { isEqual } from "lodash";
 
-import api from '../../utils/api';
-import useMergeState from 'hooks/mergeState';
-import useDeepCompareMemoize from 'hooks/deepCompareMemoize';
+import api from "../../utils/api";
+import useMergeState from "hooks/mergeState";
+import useDeepCompareMemoize from "hooks/deepCompareMemoize";
 
 type Cache = {
   [key: string]: {
@@ -13,7 +13,7 @@ type Cache = {
 };
 
 type Options = {
-  cachePolicy?: 'cache' | 'no-cache';
+  cachePolicy?: "cache" | "no-cache";
 };
 
 const cache: Cache = {};
@@ -29,9 +29,9 @@ const useQuery = (
     isLoading: boolean;
     variables: Record<string, any>;
   },
-  (newVariables?: Record<string, any>) => void
+  (newVariables?: Record<string, any>) => Promise<void>
 ] => {
-  const { cachePolicy = 'cache' } = options;
+  const { cachePolicy = "cache" } = options;
 
   const getCache = (url: string) => {
     if (cache[url] === undefined) return null;
@@ -43,7 +43,7 @@ const useQuery = (
   const isCacheAvailable =
     getCache(url) !== null &&
     isEqual(getCache(url)?.apiVariables, propsVariables);
-  const canUseCache = isCacheAvailable && cachePolicy === 'cache';
+  const canUseCache = isCacheAvailable && cachePolicy === "cache";
   const [state, mergeState] = useMergeState({
     data: canUseCache ? cache[url].data : null,
     error: null,
@@ -51,32 +51,39 @@ const useQuery = (
     variables: {},
   });
 
-  const makeRequest = useCallback((newVariables?: Record<string, any>) => {
-    const variables = { ...state.variables, ...(newVariables || {}) };
-    const apiVariables = { ...propsVariablesMemoized, ...variables };
+  const makeRequest = useCallback(
+    (newVariables?: Record<string, any>): Promise<void> => {
+      const variables = { ...state.variables, ...(newVariables || {}) };
+      const apiVariables = { ...propsVariablesMemoized, ...variables };
 
-    api.get(url, apiVariables).then(
-      (data: any) => {
-        cache[url] = { data, apiVariables };
-        mergeState((currentState) => {
-          return {
-            ...currentState,
-            data,
-            error: null,
-            isLoading: false,
-          };
-        });
-      },
-      (error) => {
-        mergeState((currentState) => ({
-          ...currentState,
-          error,
-          data: null,
-          isLoading: false,
-        }));
-      }
-    );
-  }, []);
+      return new Promise<void>((resolve, reject) => {
+        api.get(url, apiVariables).then(
+          (data: any) => {
+            cache[url] = { data, apiVariables };
+            mergeState((currentState) => {
+              resolve();
+              return {
+                ...currentState,
+                data,
+                error: null,
+                isLoading: false,
+              };
+            });
+          },
+          (error) => {
+            reject(error);
+            mergeState((currentState) => ({
+              ...currentState,
+              error,
+              data: null,
+              isLoading: false,
+            }));
+          }
+        );
+      });
+    },
+    [propsVariablesMemoized]
+  );
 
   useEffect(() => {
     if (canUseCache) return;

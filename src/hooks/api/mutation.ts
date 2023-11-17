@@ -1,9 +1,9 @@
-import useMergeState from 'hooks/mergeState';
-import { useCallback } from 'react';
+import useMergeState from "hooks/mergeState";
+import { useCallback } from "react";
 
-import api from '../../utils/api';
+import api from "../../utils/api";
 
-export type Methodtype = 'post' | 'patch' | 'put' | 'delete';
+export type Methodtype = "post" | "patch" | "put" | "delete";
 
 const useMutation = (
   method: Methodtype,
@@ -15,7 +15,7 @@ const useMutation = (
     isLoading: boolean;
     variables?: Record<string, any>;
   },
-  (newVariables?: Record<string, any>) => void
+  (newVariables?: Record<string, any>) => Promise<void>
 ] => {
   const [state, mergeState] = useMergeState({
     data: null,
@@ -25,7 +25,7 @@ const useMutation = (
   });
 
   const makeRequest = useCallback(
-    (variables = {}) =>
+    (variables = {}): Promise<void> =>
       new Promise((resolve, reject) => {
         mergeState((currentState) => ({
           ...currentState,
