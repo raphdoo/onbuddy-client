@@ -1,15 +1,17 @@
-import React, {useState, useEffect} from 'react';
-import CommentSection from './CommentSection';
-import { FaHeart, FaComment } from 'react-icons/fa';
-import { useApi } from 'hooks/api';
+import React, { useState, useEffect } from "react";
+import CommentSection from "./CommentSection";
+import { FaHeart, FaComment } from "react-icons/fa";
+import api from "../../../../utils/api";
 
 interface PostProps {
+  updateStateLikes: () => void;
   userName: string;
   userImage: string;
   time: string;
   postContent: string;
-  likes: number;
-  id: string
+  currentUserId: string;
+  likes: string[];
+  id: string;
 }
 
 const AdminPost: React.FC<PostProps> = ({
@@ -18,33 +20,37 @@ const AdminPost: React.FC<PostProps> = ({
   time,
   postContent,
   likes,
-  id
+  id,
+  currentUserId,
 }) => {
+  const [showComments, setShowComments] = useState(false);
+  const [likesArray, setLikesArray] = useState(likes);
 
-  const [value, setValue] = useState(false)
-  const [showComments, setShowComments] = useState(false)
+  const removeUserIdInArray = (id: string, array: any) => {
+    return array.filter((userId: string) => userId !== id);
+  };
 
+  const addUserIdToArray = (id: string, array: any) => {
+    return array.concat(id);
+  };
 
-  const [response, makerequest] = useApi.patch(`/post/${id}/like`)
-
+  const isLiked = likesArray.includes(currentUserId);
 
   const likePost = () => {
-    if(!value) {
-      makerequest()
-    }
-    setValue(!value)
-  }
+    let updatedFields = isLiked
+      ? removeUserIdInArray(currentUserId, likesArray)
+      : addUserIdToArray(currentUserId, likesArray);
+    api.optimisticUpdate(`/post/${id}/like`, {
+      updatedFields,
+      currentFields: likesArray,
+      setLocalData: setLikesArray,
+    });
+    setLikesArray(updatedFields);
+  };
 
   const toggleComments = () => {
-    setShowComments(!showComments)
-  }
-
-  useEffect(() => {
-    if(response) {
-      
-    }
-  }, [response])
-
+    setShowComments(!showComments);
+  };
 
   return (
     <div className="bg-white p-4 mb-4 border rounded-lg shadow-md">
@@ -60,19 +66,26 @@ const AdminPost: React.FC<PostProps> = ({
         </div>
       </div>
       <p>{postContent}</p>
-      <div className='flex flex-col sm:flex-row sm:justify-between'>
+      <div className="flex flex-col sm:flex-row sm:justify-between">
         <div className="flex items-center mt-5">
-          <FaHeart className="text-red-500 mr-2" onClick={likePost}/>
-          <span>{likes} {likes === 1 ? "Like" : "Likes"}</span>
+          <FaHeart
+            className={`${isLiked ? "text-red-500" : "text-[#d7cece]"} mr-2`}
+            onClick={likePost}
+          />
+          <span>
+            {likesArray.length} {likesArray.length <= 1 ? "Like" : "Likes"}
+          </span>
         </div>
         <div className="flex items-center" onClick={toggleComments}>
-          <FaComment className="text-blue-500 mr-2"/>
+          <FaComment className="text-blue-500 mr-2" />
           <span>View Comments</span>
         </div>
       </div>
-      <div className="mt-5">
-         <CommentSection showComments={showComments} id={id}/>
-      </div>
+      {showComments && (
+        <div className="mt-5">
+          <CommentSection postId={id} />
+        </div>
+      )}
     </div>
   );
 };

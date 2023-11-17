@@ -1,45 +1,36 @@
-import { useApi } from 'hooks/api';
-import React, { useEffect, useState } from 'react';
+import { useApi } from "hooks/api";
+import React, { useEffect, useState } from "react";
 
 interface CommentSectionProps {
-  showComments?: Boolean;
-  id: string;
+  postId: string;
 }
 
-const CommentSection: React.FC<CommentSectionProps> = ({
-  showComments,
-  id,
-}) => {
-  const [content, setContent] = useState('');
+const CommentSection: React.FC<CommentSectionProps> = ({ postId }) => {
+  const [content, setContent] = useState("");
 
   const handleCommentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setContent(event.target.value);
   };
 
-  const [{ data: singlePost }] = useApi.get(`/post/${id}`);
+  const [{ data: singlePost, isLoading }, fetch] = useApi.get(
+    `/post/${postId}`
+  );
 
-  const [{data}, makerequest] = useApi.post(`/post/${id}/comment/create`);
+  const [, makeRequest] = useApi.post(`/post/${postId}/comment/create`);
 
   const handleAddComment = () => {
-    makerequest({ content });
+    makeRequest({ content }).then(() => fetch());
+    setContent("");
   };
-
-  useEffect(() => {
-    if (singlePost) {
-      
-    }
-    if(data) {
-
-    }
-
-  }, [singlePost, data]);
 
   return (
     <div>
-      {(showComments &&
-        singlePost &&
-        singlePost.comments &&
-        singlePost.comments.length) ?
+      {isLoading && (
+        <div className="bg-white p-4 mb-4 border rounded-lg shadow-md">
+          comments are loading...
+        </div>
+      )}
+      {singlePost && singlePost.comments && singlePost.comments.length ? (
         singlePost.comments.map((comment: any, index: number) => {
           return (
             <div className="mt-8 ml-5" key={index}>
@@ -50,15 +41,18 @@ const CommentSection: React.FC<CommentSectionProps> = ({
                   className="w-10 h-10 rounded-full mr-4"
                 />
                 <div>
-                  <h2 className="text-lg font-semibold">{comment.userId.name}</h2>
+                  <h2 className="text-lg font-semibold">
+                    {comment.userId.name}
+                  </h2>
                 </div>
               </div>
               <p>{comment.content}</p>
             </div>
           );
         })
-      
-        : <p></p>}
+      ) : (
+        <p></p>
+      )}
       <div className="mt-4 ml-3">
         <input
           type="text"
