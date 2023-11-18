@@ -5,7 +5,6 @@ import { FaHeart, FaComment } from "react-icons/fa";
 import api from "../../../../utils/api";
 
 interface PostProps {
-  updateStateLikes: () => void;
   userName: string;
   userImage: string;
   postContent: string;
