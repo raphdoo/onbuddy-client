@@ -70,7 +70,7 @@ const SocialWall: React.FC<CurrentUser> = (currentUser) => {
                 updateStateLikes={updateLikes}
                 userName={post.userId.name}
                 userImage={post.userId.avatar.url}
-                time="2 hours ago"
+                createdAt={post.createdAt}
                 postContent={post.content}
                 likes={post.likes}
                 currentUserId={currentUser.currentUser.id}

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import moment from "moment";
 import CommentSection from "./CommentSection";
 import { FaHeart, FaComment } from "react-icons/fa";
 import api from "../../../../utils/api";
@@ -7,21 +8,21 @@ interface PostProps {
   updateStateLikes: () => void;
   userName: string;
   userImage: string;
-  time: string;
   postContent: string;
   currentUserId: string;
   likes: string[];
   id: string;
+  createdAt: Date;
 }
 
 const AdminPost: React.FC<PostProps> = ({
   userName,
   userImage,
-  time,
   postContent,
   likes,
   id,
   currentUserId,
+  createdAt,
 }) => {
   const [showComments, setShowComments] = useState(false);
   const [likesArray, setLikesArray] = useState(likes);
@@ -52,6 +53,8 @@ const AdminPost: React.FC<PostProps> = ({
     setShowComments(!showComments);
   };
 
+  const timeAgo = moment(createdAt).fromNow();
+
   return (
     <div className="bg-white p-4 mb-4 border rounded-lg shadow-md">
       <div className="flex items-center mb-2">
@@ -62,7 +65,7 @@ const AdminPost: React.FC<PostProps> = ({
         />
         <div>
           <h2 className="text-lg font-semibold">{userName}</h2>
-          <p className="text-gray-500">{time}</p>
+          <p className="text-gray-500">{timeAgo}</p>
         </div>
       </div>
       <p>{postContent}</p>
