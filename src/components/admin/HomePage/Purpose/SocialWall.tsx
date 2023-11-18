@@ -26,10 +26,6 @@ const SocialWall: React.FC<CurrentUser> = (currentUser) => {
     }
   };
 
-  const updateLikes = () => {
-    fetch();
-  };
-
   return (
     <div className="max-w-full flex flex-col gap-3 w-full mx-auto p-4">
       <div className="bg-white   flex flex-col shadow-md  rounded-lg">
@@ -67,7 +63,6 @@ const SocialWall: React.FC<CurrentUser> = (currentUser) => {
           return (
             <div key={index}>
               <AdminPost
-                updateStateLikes={updateLikes}
                 userName={post.userId.name}
                 userImage={post.userId.avatar.url}
                 createdAt={post.createdAt}
