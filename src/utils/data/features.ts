@@ -1,32 +1,31 @@
-import { chat, messagin, people, task } from './../../assets/Assets'
+import { chat, messagin, people, task } from './../../assets/Assets';
 
 export const featureData: {
-  title: string
-  description: string
-  imageSrc: string
+  title: string;
+  description: string;
+  imageSrc: string;
 }[] = [
   {
     title: 'Task Management',
     description:
-      'To reduce the time taken to complete onboarding tasks. It also creates, prioritizes, delegates, and monitors tasks to ensure they are completed within given deadlines.',
+      'Reduce the time taken to complete your onboarding tasks significantly by over 80% by scheduling, prioritizing, and monitoring assigned tasks.',
     imageSrc: `${task}`,
   },
   {
-    title: 'Employee Training and Onboarding',
+    title: 'Employee Onboarding and Training',
     description:
-      'improve the data accuracy related to employee onboarding by standardizing the onboarding process.',
+      'Improve the data accuracy related to employee onboarding by standardizing the onboarding process.',
     imageSrc: `${people}`,
   },
   {
-    title: 'In Messaging  ',
+    title: 'Team building',
     description:
-      'Effective communication between HR and new hires It is also is a text-based, one-to-one conversation',
+      'Messaging and Socials features alllow effective communication between HR and new hires',
     imageSrc: `${messagin}`,
   },
   {
-    title: 'In Messaging  ',
-    description:
-      'Effective communication between HR and new hires It is also is a text-based, one-to-one conversation',
+    title: 'Event Mangement  ',
+    description: 'A one-touch event management platform for new hires',
     imageSrc: `${chat}`,
   },
-]
+];

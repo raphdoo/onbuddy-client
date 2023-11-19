@@ -2,11 +2,15 @@ import AdminFooter from "components/admin/AdminFooter/AdminFooter"
 import AdminNavbar from "components/admin/AdminNavBar/AdminNav"
 import WorkDetails from "components/admin/WorkDetails/WorkDetails"
 
-function index() {
+interface CurrentUser {
+  currentUser: any;
+}
+
+const index: React.FC<CurrentUser> = ({currentUser}) =>{
   return (
     <div>
       <AdminNavbar />
-      <WorkDetails />
+      <WorkDetails currentUser={currentUser}/>
       <div className="hidden sm:block">
         <AdminFooter />
       </div>

@@ -3,29 +3,33 @@ import Button from 'components/common/Button/Button';
 import React, { useEffect, useState } from 'react';
 import { arrowleft, elipse, ticksquare, user, check, add } from '../../assets/Assets';
 
-const CheckListPage: React.FC = () => {
+interface CurrentUser {
+  currentUser: any;
+}
+
+const CheckListPage: React.FC<CurrentUser> = ({currentUser}) => {
   const [myobject, setmyobject] = useState<number | null>(null);
   const [isAddItemFormVisible, setIsAddItemFormVisible] = useState(false);
 
   const headings = [
     {
-      heading: '[12/12] Lets get started - Using the onboarding portal and actions',
+      heading: '[4/4] Lets get started - Using the onboarding portal and actions',
       text: 'Complete your onboarding portal profile and add your photograph',
-      text2: 'Review the',
+      text2: 'Review the cases assigned to you',
       text3: 'Please note the early career email address under the contact us page if you have any queries',
       text4: 'Browse the portal and familiarise yourself with all the functions, especially the',
     },
     {
-      heading: '[6/6] Your Dashboard - Using the onboarding portal and actions',
+      heading: '[4/4] Your Dashboard - Using the onboarding portal and actions',
       text: 'Complete your onboarding portal profile and add your photograph',
-      text2: 'Review the',
+      text2: 'Review the cases assigned to you',
       text3: 'Please note the early career email address under the contact us page if you have any queries',
       text4: 'Browse the portal and familiarise yourself with all the functions, especially the',
     },
     {
-      heading: '[8/8] Your message - Using the onboarding portal and actions',
+      heading: '[4/4] Your message - Using the onboarding portal and actions',
       text: 'Complete your onboarding portal profile and add your photograph',
-      text2: 'Review the',
+      text2: 'Review the cases assigned to you',
       text3: 'Please note the early career email address under the contact us page if you have any queries',
       text4: 'Browse the portal and familiarise yourself with all the functions, especially the',
     },
@@ -54,7 +58,7 @@ const CheckListPage: React.FC = () => {
   return (
     <>
       <div className="sm:mt-[50px] sm:px-20 pb-32">
-        <section className="sm:grid grid-cols-12 py-32 sm:gap-10 border-b border-b-[#000]">
+        {/* <section className="sm:grid grid-cols-12 py-32 sm:gap-10 border-b border-b-[#000]">
           <div className="col-span-7 space-y-4 sm:space-y-10 py-20" data-aos="fade-up">
             <h2 className="text-[#309CFF] text-3xl font-bold">CHECKLIST</h2>
             <h2 className="text-base text-gray-700 sm:text-xl" data-aos="fade-up">
@@ -65,19 +69,19 @@ const CheckListPage: React.FC = () => {
           <div className="col-span-5" data-aos="zoom-in-up">
             <Image src={check} alt="" className="" />
           </div>
-        </section>
+        </section> */}
 
         <section className="bg-white  mt-10  py-5 max-w-6xl mx-auto space-y-10 rounded-md shadow-xl">
           <div className="flex justify-between items-center">
             <h2 className="text-[#309CFF] text-xl font-bold px-5">Internship Checklist</h2>
-            <div className="bg-[#309CFF] hover:bg-blue-600 text-white p-3 sm:px-11 text-center items-center gap-3 cursor-pointer rounded-lg flex justify-start">
+            {/* <div className="bg-[#309CFF] hover:bg-blue-600 text-white p-3 sm:px-11 text-center items-center gap-3 cursor-pointer rounded-lg flex justify-start">
               <Image src={arrowleft} alt="arrow" className="h-10 w-10" />
               <h2 className="">Back</h2>
-            </div>
+            </div> */}
           </div>
           <div className="bg-[#309CFF]  p-5">
             <div className="flex justify-start items-center space-x-2 px-5">
-              <Image src={user} alt="user" className="w-10 h-10" />
+              <Image src={currentUser.avatar.url} alt="user" className="w-10 h-10 rounded-full" />
               <h2 className="text-white font-bold">Your responses</h2>
             </div>
           </div>
@@ -155,7 +159,7 @@ const CheckListPage: React.FC = () => {
                         
                       </div>
                       <Button
-                        className="bg-[#309CFF] p-5 text-white"
+                        className="bg-[#309CFF] p-5 text-white md:w-full md:w-1/3 m-auto"
                         label="Add Item"
                         onClick={(e) => {
                           e.stopPropagation();
