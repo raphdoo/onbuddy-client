@@ -1,7 +1,7 @@
 import Image from 'components/common/Images/Image';
 import Button from 'components/common/Button/Button';
 import React, { useEffect, useState } from 'react';
-import { arrowleft, elipse, ticksquare, user, check, add } from '../../assets/Assets';
+import { elipse, ticksquare, add } from '../../assets/Assets';
 
 interface CurrentUser {
   currentUser: any;
