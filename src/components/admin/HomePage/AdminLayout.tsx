@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom'
 import AdminNavbar from '../AdminNavBar/AdminNav'
 import { useDispatch } from '../../../hooks/hooks'
 import { closeProfile } from '../../../store/slices/ModalSlice'
+import FooterSection from 'components/Footer/Footer'
 
 interface LayoutProps {
   children?: React.ReactNode
@@ -19,6 +20,7 @@ const AdminLayout: React.FC<LayoutProps> = () => {
       >
         <Outlet />
       </div>
+      <FooterSection />
     </div>
   )
 }

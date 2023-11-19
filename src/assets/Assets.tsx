@@ -12,6 +12,11 @@ import user1 from '../assets/images/user1.png'
 import vector from '../assets/images/Vector.png'
 import vectordot from '../assets/images/Vectordot.png'
 import useredit from '../assets/images/useredit.png'
+import check from '../assets/images/herocheck.png'
+import elipse from '../assets/images/elipse.png'
+import ticksquare from '../assets/images/ticksquare.png'
+import arrowleft from '../assets/images/arrowleft.png'
+import add from '../assets/images/add.png'
 
 
 
@@ -30,5 +35,10 @@ export {
   vector,
   vectordot,
   useredit,
+  check,
+  elipse,
+  ticksquare,
+  arrowleft,
+  add,
 
 }
