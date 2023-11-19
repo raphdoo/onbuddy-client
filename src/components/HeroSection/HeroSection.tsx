@@ -38,7 +38,7 @@ const HeroSection: React.FC = () => {
 
   return (
     <div
-      className="min-h-[80%]  relative md:mt-[15%] mt-[30%] flex items-center"
+      className="min-h-[80%]  relative md:mt-[10%] mt-[30%] flex items-center"
       id="home" ref={ref}
     >
       <div className="container mt-35 mb-12  mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
