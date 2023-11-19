@@ -11,7 +11,7 @@ const FooterSection: React.FC = () => {
               <a href="#home">Home</a>
             </li>
             <li className="mb-2">
-              <a href="#">Checklist</a>
+              <a href="/admin/checklist">Checklist</a>
             </li>
             <li className="mb-2">
               <a href="#">Profile</a>
