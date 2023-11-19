@@ -34,8 +34,8 @@ const FaqSection: React.FC = () => {
   }
 
   return (
-    <div className="p-4 md:p-8 lg:p-12 bg-[#EBF4FE]" id="faq">
-      <div className="p-6 rounded-lg max-w-3xl mx-auto shadow-lg">
+    <div className="p-4 md:p-8 lg:p-12 bg-[#EBF4FE] mt-40" id="faq">
+      <div className="p-6 rounded-lg max-w-3xl m-auto shadow-lg">
         <div className="faq-head mb-[3rem] flex flex-col items-center justify-center gap-4">
           <h2 className="text-2xl font-bold uppercase md:text-4xl">
             How <span className="text-[#309CFF]">Onbuddy</span> can help you

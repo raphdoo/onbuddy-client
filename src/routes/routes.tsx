@@ -75,7 +75,7 @@ const MainRoutes: React.FC<CurrentUser> = ({ currentUser }) => {
         )}
 
 
-        <Route path="WorkDetails" element={<WorkDetails />} />
+        {currentUser && <Route path="WorkDetails" element={<WorkDetails  currentUser={currentUser}/>} />}
         {currentUser && (
           <Route
             path="profile"
@@ -97,7 +97,7 @@ const MainRoutes: React.FC<CurrentUser> = ({ currentUser }) => {
             <Route index={true} element={<Event />} />
             <Route path=":eventId" element={<EventDetail />} />
           </Route>
-          <Route path="checklist" element={<CheckListPage />} />
+          {currentUser && <Route path="checklist" element={<CheckListPage currentUser={currentUser}/>} />}
 
           <Route index element={<AdminHomePageLayout />} />
           <Route path="profile" element={<AdminProfile />} />
