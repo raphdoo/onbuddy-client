@@ -11,8 +11,8 @@ type ErrorData = {
   data: any | null;
 };
 
-// const API_URL = import.meta.env.VITE_API_URL;
-const API_URL = 'http://localhost:8000';
+const API_URL = import.meta.env.VITE_API_URL;
+// const API_URL = 'http://localhost:8000';
 
 const defaults = {
   baseURL: API_URL,
