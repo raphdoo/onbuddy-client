@@ -58,7 +58,7 @@ const AdminNavbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-[#0F6FC8] md:px-8 sm:px-6  h-16 flex items-center justify-between fixed w-full ">
+    <nav className="bg-[#0F6FC8] md:px-8 sm:px-6  h-16 flex items-center justify-between fixed w-full z-50">
       <div className="ml-4 text-white text-xl font-bold">
         <a href="/home" className="">
           <img src={logowhite} alt="logo image" />
