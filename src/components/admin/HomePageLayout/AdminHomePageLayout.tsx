@@ -2,9 +2,14 @@ import { Outlet, Link, NavLink } from "react-router-dom";
 
 import Collapsible from "../../../components/common/CollapsMenu/Colllaps";
 import AdminHeroImage from "../HomePage/AdminHeroImage";
+import { useEffect } from "react";
 
 interface LayoutProps {
   children?: React.ReactNode;
+  currentUser?: any
+}
+interface CurrentUser {
+  currentUser: any;
 }
 
 interface Link {
@@ -85,13 +90,23 @@ export const links: MenuItem[] = [
   },
 ];
 
-const AdminHomePageLayout: React.FC<LayoutProps> = () => {
+
+
+const AdminHomePageLayout: React.FC<LayoutProps> = ({currentUser}) => {
+
+    useEffect(() => {
+      if(currentUser) {
+        console.log(currentUser)
+      }
+    }, [currentUser])
+
   return (
     <div>
       <AdminHeroImage />
       <div className="flex min-h-screen bg-gray-300 mt-10">
         <div className=" md:flex flex-col hidden md:w-[25%] w-full md:px-4 ">
           <nav>
+            
             {links.map((link) => (
               <div key={link.title}>
                 <Collapsible key={link.title} title={link.title}>
@@ -111,6 +126,14 @@ const AdminHomePageLayout: React.FC<LayoutProps> = () => {
             ))}
 
             <div className="flex flex-col  gap-4 mt-8 mb-10">
+            {currentUser.role === 'admin' && <div className="cursor-pointer border-b  border-gray-300  flex justify-between items-center">
+                <Link
+                  to="/admin/upload"
+                  className="font-bold  text-xl text-gray-500  uppercase"
+                >
+                  Add new Employees
+                </Link>
+              </div>}
               <div className="cursor-pointer border-b  border-gray-300  flex justify-between items-center">
                 <NavLink
                   to="/admin/home/socials"
