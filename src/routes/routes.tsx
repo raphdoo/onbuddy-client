@@ -1,5 +1,4 @@
-
-import CheckListPage from '../pages/CheckList';
+import CheckListPage from "../pages/CheckList";
 
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HomePage from "../pages/HomePage/Index";
@@ -8,37 +7,38 @@ import WorkDetails from "../pages/WorkDetails/index";
 import ChangePassword from "../pages/ChangePassword/index";
 
 // import AdminPurpose from "../components/admin/HomePage/Purpose/AdminPurpose";
-import ConfirmPassword from 'components/auth/confirm-password';
-import ProfilePage from '../pages/ProfilePage/index';
+import ConfirmPassword from "components/auth/confirm-password";
+import ProfilePage from "../pages/ProfilePage/index";
 // import AdminWelcome from "../components/admin/HomePage/Purpose/AdminPurpose";
 
-import AdminLayout from 'components/admin/HomePage/AdminLayout';
-import AdminHomePageLayout from '../components/admin/HomePageLayout/AdminHomePageLayout';
-import AdminProfile from '../pages/Profile/Index';
-import { OurPurpose } from 'components/admin/HomePage/HomePages';
-import { OurValues } from 'components/admin/HomePage/HomePages/OurValues';
-import { OurCulture } from 'components/admin/HomePage/HomePages/OurCulture';
-import { ContactBooks } from 'components/admin/HomePage/HomePages/ContactBooks';
-import { Diversity } from 'components/admin/HomePage/HomePages/Diversity';
-import { Health } from 'components/admin/HomePage/HomePages/Health';
-import { Learning } from 'components/admin/HomePage/HomePages/Learning';
-import { GettingReady } from 'components/admin/HomePage/HomePages/GettingReady';
-import { OnePageProfile } from 'components/admin/HomePage/HomePages/OnePageProfile';
-import { SocialPage } from 'components/admin/HomePage/HomePages/Socials';
-import { ContactUsPage } from 'components/admin/HomePage/HomePages/ContactUs';
-import { WelcomePage } from 'components/admin/HomePage/HomePages/WelcomePage';
-import { ForgotPassword } from 'components/auth/forgot';
-import { AdminLogin } from 'components/auth/admin-login';
-import { Register } from 'components/auth/register';
+import AdminLayout from "components/admin/HomePage/AdminLayout";
+import AdminHomePageLayout from "../components/admin/HomePageLayout/AdminHomePageLayout";
+import AdminProfile from "../pages/Profile/Index";
+import { OurPurpose } from "components/admin/HomePage/HomePages";
+import { OurValues } from "components/admin/HomePage/HomePages/OurValues";
+import { OurCulture } from "components/admin/HomePage/HomePages/OurCulture";
+import { ContactBooks } from "components/admin/HomePage/HomePages/ContactBooks";
+import { Diversity } from "components/admin/HomePage/HomePages/Diversity";
+import { Health } from "components/admin/HomePage/HomePages/Health";
+import { Learning } from "components/admin/HomePage/HomePages/Learning";
+import { GettingReady } from "components/admin/HomePage/HomePages/GettingReady";
+import { OnePageProfile } from "components/admin/HomePage/HomePages/OnePageProfile";
+import { SocialPage } from "components/admin/HomePage/HomePages/Socials";
+import { ContactUsPage } from "components/admin/HomePage/HomePages/ContactUs";
+import { WelcomePage } from "components/admin/HomePage/HomePages/WelcomePage";
+import { ForgotPassword } from "components/auth/forgot";
+import { AdminLogin } from "components/auth/admin-login";
+import { Register } from "components/auth/register";
 
-import AdminEdit from '../pages/AdminEdit/index';
+import AdminEdit from "../pages/AdminEdit/index";
 
-import EventPage from '../pages/Event';
-import Event from 'components/Event';
-import LandingPage from '../pages/LandingPage';
-import EventDetail from 'components/Event/EventDetail';
-import { EmployeeLogin } from 'components/auth/employee-login';
-import Signout from 'components/auth/signout';
+import EventPage from "../pages/Event";
+import Event from "components/Event";
+import LandingPage from "../pages/LandingPage";
+import EventDetail from "components/Event/EventDetail";
+import { EmployeeLogin } from "components/auth/employee-login";
+import Signout from "components/auth/signout";
+import AdminUploadCsv from "components/admin/uploadCSV";
 
 interface CurrentUser {
   currentUser: any;
@@ -66,7 +66,6 @@ const MainRoutes: React.FC<CurrentUser> = ({ currentUser }) => {
           <Route path="edit" element={<EditPage currentUser={currentUser} />} />
         )}
 
-
         {currentUser && (
           <Route
             path="changepassword"
@@ -74,15 +73,18 @@ const MainRoutes: React.FC<CurrentUser> = ({ currentUser }) => {
           />
         )}
 
-
-        {currentUser && <Route path="WorkDetails" element={<WorkDetails  currentUser={currentUser}/>} />}
+        {currentUser && (
+          <Route
+            path="WorkDetails"
+            element={<WorkDetails currentUser={currentUser} />}
+          />
+        )}
         {currentUser && (
           <Route
             path="profile"
             element={<ProfilePage currentUser={currentUser} />}
           />
         )}
-
 
         {currentUser && (
           <Route
@@ -91,16 +93,21 @@ const MainRoutes: React.FC<CurrentUser> = ({ currentUser }) => {
           />
         )}
 
-
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="event" element={<EventPage />}>
             <Route index={true} element={<Event />} />
             <Route path=":eventId" element={<EventDetail />} />
           </Route>
-          {currentUser && <Route path="checklist" element={<CheckListPage currentUser={currentUser}/>} />}
+          {currentUser && (
+            <Route
+              path="checklist"
+              element={<CheckListPage currentUser={currentUser} />}
+            />
+          )}
 
           <Route index element={<AdminHomePageLayout />} />
           <Route path="profile" element={<AdminProfile />} />
+          <Route path="upload" element={<AdminUploadCsv />}></Route>
 
           <Route path="home" element={<AdminHomePageLayout />}>
             <Route index element={<WelcomePage />} />
