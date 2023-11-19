@@ -1,5 +1,5 @@
 import { useApi } from "hooks/api";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 interface CommentSectionProps {
   postId: string;

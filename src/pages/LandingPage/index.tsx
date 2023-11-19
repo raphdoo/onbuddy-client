@@ -40,23 +40,24 @@ const LandingPage: React.FC<CurrentUser> = ({ currentUser }) => {
                 company!
               </p>
               <div className="w-full p-4 flex flex-col md:flex-row justify-around">
-                <div className="flex flex-col items-end justify-between gap-4 mt-8 ">
+                <div className="flex flex-col items-end justify-between gap-4 mt-8 "
+                onClick={()=> window.location.href = '/admin/home'}>
                   <img src={pana} alt="" />
-                  <button className="w-full bg-blue-500 px-2 py-3 text-white font-semibold m-auto flex items-center gap-4 rounded-xl" onClick={()=> window.location.href = '/admin/home'}>
+                  <button className="w-full bg-blue-500 px-2 py-3 text-white font-semibold m-auto flex items-center gap-4 rounded-xl">
                     How to use our portal{' '}
                     <BsFillArrowRightSquareFill className="text-xl" />
                   </button>
                 </div>
-                <div className="flex flex-col items-end justify-between gap-4 mt-8 ">
+                <div className="flex flex-col items-end justify-between gap-4 mt-8 " onClick={()=> window.location.href = '/admin/home/socials'}>
                   <img src={amico} alt=""  />
                   <button className="w-full bg-blue-500 px-2 py-3 text-white font-semibold m-auto flex items-center gap-4 rounded-xl">
                     Socials{' '}
                     <BsFillArrowRightSquareFill className="text-xl" />
                   </button>
                 </div>
-                <div className="flex flex-col items-center gap-4 mt-8 ">
+                <div className="flex flex-col items-center gap-4 mt-8 " onClick={()=> window.location.href = '/admin/home/purpose'}>
                   <img src={amico2} alt="" />
-                  <button className="w-full bg-blue-500 px-2 py-3 text-white font-semibold m-auto flex items-center gap-4 rounded-xl" onClick={()=> window.location.href = '/admin/home/purpose'}>
+                  <button className="w-full bg-blue-500 px-2 py-3 text-white font-semibold m-auto flex items-center gap-4 rounded-xl">
                     Our business{' '}
                     <BsFillArrowRightSquareFill className="text-xl" />
                   </button>

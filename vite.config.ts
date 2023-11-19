@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import react from '@vitejs/plugin-react';
+import replace from '@rollup/plugin-replace';
 
 export default defineConfig((configEnv) => {
   const isDevelopment = configEnv.mode === 'development';

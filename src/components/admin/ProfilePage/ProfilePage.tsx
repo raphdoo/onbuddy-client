@@ -1,9 +1,7 @@
 import Image from 'components/common/Images/Image';
-import { profil } from '../../../assets/Assets';
 import { user1 } from '../../../assets/Assets';
 import { vector } from '../../../assets/Assets';
 import { vectordot } from '../../../assets/Assets';
-import { useApi } from 'hooks/api';
 import Loader from 'components/common/loader/loader';
 
 interface CurrentUser {

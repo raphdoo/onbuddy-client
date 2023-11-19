@@ -3,7 +3,15 @@ import { user1 } from '../../../assets/Assets'
 import { vector } from '../../../assets/Assets'
 import { vectordot } from '../../../assets/Assets'
 
-function WorkDetails() {
+interface CurrentUser {
+  currentUser: any;
+}
+
+ const WorkDetails: React.FC<CurrentUser> = ({currentUser}) => {
+
+	
+
+
   return (
     <div className="h-screen bg-gray-200">	
 			<section className="">
@@ -66,25 +74,20 @@ function WorkDetails() {
 
 						<div className="col-span-8 bg-white shadow-xl rounded-sm">
 							<div className="flex justify-between py-4 px-4 bg-[#D6EBFF99]">
-								<h2 className="">Work type</h2>
-								<h2 className="">Internship</h2>
+								<h2 className="">Candidate type</h2>
+								<h2 className="">{currentUser.candidateType}</h2>
 							</div>
 
 							<div className="flex justify-between py-4 px-4">
-								<h2 className="">Role</h2>
-								<h2 className="">Frontend engineer</h2>
-							</div>
-
-							<div className="flex justify-between py-4 px-4 bg-[#D6EBFF99]">
-							<h2 className="">Start date</h2>
-								<h2 className="">23/10/23</h2>
+								<h2 className="">Manager</h2>
+								<h2 className="">{currentUser.manager}</h2>
 							</div>
 
 							<div className="flex justify-between py-4 px-4">
-							<h2 className="">Payment</h2>
-								<h2 className="">#100,000</h2>
+								<h2 className="">Status</h2>
+								<h2 className="">{currentUser.status}</h2>
 							</div>
-							
+
 						</div>
 					</section>
 				</div>
