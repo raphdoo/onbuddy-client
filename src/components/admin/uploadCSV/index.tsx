@@ -21,7 +21,6 @@ const AdminUploadCsv: React.FC = () => {
 
   const handleFileChange = (file: File) => {
     const display = `${file.name} size:${file.size}mb`;
-    console.log(display);
     setContent(display);
 
     setSelectedFile(file);
@@ -64,12 +63,23 @@ const AdminUploadCsv: React.FC = () => {
   const disableUploadButton = isUploading || fileUrl !== null;
 
   return (
-    <div className="flex flex-col items-center mt-10 p-2 min:h-screen h-screen ">
-      <h2 className="text-[1.3rem] md:max-w-[60%] w-[100%] text-center">
-        Upload your employee info as a csv file
+    <div className="flex flex-col p-2 px-4 min:h-screen h-screen ">
+      <div className="flex items-center px-4  gap-5 cursor-pointer">
+        <h1 className="font-bold mb-5 uppercase flex md:text-4xl text-lg text-[#309CFF] ">
+          Add new Employees
+        </h1>
+      </div>
+      <div>
+      <h2 className="text-[1.1rem] px-4 mb-8  w-[100%]">
+        A template CSV file has been provided below. Please ensure to use the csv template provided for upload request. Thank you!
       </h2>
+      <h2 className="text-[1.3rem] px-4 mb-8  w-[100%]">
+        <button className="text-[#1D6CB3] hover:underline" onClick={() => window.open('/assets/template.csv')}>Download Template CSV file</button>
+      </h2>
+      </div>
+      
       <FileUpload onFileChange={handleFileChange} content={content} />
-      <div className="flex p-1 items-center justify-between gap-[10px] px-4 w-full">
+      <div className="flex p-1 items-center justify-between gap-[10px] w-full">
         <button
           className={`text-white w-full bg-[grey] hover:bg-[#575555] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ${
             disableUploadButton && "cursor-not-allowed"
@@ -80,7 +90,7 @@ const AdminUploadCsv: React.FC = () => {
           {fileUrl ? "File upload successfully!" : "Upload"}
         </button>
         <button
-          className={`text-white bg-blue-700 w-full hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 ${
+          className={`text-white bg-[#309CFF] w-full hover:bg-[#1D6CB3] focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 ${
             isLoading && "cursor-not-allowed"
           }`}
           disabled={isLoading}

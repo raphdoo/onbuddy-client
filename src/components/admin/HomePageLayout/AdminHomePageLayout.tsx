@@ -94,12 +94,6 @@ export const links: MenuItem[] = [
 
 const AdminHomePageLayout: React.FC<LayoutProps> = ({currentUser}) => {
 
-    useEffect(() => {
-      if(currentUser) {
-        console.log(currentUser)
-      }
-    }, [currentUser])
-
   return (
     <div>
       <AdminHeroImage />
@@ -128,7 +122,7 @@ const AdminHomePageLayout: React.FC<LayoutProps> = ({currentUser}) => {
             <div className="flex flex-col  gap-4 mt-8 mb-10">
             {currentUser.role === 'admin' && <div className="cursor-pointer border-b  border-gray-300  flex justify-between items-center">
                 <Link
-                  to="/admin/upload"
+                  to="/admin/home/upload"
                   className="font-bold  text-xl text-gray-500  uppercase"
                 >
                   Add new Employees

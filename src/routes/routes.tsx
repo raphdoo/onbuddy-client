@@ -107,7 +107,6 @@ const MainRoutes: React.FC<CurrentUser> = ({ currentUser }) => {
 
           {currentUser && <Route index element={<AdminHomePageLayout currentUser={currentUser}/>} />}
           <Route path="profile" element={<AdminProfile />} />
-          <Route path="upload" element={<AdminUploadCsv />}></Route>
 
           {currentUser && <Route path="home" element={<AdminHomePageLayout currentUser={currentUser}/>}>
             <Route index element={<WelcomePage />} />
@@ -128,6 +127,7 @@ const MainRoutes: React.FC<CurrentUser> = ({ currentUser }) => {
             )}
             <Route path="events" element={<h1>Events</h1>} />
             <Route path="contact" element={<ContactUsPage />} />
+            <Route path="upload" element={<AdminUploadCsv />}></Route>
           </Route>}
         </Route>
 
