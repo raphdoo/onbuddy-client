@@ -3,7 +3,11 @@ import ContactSearch from './ContactSearch'
 import NewsLetter from './NewLetter'
 import SocialWall from './SocialWall'
 
-const AdminPurpose: React.FC = () => {
+interface CurrentUser {
+  currentUser: any;
+}
+
+const AdminPurpose: React.FC<CurrentUser> = ({currentUser}) => {
   return (
     <div>
       {' '}
@@ -44,7 +48,7 @@ const AdminPurpose: React.FC = () => {
         </ContentCollapse>
         <ContentCollapse title="Social Walls" key={'Social Walls'}>
           <div className="ml-2">
-            <SocialWall />
+            {currentUser && <SocialWall currentUser={currentUser}/>}
           </div>
         </ContentCollapse>
         <ContentCollapse title="Updates" key={'Updates'}>

@@ -2,7 +2,10 @@ import axios, { AxiosResponse } from 'axios';
 import { getStoredAuthToken, removeStoredAuthToken } from './authToken';
 import { objectToQueryString } from './url';
 
-import.meta.env;
+// import.meta.env;
+
+const API_URL: string =
+  'https://onbuddy.onrender.com' || 'http://localhost:8000';
 
 type ErrorData = {
   code: string;
@@ -11,8 +14,8 @@ type ErrorData = {
   data: any | null;
 };
 
-const API_URL = import.meta.env.VITE_API_URL;
-// const API_URL = 'http://localhost:8000';
+// const API_URL = VITE_API_URL;
+// // const API_URL = 'http://localhost:8000';
 
 const defaults = {
   baseURL: API_URL,
