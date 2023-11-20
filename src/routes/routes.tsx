@@ -39,6 +39,7 @@ import EventDetail from "components/Event/EventDetail";
 import { EmployeeLogin } from "components/auth/employee-login";
 import Signout from "components/auth/signout";
 import AdminUploadCsv from "components/admin/uploadCSV";
+import NotFoundPage from "../pages/NotFoundPage/index";
 
 interface CurrentUser {
   currentUser: any;
@@ -48,6 +49,7 @@ const MainRoutes: React.FC<CurrentUser> = ({ currentUser }) => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/notfound" element={<NotFoundPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<h1>About</h1>} />
         <Route path="/users" element={<h1>Users</h1>} />

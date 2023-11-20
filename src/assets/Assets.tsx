@@ -17,6 +17,7 @@ import elipse from '../assets/images/elipse.png'
 import ticksquare from '../assets/images/ticksquare.png'
 import arrowleft from '../assets/images/arrowleft.png'
 import add from '../assets/images/add.png'
+import notFoundImage from '../assets/images/notFoundImage.jpeg'
 
 
 
@@ -40,5 +41,6 @@ export {
   ticksquare,
   arrowleft,
   add,
+  notFoundImage,
 
 }
