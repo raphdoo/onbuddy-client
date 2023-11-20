@@ -1,6 +1,6 @@
 import Collapsible from 'components/common/CollapsMenu/Colllaps';
 import Image from 'components/common/Images/Image';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { user } from '../../../../assets/Assets';
 import { useApi } from 'hooks/api';
 import Loader from 'components/common/loader/loader';
@@ -33,20 +33,19 @@ const ContactSearch: React.FC = () => {
   // ];
 
   const [{ data, isLoading }, makeRequest] = useApi.get('/users/index', {
-    keyword: keyword,
+    keyword,
   });
 
   const searchHandler = () => {
 
     if (keyword.trim()) {
       makeRequest()
+    }else{
+      makeRequest()
     }
-  };
 
-  useEffect(() => {
-    if (data) {
-    }
-  }, [data]);
+    setKeyword('')
+  };
 
   return (
     <div>
