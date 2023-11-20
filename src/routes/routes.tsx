@@ -41,6 +41,7 @@ import Signout from "components/auth/signout";
 import AdminUploadCsv from "components/admin/uploadCSV";
 import NotFoundPage from "../pages/NotFoundPage/index";
 
+
 interface CurrentUser {
   currentUser: any;
 }
@@ -143,9 +144,7 @@ const MainRoutes: React.FC<CurrentUser> = ({ currentUser }) => {
         <Route
           path="*"
           element={
-            <div>
-              <h1>Page not Found 😢 </h1> <Link to={"/"}> Back to Home</Link>
-            </div>
+            <NotFoundPage />
           }
         />
       </Routes>
