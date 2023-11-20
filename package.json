@@ -43,7 +43,6 @@
     "postinstall": "husky install"
   },
   "dependencies": {
-    "@esbuild/win32-x64": "version_number",
     "@heroicons/react": "2.0.18",
     "@reduxjs/toolkit": "^1.9.7",
     "aos": "^2.3.4",

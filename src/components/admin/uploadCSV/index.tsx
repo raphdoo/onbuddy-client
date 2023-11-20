@@ -5,9 +5,12 @@ import FileUpload from "components/common/upload";
 import axios from "axios";
 import { useApi } from "hooks/api";
 
-import.meta.env;
+// import.meta.env;
 
-const API_URL = import.meta.env.VITE_API_URL;
+// const API_URL = import.meta.env.VITE_API_URL;
+
+const API_URL: string =
+  'https://onbuddy.onrender.com' || 'http://localhost:8000';
 
 const AdminUploadCsv: React.FC = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
