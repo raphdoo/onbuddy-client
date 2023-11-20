@@ -100,13 +100,13 @@ const NavBar: React.FC = () => {
             ))}
             <div className="flex flex-col gap-2 mt-4">
               <a
-                href="#"
+                href="/admin/login"
                 className="bg-blue-white border-solid border-[1px] px-[2rem] py-[0.5rem] rounded-md text-white transition duration-300"
               >
                 Login
               </a>
               <a
-                href="#"
+                href="/register"
                 className="bg-blue-500 border-solid border-[1px] px-[2rem] py-[0.5rem] rounded-md text-white hover:bg-blue-600 transition duration-300"
               >
                 Register

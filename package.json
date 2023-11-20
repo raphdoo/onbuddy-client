@@ -36,6 +36,7 @@
   },
   "scripts": {
     "dev": "vite",
+    "start": "vite",
     "build": "tsc && vite build",
     "test": "vitest",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -47,6 +48,7 @@
     "@reduxjs/toolkit": "^1.9.7",
     "aos": "^2.3.4",
     "axios": "^1.6.0",
+    "esbuild": "^0.19.6",
     "framer-motion": "^10.16.5",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",

@@ -159,7 +159,7 @@ const CheckListPage: React.FC<CurrentUser> = ({currentUser}) => {
                         
                       </div>
                       <Button
-                        className="bg-[#309CFF] p-5 text-white md:w-full md:w-1/3 m-auto"
+                        className="bg-[#309CFF] p-5 text-white md:w-full m-auto"
                         label="Add Item"
                         onClick={(e) => {
                           e.stopPropagation();
