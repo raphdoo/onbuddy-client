@@ -1,9 +1,10 @@
 import Collapsible from 'components/common/CollapsMenu/Colllaps';
 import Image from 'components/common/Images/Image';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { user } from '../../../../assets/Assets';
 import { useApi } from 'hooks/api';
 import Loader from 'components/common/loader/loader';
+import { RiSearchLine } from 'react-icons/ri';
 
 // Sample data for program and hub select options
 // const programs = ['Technology', 'Sales', 'Operations'];
@@ -31,13 +32,20 @@ const ContactSearch: React.FC = () => {
   //   // Add more contacts here
   // ];
 
-  const [{ data, isLoading }] = useApi.get('/users/index', {keyword});
+  const [{ data, isLoading }, makeRequest] = useApi.get('/users/index', {
+    keyword,
+  });
 
-  useEffect(() => {
-    if(data) {
-      
+  const searchHandler = () => {
+
+    if (keyword.trim()) {
+      makeRequest()
+    }else{
+      makeRequest()
     }
-  }, [data])
+
+    setKeyword('')
+  };
 
   return (
     <div>
@@ -51,9 +59,9 @@ const ContactSearch: React.FC = () => {
               <h2 className="text-lg px-4 py-2 rounded-t-lg text-white font-semibold mb-4 bg-[#309CFF]">
                 Search Contact
               </h2>
-              <div className="mb-4 p-4">
-                {' '}
-                {/* <div className="mb-4 ">
+                <div className="mb-4 p-4 flex justify-between items-center">
+                  {' '}
+                  {/* <div className="mb-4 ">
                   <label
                     htmlFor="program"
                     className="block text-sm font-medium text-gray-700 mb-2"
@@ -75,15 +83,19 @@ const ContactSearch: React.FC = () => {
                     ))}
                   </select>
                 </div> */}
-                
-                <input
-                  type="text"
-                  placeholder="Start typing a name"
-                  value={keyword}
-                  onChange={(e) => setKeyword(e.target.value)}
-                  className="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-                />
-              </div>
+                  <input
+                    type="text"
+                    placeholder="Start typing a name"
+                    value={keyword}
+                    onChange={(e) => setKeyword(e.target.value)}
+                    className="border border-gray-300 p-2 rounded-md w-[90%] focus:outline-none focus:ring focus:border-blue-300"
+                  />
+                  <div className="input-group-append">
+                    <button id="search_btn" className="btn" onClick={searchHandler}>
+                    <RiSearchLine size={24} color="black" />
+                    </button>
+                  </div>
+                </div>
             </div>
           </div>
           {/* Contact Book Card */}
@@ -91,27 +103,28 @@ const ContactSearch: React.FC = () => {
             <h2 className="text-lg px-4 py-2 rounded-t-lg text-white font-semibold mb-4 bg-[#309CFF]">
               Search Contact
             </h2>
-            {data && data.map((contact: any, index: number) => (
-              <div key={index} className="px-4">
-                <Collapsible title={contact.name} key={index}>
-                  <div className="mt-5 flex mx-auto w-fit">
-                    <Image src={user} alt="user profile" />
-                  </div>
-                  <div className="flex flex-col gap-8">
-                    <div className="flex flex-col gap-2">
-                      <p className="font-bold">Message</p>
-                      <hr />
+            {data &&
+              data.map((contact: any, index: number) => (
+                <div key={index} className="px-4">
+                  <Collapsible title={contact.name} key={index}>
+                    <div className="mt-5 flex mx-auto w-fit">
+                      <Image src={user} alt="user profile" />
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <p>{`Candidate Type:  ${contact.candidateType}`}</p>
-                      <p>{`Pogramme:  ${contact.programTrack}`}</p>
-                      <p>{`Status:  ${contact.status}`}</p>
-                      <hr />
+                    <div className="flex flex-col gap-8">
+                      <div className="flex flex-col gap-2">
+                        <p className="font-bold">Message</p>
+                        <hr />
+                      </div>
+                      <div className="flex flex-col gap-2">
+                        <p>{`Candidate Type:  ${contact.candidateType}`}</p>
+                        <p>{`Pogramme:  ${contact.programTrack}`}</p>
+                        <p>{`Status:  ${contact.status}`}</p>
+                        <hr />
+                      </div>
                     </div>
-                  </div>
-                </Collapsible>
-              </div>
-            ))}
+                  </Collapsible>
+                </div>
+              ))}
           </div>
         </div>
       )}

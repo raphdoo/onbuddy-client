@@ -2,15 +2,12 @@ import { Outlet, Link, NavLink } from "react-router-dom";
 
 import Collapsible from "../../../components/common/CollapsMenu/Colllaps";
 import AdminHeroImage from "../HomePage/AdminHeroImage";
-import { useEffect } from "react";
 
 interface LayoutProps {
   children?: React.ReactNode;
   currentUser?: any
 }
-interface CurrentUser {
-  currentUser: any;
-}
+
 
 interface Link {
   path: string;
