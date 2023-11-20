@@ -1,50 +1,49 @@
-
-import { useApi } from 'hooks/api';
-import pic from '../../assets/images/auth.png';
-import logo from '../../assets/images/logo.png';
-import { useState, useEffect } from 'react';
-import { AiOutlineCaretDown, AiOutlineCaretUp } from 'react-icons/ai';
-import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
-import Error from 'components/common/Errors';
+import { useApi } from "hooks/api";
+import pic from "../../assets/images/auth.png";
+import logo from "../../assets/images/logo.png";
+import { useState, useEffect } from "react";
+import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai";
+import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
+import Error from "components/common/Errors";
 
 const list: { pricing: string }[] = [
   {
-    pricing: 'Standard',
+    pricing: "Standard",
   },
   {
-    pricing: 'Pro',
+    pricing: "Pro",
   },
 ];
 
 export const Register = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const[firstname, setFirstName] = useState('')
-  const[lastname, setLastName] = useState('')
-  const[companyName, setCompanyName] = useState('')
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [pricing, setPricing] = useState("Standard")
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [pricing, setPricing] = useState("Standard");
 
   const setToggle = () => {
     setIsOpen((prev) => !prev);
-    setPricing(pricing)
+    setPricing(pricing);
   };
 
   const [{ data, error }, makerequest] = useApi.post(`/auth/signup`);
 
   useEffect(() => {
     if (data) {
-      
+      window.location.href = "/admin/home";
     }
   }, [data]);
 
   const onSubmit = (event: any) => {
     event.preventDefault();
 
-    makerequest({firstname, lastname, email, password, companyName, pricing});
-  }
+    makerequest({ firstname, lastname, email, password, companyName, pricing });
+  };
 
   return (
     <div className="2xl:container h-screen m-auto select-none">
@@ -61,7 +60,7 @@ export const Register = () => {
             <img src={logo} className="m-auto" alt="" />
             {/* <h1 className="font-bold text-center text-4xl">Hello</h1> */}
             <p className="font-medium text-center text-lg text-gray-600">
-              Have an account?{' '}
+              Have an account?{" "}
               <span className="text-blue-500">
                 <Link to="/login">Log in</Link>
               </span>
@@ -83,7 +82,11 @@ export const Register = () => {
             </span>
           </div>
 
-          <form action="" onSubmit={(e) => onSubmit(e)} className="space-y-6 py-6 mt-5">
+          <form
+            action=""
+            onSubmit={(e) => onSubmit(e)}
+            className="space-y-6 py-6 mt-5"
+          >
             <div>
               <label htmlFor="firstname" className="text-sm font-semibold">
                 Firstname
@@ -164,17 +167,20 @@ export const Register = () => {
                   ) : (
                     <AiOutlineCaretUp className="h-8" />
                   )}
-                  
                 </div>
 
                 {isOpen && (
                   <div className="w-full text-center flex flex-col justify-center align-center border-blue-400 py-1  bg-sky-300 absolute top-[55px]">
                     {list.map((item, i) => {
                       return (
-                        <div onClick={() => {
-                          setPricing(item.pricing)
-                          setIsOpen(false)
-                          }} key={i} className='cursor-pointer hover:bg-sky-200 p-2' >
+                        <div
+                          onClick={() => {
+                            setPricing(item.pricing);
+                            setIsOpen(false);
+                          }}
+                          key={i}
+                          className="cursor-pointer hover:bg-sky-200 p-2"
+                        >
                           <h3>{item.pricing}</h3>
                         </div>
                       );
@@ -206,11 +212,9 @@ export const Register = () => {
                 Home
               </Link>
             </div>
-
-
           </form>
 
-          < Error errors={error}/>
+          <Error errors={error} />
         </div>
       </div>
     </div>

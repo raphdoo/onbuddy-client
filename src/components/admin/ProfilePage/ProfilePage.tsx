@@ -1,15 +1,14 @@
-import Image from 'components/common/Images/Image';
-import { user1 } from '../../../assets/Assets';
-import { vector } from '../../../assets/Assets';
-import { vectordot } from '../../../assets/Assets';
-import Loader from 'components/common/loader/loader';
+import Image from "components/common/Images/Image";
+import { user1 } from "../../../assets/Assets";
+import { vector } from "../../../assets/Assets";
+import { vectordot } from "../../../assets/Assets";
+import Loader from "components/common/loader/loader";
 
 interface CurrentUser {
   currentUser: any;
 }
 
 const ProfilePage: React.FC<CurrentUser> = ({ currentUser }) => {
-
   return (
     <div>
       {!currentUser ? (
@@ -99,7 +98,7 @@ const ProfilePage: React.FC<CurrentUser> = ({ currentUser }) => {
                     <Image
                       src={currentUser.avatar.url}
                       alt="Logo Image"
-                      className="w-40 h-40 rounded-full md:w-auto"
+                      className="w-40 h-40 rounded-full"
                     />
                   </div>
                   <div className="flex flex-col items-center">
@@ -123,12 +122,12 @@ const ProfilePage: React.FC<CurrentUser> = ({ currentUser }) => {
                     <h2 className="">{currentUser.email}</h2>
                   </div>
 
-									<div className="flex justify-between py-4 px-4 ">
+                  <div className="flex justify-between py-4 px-4 ">
                     <h2 className="">Program Track</h2>
                     <h2 className="">{currentUser.programTrack}</h2>
                   </div>
 
-									<div className="flex justify-between py-4 px-4 bg-[#D6EBFF99]">
+                  <div className="flex justify-between py-4 px-4 bg-[#D6EBFF99]">
                     <h2 className="">Company Id</h2>
                     <h2 className="">{currentUser.companyId}</h2>
                   </div>

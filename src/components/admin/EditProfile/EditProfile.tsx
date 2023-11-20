@@ -1,40 +1,33 @@
-import Button from 'components/common/Button/Button';
-import Image from 'components/common/Images/Image';
-import { profil } from '../../../assets/Assets';
-import { user1 } from '../../../assets/Assets';
-import { vector } from '../../../assets/Assets';
-import { vectordot } from '../../../assets/Assets';
-import { useEffect, useState } from 'react';
-import { useApi } from 'hooks/api';
+import Button from "components/common/Button/Button";
+import Image from "components/common/Images/Image";
+import { profil } from "../../../assets/Assets";
+import { user1 } from "../../../assets/Assets";
+import { vector } from "../../../assets/Assets";
+import { vectordot } from "../../../assets/Assets";
+import { useEffect, useState } from "react";
+import { useApi } from "hooks/api";
 
 interface CurrentUser {
   currentUser: any;
 }
 
-const EditProfile: React.FC<CurrentUser> = ({currentUser}) => {
+const EditProfile: React.FC<CurrentUser> = ({ currentUser }) => {
+  const [bio, setBio] = useState("-");
+  const [avatar, setAvatar] = useState("");
+  const [avatarPreview, setAvatarPreview] = useState("/images/profil.png");
 
-  const [bio, setBio] =useState('-')
-  const [avatar, setAvatar] = useState('');
-  const [avatarPreview, setAvatarPreview] = useState('/images/profil.png');
-
-  
-
-  const [response, makerequest] = useApi.patch(
-    `/users/${currentUser.id}`
-  );
+  const [response, makerequest] = useApi.patch(`/users/${currentUser.id}`);
 
   const submitHandler = () => {
-  const formData = new FormData();
-  formData.append('avatar', avatar);
-  formData.append('bio', bio);
+    const formData = new FormData();
+    formData.append("avatar", avatar);
+    formData.append("bio", bio);
 
-  makerequest(formData);
-
-  
+    makerequest(formData);
   };
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.name === 'avatar') {
+    if (e.target.name === "avatar") {
       const reader = new FileReader();
 
       reader.onload = () => {
@@ -50,11 +43,11 @@ const EditProfile: React.FC<CurrentUser> = ({currentUser}) => {
   };
 
   useEffect(() => {
-    if(response.data) {
+    if (response.data) {
       // console.log({response,currentUser, bio, avatar, avatarPreview})
-      window.location.href = '/profile'
+      window.location.href = "/profile";
     }
-  }, [response])
+  }, [response]);
 
   return (
     <div className="h-screen bg-gray-200">
@@ -145,12 +138,12 @@ const EditProfile: React.FC<CurrentUser> = ({currentUser}) => {
                 <figure>
                   <img
                     src={avatarPreview}
-                    className="w-40 h-40 rounded-full md:w-auto"
+                    className="w-40 h-40 rounded-full"
                     alt="Avatar Preview"
                   />
                 </figure>
               </div>
-              <div className=" mt-3 m-auto flex ">
+              <div className=" mt-3 m-auto flex flex-col ">
                 <div className="custom-file">
                   <input
                     type="file"
@@ -192,6 +185,6 @@ const EditProfile: React.FC<CurrentUser> = ({currentUser}) => {
       </section>
     </div>
   );
-}
+};
 
 export default EditProfile;
