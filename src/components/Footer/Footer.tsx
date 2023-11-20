@@ -1,5 +1,5 @@
-import React from 'react'
-import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
+import React from "react";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const FooterSection: React.FC = () => {
   return (
@@ -14,10 +14,10 @@ const FooterSection: React.FC = () => {
               <a href="/admin/checklist">Checklist</a>
             </li>
             <li className="mb-2">
-              <a href="#">Profile</a>
+              <a href="/profile">Profile</a>
             </li>
             <li className="mb-2">
-              <a href="#">Socials</a>
+              <a href="/admin/home/socials">Socials</a>
             </li>
           </ul>
         </div>
@@ -39,7 +39,7 @@ const FooterSection: React.FC = () => {
         &copy; {new Date().getFullYear()} OnBuddy. All rights reserved.
       </p>
     </footer>
-  )
-}
+  );
+};
 
-export default FooterSection
+export default FooterSection;

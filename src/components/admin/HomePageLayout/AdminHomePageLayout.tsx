@@ -85,6 +85,19 @@ export const links: MenuItem[] = [
       },
     ],
   },
+  {
+    title: "In app",
+    link: [
+      {
+        path: "socials",
+        label: "Socials",
+      },
+      {
+        path: "/admin/checklist",
+        label: "Checklist",
+      },
+    ],
+  },
 ];
 
 
@@ -125,22 +138,6 @@ const AdminHomePageLayout: React.FC<LayoutProps> = ({currentUser}) => {
                   Add new Employees
                 </Link>
               </div>}
-              <div className="cursor-pointer border-b  border-gray-300  flex justify-between items-center">
-                <NavLink
-                  to="/admin/home/socials"
-                  className="font-bold text-xl  text-gray-500 uppercase active:text-red-500"
-                >
-                  Socials
-                </NavLink>
-              </div>
-              <div className="cursor-pointer border-b  border-gray-300  flex justify-between items-center">
-                <Link
-                  to="/admin/checklist"
-                  className="font-bold text-xl text-gray-500 uppercase"
-                >
-                  Checklist
-                </Link>
-              </div>
               <div className="cursor-pointer border-b  border-gray-300  flex justify-between items-center">
                 <Link
                   to="/admin/home/contact"
