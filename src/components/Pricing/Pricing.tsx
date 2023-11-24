@@ -1,18 +1,23 @@
 import Checkbox from 'components/common/checkbox/Checkbox';
 import React, { useEffect } from 'react';
-
+import Button from "components/common/Button/Button";
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useNavigate } from "react-router-dom";
 
 const PricingSection: React.FC = () => {
   const featureCtrl = useAnimation();
   const buttonCtrl = useAnimation();
   const headingCtrl_1 = useAnimation();
 
+
+  const navigate = useNavigate();
   const { ref, inView } = useInView({
     threshold: 0.5,
     triggerOnce: true,
   });
+
+ 
 
   const animationSequence = async () => {
     await headingCtrl_1.start({ opacity: 1, scale: 1 });
@@ -78,9 +83,13 @@ const PricingSection: React.FC = () => {
               </li>
             </ul>
 
-            <button className="bg-blue-500 text-white px-4 py-2   mt-8 rounded-lg shadow-lg hover:bg-blue-600  flex">
-              Get Started
-            </button>
+            <Button
+              className="bg-blue-500 shadow-lg text-white px-4 py-2  mt-8 rounded-lg hover:bg-blue-600  flex"
+              label="Get Started"
+              onClick={() => {
+                navigate("/register");
+              }}
+            />
           </motion.div>
 
           <motion.div
@@ -121,9 +130,13 @@ const PricingSection: React.FC = () => {
               </li>
             </ul>
 
-            <button className="bg-blue-500 shadow-lg text-white px-4 py-2  mt-8 rounded-lg hover:bg-blue-600  flex">
-              Get Started
-            </button>
+            <Button
+              className="bg-blue-500 shadow-lg text-white px-4 py-2  mt-8 rounded-lg hover:bg-blue-600  flex"
+              label="Get Started"
+              onClick={() => {
+                navigate("/register");
+              }}
+            />
           </motion.div>
         </div>
       </div>
